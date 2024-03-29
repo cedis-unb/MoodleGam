@@ -1,0 +1,91 @@
+.background-login-page{
+    background-color: var(--primary-dark-grey);
+    font-family: Lato, sans-serif;
+    font-size: 38px;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.login-container{
+    width: 50vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.login-container input{
+    width: 35vw;
+    height: 7vh;
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+
+.login-container input::placeholder{
+    font-size: 22px;
+    font-weight: light;
+}
+.login-container input:focus{
+    outline: none;
+}
+.login-container a{
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--moodle-orange);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.login-container a:hover{
+    color: white;
+}
+
+.login-container button{
+    font-size: 22px;
+    background-color: var(--light-gray);
+    width: 25vw;
+    height: 7vh;
+    box-shadow: 7px 7px 7px -6px black;
+}
+.login-container button:hover{
+    background-color: var(--moodle-orange);
+}
+.login-container form{
+    height: 65vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    /* background-color: blueviolet; */
+}
+.button-login-wrapper{
+    width: 35vw;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+}
+.login-container p{
+    font-weight: bold;
+    height: 10vh;
+    width: 35vw;
+    text-align: center;
+    /* background-color: brown; */
+}
+
+#orange-moodle{
+
+    color: var(--moodle-orange)
+}
+
+.moodlegam-logo-login{
+    width: 50vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    border-left-width: 2px;
+    border-left-color: var(--moodle-orange);
+}
+
