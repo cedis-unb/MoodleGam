@@ -4,6 +4,7 @@ dotenv.config()
 import express from 'express'
 import connectDB from './config/db.js'
 import userRoutes from './routes/UserRoutes.js'
+import sessionsRouter from './routes/SessionsRoutes.js'
 
 const app = express()
 
@@ -22,5 +23,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', userRoutes)
+app.use('/sessions', sessionsRouter)
 
 app.listen(PORT, () => console.log(`Server is listening on ${PORT}`))
