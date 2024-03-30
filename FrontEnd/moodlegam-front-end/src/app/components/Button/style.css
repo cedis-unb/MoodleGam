@@ -1,0 +1,11 @@
+.button-component{
+    font-size: 22px;
+    background-color: var(--light-gray);
+    width: 25vw;
+    height: 7vh;
+    box-shadow: 7px 7px 7px -6px black;
+    
+}
+.button-component:hover{
+    background-color: var(--moodle-orange);
+}
