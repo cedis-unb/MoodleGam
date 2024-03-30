@@ -1,5 +1,6 @@
 import "../loginPage/style.css";
 import Image from "next/image";
+import Button from "../../components/Button/index";
 
 export default function LoginPage(){
 
@@ -7,7 +8,6 @@ export default function LoginPage(){
 
     return (
         <div className="background-login-page">
-            
             
             <div className="login-container">
                 <p>Faça Login no <span id='orange-moodle'>Moodle</span>Gam</p>
@@ -18,7 +18,10 @@ export default function LoginPage(){
                     <a>Esqueci minha senha</a>
                     <a>Fazer cadastro</a>
                     <div className="button-login-wrapper">
-                        <button type="submit">Entrar</button>
+                        <Button
+                            text="Entrar"
+                            type="submit"
+                        />
                     </div>
                     
                 </form>

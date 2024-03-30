@@ -42,16 +42,7 @@
     color: white;
 }
 
-.login-container button{
-    font-size: 22px;
-    background-color: var(--light-gray);
-    width: 25vw;
-    height: 7vh;
-    box-shadow: 7px 7px 7px -6px black;
-}
-.login-container button:hover{
-    background-color: var(--moodle-orange);
-}
+
 .login-container form{
     height: 65vh;
     width: 35vw;
