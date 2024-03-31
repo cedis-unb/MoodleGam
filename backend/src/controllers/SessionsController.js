@@ -16,6 +16,12 @@ const SessionsController = {
         return res.status(400).json({ message: 'Email/Senha inválida' })
       }
 
+      if (user.status === 'inactive') {
+        return res.status(400).json({
+          message: 'Esse usuário foi desativado pelo admin do sistema.',
+        })
+      }
+
       return res.status(200).json({
         message: 'Login bem-sucedido',
         user: {
