@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs'
 import UserRepository from '../repositories/UserRepository.js'
+import jwt from 'jsonwebtoken'
 
 const SessionsController = {
   loginUser: async (req, res) => {
@@ -22,14 +23,15 @@ const SessionsController = {
         })
       }
 
+      const token = jwt.sign({}, process.env.JWT_SECRET, {
+        subject: user.id,
+        expiresIn: '1d',
+      })
+
       return res.status(200).json({
         message: 'Login bem-sucedido',
-        user: {
-          id: user._id,
-          email: user.email,
-          role: user.role,
-          status: user.status,
-        },
+        token,
+        user,
       })
     } catch (error) {
       return res.status(500).json({ message: error.message })
