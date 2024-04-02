@@ -18,9 +18,9 @@
 }
 
 .fields-register-user{
-    height: 50vh;
+    height: 55vh;
     width: 90vw;
-    padding-left: 10rem;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -29,6 +29,7 @@
 .input-row-register-user{
     display: flex;
     justify-content: space-around;
+    padding-left: 10rem;
 }
 
 .input-row-register-user input{
@@ -48,7 +49,20 @@
 }
 
 .button-wrapper-register-user{
-    width:100vw;
+    width:90vw;
+    display: flex;
+    justify-content: center;
+}
+
+#error-text-register-user{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+    
+}
+
+.error-register-wrapper{
     display: flex;
     justify-content: center;
 }
