@@ -80,3 +80,10 @@
     border-left-color: var(--moodle-orange);
 }
 
+#error-text-login{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+}
+
