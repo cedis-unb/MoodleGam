@@ -16,8 +16,16 @@ export default function Background(props){
             try {
                 if (token) {
                     const decodedUser = jwtDecode(token);
+                    const tokenExpired = await isTokenExpired(decodedUser);
+                    if (tokenExpired) {
+                        redirectToLoginPage();
+                        return;
+                    }
                     const userData = await fetchUser(decodedUser.sub, token);
                     setUser(userData);
+                }
+                else{
+                    redirectToLoginPage()
                 }
             } catch (error) {
                 console.error('Erro ao buscar usuário:', error);
@@ -25,19 +33,7 @@ export default function Background(props){
         };
 
         fetchData();
-        // if (token) {
-        //     const decodedUser = jwtDecode(token);
-        //     const userData = await fetchUser(decodedUser.sub, token)
-        //     setUser(userData)
-        //     //setUser(decodedUser.sub);
-
-
-        //     //setUser(jwtDecode(token))
-        //     //console.log(`User: ${user}`)
-        //     // if(isTokenExpired(user)){
-        //     //     setUser(null)
-        //     // } 
-        // }
+        
     }, [])
 
 
@@ -68,12 +64,30 @@ export default function Background(props){
 
     }
 
+    function getFirstName(name) {
+        var dividedName = name.split(" ");
+        if(dividedName[0].length > 10){
+            return ''
+        }
+        else{
+            return dividedName[0];
+        }
+        
+    }
+
+    const redirectToLoginPage = () => {
+        
+        router.push('/pages/loginPage'); // Redireciona para a página de login
+    };
+
     useEffect(() => {
         console.log(`User: ${JSON.stringify(user)}`);
     }, [user]); 
 
-    const isTokenExpired = (decodedToken) =>{
-        if (!decodedToken || Date.now() >= decodedToken.exp * 1000) {
+    const isTokenExpired = async (decodedToken) =>{
+        var now = Math.floor(Date.now() / 1000);
+
+        if (!decodedToken || now >= decodedToken.exp) {
           console.log("token expirou")
           return true; // Token expirado
         }
@@ -146,14 +160,17 @@ export default function Background(props){
                     </div>
                 </div>
                 <div className="user-area">
-                    <Image 
-                        src="/img/user_icon.svg"
-                        width={40}
-                        height={40}
-                        unoptimized={true}
-                    />
+                    <div className="hover-user-area">
+                        <Image 
+                            src="/img/user_icon.svg"
+                            width={40}
+                            height={40}
+                            unoptimized={true}
+                        />
 
-                    <span>Olá {user !== null ? user.name : ''}</span>
+                        <span>Olá {user !== null ? getFirstName(user.name) : ''}</span>
+                    </div>
+                    
 
                 </div>
             </div>
