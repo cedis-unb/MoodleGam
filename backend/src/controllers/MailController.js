@@ -1,23 +1,26 @@
 import nodemailer from 'nodemailer'
-import UserRepository from '../repositories/UserRepository'
-import '../utils/passwordGenerator.js'
+import bcrypt from 'bcryptjs'
+import UserRepository from '../repositories/UserRepository.js'
+import randomPassword from '../utils/passwordGenerator.js'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.APP_ADDRESS,
-    pass: process.env.APP_PASSWORD,
-  },
-})
+const { hash } = bcrypt
 
 export default class MailController {
   static async sendEmailForgotPassword(req, res) {
     try {
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.APP_ADDRESS,
+          pass: process.env.APP_PASSWORD,
+        },
+      })
+
       const { email } = req.body
 
-      const user = UserRepository.findByEmail(email)
+      const user = await UserRepository.findByEmail(email)
 
       if (!user) {
         return res.status(400).json({
@@ -36,6 +39,10 @@ export default class MailController {
         subject: 'Recuperação de senha',
         html: `<p>Sua nova senha é <strong>${newPassword}</strong></p>`,
       }
+
+      const hashedPassword = await hash(newPassword, 8)
+
+      UserRepository.updateById(user.id, { password: hashedPassword })
 
       await transporter.sendMail(mailOptions)
 
