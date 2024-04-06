@@ -18,6 +18,11 @@ export default function LoginPage(){
     const [password, setPassword] = useState('');
     const [errorText, setErrorText] = useState('');
 
+    const redirectToHomepage = () => {
+        
+        router.push('/pages/homepage'); // Redireciona para a página de login
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         
@@ -39,9 +44,9 @@ export default function LoginPage(){
             // Verificar se o login foi bem-sucedido
             if (response.status === 200) {
                 // Armazenar o token no localStorage
-                localStorage.setItem('token', response.data.token);
-                
-               console.log("Login efetuado")
+                localStorage.setItem("token", response.data.token);
+                console.log(response.data)
+                redirectToHomepage()
             } 
             
 
