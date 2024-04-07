@@ -1,0 +1,43 @@
+.dropdown-menu {
+    position: absolute;
+    height: 60px;
+    width: 140px;
+    background-color: var(--secondary-dark-grey);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    margin-top: 10rem;
+    opacity: 0;
+    visibility: hidden;
+    padding: 5px;
+    font-size: 17px;
+    
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-options{
+    width: 100%;
+    text-align: center; 
+    color: white;
+   
+}
+
+#my-profile:hover{
+    background-color: var(--light-gray-2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+#logout{
+    color: var(--moodle-red)
+}
+#logout:hover{
+    cursor: pointer;
+    background-color: var(--light-gray-2);
+    border-radius: 4px;
+}
+
+  
