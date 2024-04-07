@@ -4,10 +4,12 @@ import Image from "next/image";
 import {jwtDecode} from "jwt-decode"; 
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
-
+import Dropdown from "@/app/components/Dropdown/index"
+import { useRouter } from 'next/navigation';
 export default function Background(props){
-
+    const router = useRouter();
     const [user, setUser] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     useEffect(() => {
         // Perform localStorage action
@@ -80,6 +82,10 @@ export default function Background(props){
         router.push('/pages/loginPage'); // Redireciona para a página de login
     };
 
+    const redirectToHome = () =>{
+        router.push('/pages/homepage');
+    }
+
     useEffect(() => {
         console.log(`User: ${JSON.stringify(user)}`);
     }, [user]); 
@@ -96,21 +102,24 @@ export default function Background(props){
         }
     }
 
-    const userLogOut = async (e) => {
-        e.preventDefault();
-        try{
-        localStorage.clear();
-        navigate("/");
-        }
-        catch(error){
-        console.log(error)
-        }
-    }
+    
+
+    
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+        console.log(menuOpen)
+    };
     return (
 
         <div className="background-page">
             <div className="navbar">
-                <h1><span id='orange-moodle'>Moodle</span>Gam</h1>
+                <h1>
+                    <a onClick={redirectToHome}>
+                        <span id='orange-moodle'>Moodle</span>Gam
+                    </a>
+                </h1>
+                
                 <div className="navbar-buttons">
                     <div className="button-navbar">
                         <Image 
@@ -160,7 +169,7 @@ export default function Background(props){
                     </div>
                 </div>
                 <div className="user-area">
-                    <div className="hover-user-area">
+                    <a className="hover-user-area" onClick={toggleMenu}>
                         <Image 
                             src="/img/user_icon.svg"
                             width={40}
@@ -169,9 +178,13 @@ export default function Background(props){
                         />
 
                         <span>Olá {user !== null ? getFirstName(user.name) : ''}</span>
-                    </div>
+                       
+                        
+                    </a>
                     
-
+                    <Dropdown
+                        isOpen={menuOpen}
+                    />
                 </div>
             </div>
             {props.children}

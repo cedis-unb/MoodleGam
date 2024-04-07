@@ -23,7 +23,9 @@
     text-align: center;
     height: 6vh;
 }
-
+.navbar a:hover{
+    cursor: pointer;
+}
 .navbar-buttons{
     height: 12vh;
     width: 65vw;
@@ -65,7 +67,7 @@
     align-items: center;
 
 }
-.hover-user-area{
+.hover-user-area{   
     height: 11vh;
     width: 8vw;
     display: flex;
