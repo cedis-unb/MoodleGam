@@ -57,6 +57,10 @@ export default function LoginPage(){
         }
     };
 
+    const redirectRegisterUser = () =>{
+        router.push('/pages/registerUserPage')
+    }
+
     return (
         <div className="background-login-page">
             
@@ -78,7 +82,7 @@ export default function LoginPage(){
                     ></input>
                     <span id="error-text-login">{errorText}</span>
                     <a>Esqueci minha senha</a>
-                    <a>Fazer cadastro</a>
+                    <a onClick={redirectRegisterUser}>Fazer cadastro</a>
                     <div className="button-login-wrapper">
                         <Button
                             text="Entrar"
