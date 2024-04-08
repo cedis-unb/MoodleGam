@@ -65,10 +65,24 @@ const UserController = {
 
   updateUser: async (req, res) => {
     try {
+      const { password } = req.body
+
+      if (password) {
+        const hashedPassword = await hash(password, 8)
+
+        const updatedUser = await UserRepository.updateById(req.params.id, {
+          ...req.body,
+          password: hashedPassword,
+        })
+
+        return res.status(200).json(updatedUser)
+      }
+
       const updatedUser = await UserRepository.updateById(
         req.params.id,
         req.body
       )
+
       return res.status(200).json(updatedUser)
     } catch (error) {
       return res.status(400).json({ message: error.message })

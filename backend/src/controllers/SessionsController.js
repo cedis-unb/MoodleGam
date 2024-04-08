@@ -37,6 +37,31 @@ const SessionsController = {
       return res.status(500).json({ message: error.message })
     }
   },
+  showProfile: async (req, res) => {
+    try {
+      const authHeader = req.headers.authorization
+
+      const [, token] = authHeader.split(' ')
+
+      const decodedToken = jwt.verify(token, process.env.JWT_SECRET)
+
+      const { sub } = decodedToken
+
+      const user = await UserRepository.findById(sub)
+
+      if (!user) {
+        return res.status(400).json({
+          message: 'Erro ao buscar usuário!',
+        })
+      }
+
+      return res.status(200).json({
+        user,
+      })
+    } catch (error) {
+      return res.status(500).json({ message: error.message })
+    }
+  },
 }
 
 export default SessionsController
