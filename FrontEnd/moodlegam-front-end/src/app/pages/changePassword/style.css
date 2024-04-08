@@ -1,0 +1,42 @@
+.change-password-form{
+    height: 75vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10rem;
+    padding-top: 3rem;
+    justify-content: space-around;
+    color: white;
+}
+
+
+.change-password-form input{
+    width: 35vw;
+    height: 7vh;
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+    color:white;
+}
+
+.change-password-form input::placeholder{
+    font-size: 22px;
+    font-weight: light;
+}
+.change-password-form input:focus{
+    outline: none;
+}
+
+#change-password-title{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+
+
+}
+
+.button-wrapper-change-password{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}

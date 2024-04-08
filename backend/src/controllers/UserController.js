@@ -12,7 +12,7 @@ const UserController = {
 
       if (userExists) {
         return res.status(400).json({
-          message: 'Email já cadastrado',
+          message: 'Email já cadastrado'
         })
       }
 
