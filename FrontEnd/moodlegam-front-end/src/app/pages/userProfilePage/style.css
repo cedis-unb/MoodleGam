@@ -26,6 +26,11 @@
     color: white;
 }
 
+#edit-user-link{
+    color: white;
+}
+
+
 .user-info-container a{
     font-size: 22px;
     font-weight: normal;
