@@ -1,0 +1,68 @@
+.background-register-user-page{
+    background-color: var(--primary-dark-grey);
+    font-family: Lato, sans-serif;
+    font-size: 38px;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.background-register-user-page h1{
+    font-weight: bold;
+    padding-left: 10rem;
+    width: 55vw;
+}
+
+.fields-register-user{
+    height: 55vh;
+    width: 100vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-row-register-user{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10rem;
+}
+
+.input-row-register-user input{
+    width: 35vw;
+    height: 7vh;
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+
+.input-row-register-user input::placeholder{
+    font-size: 22px;
+    font-weight: light;
+}
+.input-row-register-user input:focus{
+    outline: none;
+}
+
+.button-wrapper-register-user{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#error-text-register-user{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+    
+}
+
+.error-register-wrapper{
+    display: flex;
+    justify-content: center;
+}

@@ -42,16 +42,7 @@
     color: white;
 }
 
-.login-container button{
-    font-size: 22px;
-    background-color: var(--light-gray);
-    width: 25vw;
-    height: 7vh;
-    box-shadow: 7px 7px 7px -6px black;
-}
-.login-container button:hover{
-    background-color: var(--moodle-orange);
-}
+
 .login-container form{
     height: 65vh;
     width: 35vw;
@@ -82,10 +73,17 @@
 
 .moodlegam-logo-login{
     width: 50vw;
-    height: 75vh;
+    height: 76vh;
     display: flex;
     justify-content: center;
     border-left-width: 2px;
     border-left-color: var(--moodle-orange);
+}
+
+#error-text-login{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
 }
 
