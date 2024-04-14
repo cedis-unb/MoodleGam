@@ -40,3 +40,8 @@
     display: flex;
     justify-content: center;
 }
+
+#change-password-error{
+    color: var(--moodle-red);
+    font-size: 20px;
+}
