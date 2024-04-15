@@ -17,6 +17,7 @@ export default function Subject(){
                 <MenuOption
                     title="Disciplina"
                     text="Crie e edite Disciplinas, além de ver as que já foram criadas. Ao criar uma Disciplina é possível adicionar turmas para mesma. "
+                    redirect="registerSubjectPage" 
                 >
                     <Image 
                         src="/img/plus.svg"
@@ -27,8 +28,8 @@ export default function Subject(){
                 </MenuOption>
 
                 <MenuOption
-                    title="Conteúdos"
-                    text="Veja conteúdos sobre Gamificação, além de tutoriais sobre como utilizar o Moodle"
+                    title="Ver disciplinas"
+                    text="Veja quais disciplinas já foram cadastradas"
                 >
                     <Image 
                         src="/img/list.svg"
