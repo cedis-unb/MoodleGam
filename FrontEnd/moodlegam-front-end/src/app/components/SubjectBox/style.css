@@ -1,0 +1,65 @@
+.subject-container{
+    width: 29vw;
+    height: 41vh;
+    background-color: var(--option-subject);
+    box-shadow: 0px 7px 3px rgba(0, 0, 0, 0.726);
+    transition: transform 0.3s ease;
+    
+}
+
+.subject-container:hover{
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.subject-header{
+    height: 4vh;
+    width: 29vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--moodle-orange);
+    background-color: var(--option-background);
+    font-weight: bold;
+}
+
+.subject-data{
+    color: white;
+    height: 28vh;
+    width: 29vw;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subject-data h1{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.subject-footer{
+    width: 29vw;
+    height: 9vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.subject-footer p{
+    margin: 0;
+    color: white;
+    font-style: italic;
+}
+
+.subject-footer a{
+    color: var(--moodle-orange);
+    font-weight: bold;
+}
+
+.subject-footer a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
