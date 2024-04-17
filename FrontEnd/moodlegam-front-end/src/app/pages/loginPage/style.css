@@ -87,3 +87,10 @@
     text-align: center;
 }
 
+#success-text-forgot-password{
+    color: var(--moodle-green);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+}
+

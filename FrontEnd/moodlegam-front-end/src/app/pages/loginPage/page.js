@@ -17,7 +17,48 @@ export default function LoginPage(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorText, setErrorText] = useState('');
+    const [successText, setSuccessText] = useState('');
 
+    const forgotPassword = async(event) =>{
+        setSuccessText('')
+        event.preventDefault();
+        if(!email){
+            setErrorText("Insira seu E-mail para que possamos lhe enviar uma nova senha")
+            return
+        }
+        else{
+            try{
+                 // Enviar os dados do formulário para o backend
+                const response = await axiosInstance.post(
+                '/mail', 
+                {
+                    email,
+                },
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`
+                    }
+                }
+            );
+
+            // Verificar se o login foi bem-sucedido
+            if (response.status === 200) {
+                // Armazenar o token no localStorage
+                setSuccessText("Nova senha enviada para o E-mail")
+            }
+            
+
+            } catch (error) {
+                setErrorText(error.response.data.message);
+            }
+        }
+
+
+    }
+
+    const teste = () =>{
+        setSuccessText("Nova senha enviada para o E-mail")
+    }
     const redirectToHomepage = () => {
         
         router.push('/pages/homepage'); // Redireciona para a página de login
@@ -39,7 +80,7 @@ export default function LoginPage(){
                         'x-api-key': `${apiKey}`
                     }
                 }
-        );
+            );
 
             // Verificar se o login foi bem-sucedido
             if (response.status === 200) {
@@ -81,7 +122,8 @@ export default function LoginPage(){
                         onChange={(e) => setPassword(e.target.value)}
                     ></input>
                     <span id="error-text-login">{errorText}</span>
-                    <a>Esqueci minha senha</a>
+                    <span id="success-text-forgot-password">{successText}</span>
+                    <a onClick={forgotPassword}>Esqueci minha senha</a>
                     <a onClick={redirectRegisterUser}>Fazer cadastro</a>
                     <div className="button-login-wrapper">
                         <Button
