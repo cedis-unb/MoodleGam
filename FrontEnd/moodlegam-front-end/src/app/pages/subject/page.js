@@ -30,6 +30,7 @@ export default function Subject(){
                 <MenuOption
                     title="Ver disciplinas"
                     text="Veja quais disciplinas já foram cadastradas"
+                    redirect="subjectsListPage"
                 >
                     <Image 
                         src="/img/list.svg"
