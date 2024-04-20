@@ -21,6 +21,22 @@ const PluginRepository = {
   deleteById: async id => {
     return await Plugin.findByIdAndDelete(id)
   },
+
+  addTechniqueToPlugin: async (pluginId, techniqueId) => {
+    try {
+      const updatedPlugin = await Plugin.findByIdAndUpdate(
+        pluginId,
+        { $addToSet: { techniques: techniqueId } },
+        { new: true, safe: true, upsert: false }
+      )
+
+      return updatedPlugin
+    } catch (error) {
+      throw new Error(
+        'Não foi possível adicionar a técnica ao plugin: ' + error.message
+      )
+    }
+  },
 }
 
 export default PluginRepository
