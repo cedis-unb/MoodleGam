@@ -8,6 +8,12 @@ const pluginSchema = new Schema(
       type: String,
       required: true,
     },
+    techniques: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Technique',
+      },
+    ],
   },
   {
     timestamps: true,
