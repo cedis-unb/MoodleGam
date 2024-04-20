@@ -1,4 +1,5 @@
 import PluginRepository from '../repositories/PluginRepository.js'
+import TechniqueRepository from '../repositories/TechniqueRepository.js'
 
 const PluginController = {
   createPlugin: async (req, res) => {
@@ -59,6 +60,32 @@ const PluginController = {
       }
     } catch (error) {
       return res.status(500).json({ message: error.message })
+    }
+  },
+
+  addTechniqueToPlugin: async (req, res) => {
+    try {
+      const { pluginId, techniqueId } = req.body
+
+      const plugin = await PluginRepository.findById(pluginId)
+      const technique = await TechniqueRepository.findById(techniqueId)
+
+      if (!plugin || !technique) {
+        return res.status(404).json({
+          message: 'Error ao encontrar plugin ao technique',
+        })
+      }
+
+      const updatedPlugin = await PluginRepository.addTechniqueToPlugin(
+        pluginId,
+        techniqueId
+      )
+
+      return res.status(200).json(updatedPlugin)
+    } catch (error) {
+      return res.status(500).json({
+        message: 'Error ao adicionar técnica ao plugin' + error.message,
+      })
     }
   },
 }
