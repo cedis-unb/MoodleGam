@@ -4,11 +4,6 @@ const { Schema } = mongoose
 
 const coreDriveSchema = new Schema(
   {
-    role: {
-      type: String,
-      required: true,
-      enum: ['user', 'admin'],
-    },
     coreDriveName: {
       type: String,
       required: true,
