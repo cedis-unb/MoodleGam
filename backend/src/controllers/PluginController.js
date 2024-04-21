@@ -4,11 +4,24 @@ import TechniqueRepository from '../repositories/TechniqueRepository.js'
 const PluginController = {
   createPlugin: async (req, res) => {
     try {
-      const { pluginName } = req.body
-      const newPlugin = await PluginRepository.create({ pluginName })
+      const { pluginName, techniques } = req.body
+
+      if (techniques && !Array.isArray(techniques)) {
+        return res
+          .status(400)
+          .json({ message: 'Techniques must be an array of IDs' })
+      }
+
+      const newPlugin = await PluginRepository.create({
+        pluginName,
+        techniques,
+      })
+
       return res.status(201).json(newPlugin)
     } catch (error) {
-      return res.status(400).json({ message: error.message })
+      return res
+        .status(400)
+        .json({ message: 'Error creating plugin: ' + error.message })
     }
   },
 
@@ -65,14 +78,15 @@ const PluginController = {
 
   addTechniqueToPlugin: async (req, res) => {
     try {
-      const { pluginId, techniqueId } = req.body
+      const { techniqueId } = req.body
+      const { pluginId } = req.params
 
       const plugin = await PluginRepository.findById(pluginId)
       const technique = await TechniqueRepository.findById(techniqueId)
 
       if (!plugin || !technique) {
         return res.status(404).json({
-          message: 'Error ao encontrar plugin ao technique',
+          message: 'Error ao encontrar plugin ou technique',
         })
       }
 
