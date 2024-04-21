@@ -8,6 +8,10 @@ import userRoutes from './routes/UserRoutes.js'
 import sessionsRouter from './routes/SessionsRoutes.js'
 import apiKeyAuth from './middlewares/apiKeyAuth.js'
 import mailRouter from './routes/ForgotPasswordRoutes.js'
+import subjectRoutes from './routes/SubjectRoutes.js'
+import pluginRouter from './routes/PluginRoutes.js'
+import techniqueRoutes from './routes/TechniqueRoutes.js'
+import coreDriveRoutes from './routes/CoreDriveRoutes.js'
 
 const app = express()
 
@@ -30,5 +34,9 @@ app.get('/', (req, res) => {
 app.use('/users', userRoutes)
 app.use('/sessions', sessionsRouter)
 app.use('/mail', mailRouter)
+app.use('/subject', subjectRoutes)
+app.use('/plugins', pluginRouter)
+app.use('/technique', techniqueRoutes)
+app.use('/coreDrive', coreDriveRoutes)
 
 app.listen(PORT, () => console.log(`Server is listening on ${PORT}`))
