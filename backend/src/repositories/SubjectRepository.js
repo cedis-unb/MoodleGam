@@ -5,6 +5,10 @@ const SubjectRepository = {
     return await Subject.findOne({ subjectCode: code })
   },
 
+  findByUserId: async userId => {
+    return await Subject.find({ userId })
+  },
+
   create: async data => {
     const subject = new Subject(data)
     return await subject.save()
@@ -24,6 +28,10 @@ const SubjectRepository = {
 
   deleteById: async id => {
     return await Subject.findByIdAndDelete(id)
+  },
+
+  findByCodeAndYearSemester: async (subjectCode, yearSemester) => {
+    return await Subject.findOne({ subjectCode, yearSemester })
   },
 }
 
