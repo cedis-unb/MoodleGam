@@ -15,8 +15,8 @@ export default function Subject(){
             <div className="subject-option">
 
                 <MenuOption
-                    title="Disciplina"
-                    text="Crie e edite Disciplinas, além de ver as que já foram criadas. Ao criar uma Disciplina é possível adicionar turmas para mesma. "
+                    title="Nova Disciplina"
+                    text="Crie uma nova Disciplina e aplique Gamificação a ela"
                     redirect="registerSubjectPage" 
                 >
                     <Image 

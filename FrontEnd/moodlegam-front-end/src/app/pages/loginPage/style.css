@@ -24,6 +24,10 @@
     font-size: 22px;
 }
 
+.login-container input:invalid{
+    border-bottom-color: var(--moodle-red) ;
+}
+
 .login-container input::placeholder{
     font-size: 22px;
     font-weight: light;
