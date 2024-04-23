@@ -62,7 +62,7 @@ export default function RegisterSubjectPage(){
                 console.log(`subject ${apiKey}`)
     
                 const response = await axiosInstance.post(
-                    '/users', 
+                    '/subject', 
                     subject,
                     {
                         headers: {
@@ -129,12 +129,13 @@ export default function RegisterSubjectPage(){
                     </div>
 
                     <div className="input-row-register-subject">
-                        <input 
-                            type="text" 
+                        <textarea 
+                            rows="4" 
+                            cols="45"
                             placeholder="Observação"
                             onChange={(e) => setSubject({...subject, note: e.target.value})}
                         >
-                        </input>
+                        </textarea>
                         <div className="input-year-semester">
                             <input 
                                 type="text" 
@@ -151,6 +152,7 @@ export default function RegisterSubjectPage(){
                         </div>
                         
                     </div>
+                    <p id="info-observation">O campo observação armazena anotações do criador de conteúdo sobre a sua experiência com aquela Gamificação específica. Não é um campo obrigatório no ato do cadastro</p>
                     <div className="error-register-wrapper">
                         <span id="error-text-register-subject">{errorText}</span>
 
