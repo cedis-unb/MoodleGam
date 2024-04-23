@@ -1,0 +1,67 @@
+.choose-technique-background{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 4rem;
+    padding-top: 3rem;
+    color: white; 
+}
+
+.choose-technique-header{
+    width: 85vw;
+   
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-warnings{
+    width: 67vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-warnings h1{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.text-warnings p{
+    font-size: 22px;
+    font-weight: light;
+
+}
+
+.core-drive-help{
+    display: flex;
+    align-items: end;
+    gap: 0.5rem;
+}
+
+.core-drive-warning{
+    display: flex;
+    align-items: end;
+    gap: 0.5rem;
+}
+
+.technique-quantity{
+    width: 14vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.technique-quantity-text{
+    padding-left: 0.2rem;
+    border-left-width: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: var(--moodle-orange);
+}
+
+#attention{
+    font-weight: bold;
+    color: var(--moodle-orange)
+}
