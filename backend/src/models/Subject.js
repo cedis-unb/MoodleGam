@@ -15,7 +15,7 @@ const subjectSchema = new Schema(
     },
     note: {
       type: String,
-      required: true,
+      required: false,
     },
     subjectCode: {
       type: String,
