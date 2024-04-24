@@ -54,12 +54,12 @@
     font-style: italic;
 }
 
-.subject-footer a{
+#subject-details-link{
     color: var(--moodle-orange);
     font-weight: bold;
 }
 
-.subject-footer a:hover{
+#subject-details-link:hover{
     cursor: pointer;
     text-decoration: underline;
 }

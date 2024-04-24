@@ -1,4 +1,7 @@
+
 import './style.css'
+import Link from "next/link"
+
 
 
 export default function SubjectBox(props){
@@ -18,7 +21,16 @@ export default function SubjectBox(props){
 
             <div className="subject-footer">
                 <p>Criada em {props.createdAt}</p>
-                <a>Ver detalhes</a>
+                <Link
+                    href={{
+                        pathname: "/pages/subjectDetailsPage",
+                        query: {
+                            subjectId: props.subjectId
+                        }
+                    }}
+                >
+                    <p id="subject-details-link">Ver detalhes</p>
+                </Link>
             </div>
             
         </div>
