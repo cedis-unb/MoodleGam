@@ -1,12 +1,84 @@
 
-
+"use client"
 import "./style.css"
 import Background from "@/app/components/Background";
+import { useEffect, useState } from "react";
+import {jwtDecode} from "jwt-decode"; 
 import Image from "next/image";
+import { axiosInstance } from "@/app/config/config";
 import SubjectBox from "@/app/components/SubjectBox"
 export default function SubjectsListPage (){
+    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+
+    const [subjectsList, setSubjectsList] = useState(null)
 
 
+    function getDate(datetime) {
+        const data = new Date(datetime);
+        
+        const dia = String(data.getDate()).padStart(2, '0');
+        const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do zero
+        const ano = data.getFullYear();
+    
+        return `${dia}/${mes}/${ano}`;
+    }
+    
+
+    useEffect(() => {
+        // Perform localStorage action
+        const token = localStorage.getItem("token");
+        const fetchData = async () => {
+            try {
+                if (token) {
+                    const decodedUser = jwtDecode(token);
+                    
+                    const subjectData = await fetchSubject(decodedUser.sub, token);
+
+                    setSubjectsList(subjectData)
+                }
+                
+            } catch (error) {
+                console.error('Erro ao buscar disciplinas do usuário:', error.response);
+            }
+        };
+
+        fetchData();
+        
+    }, [])
+
+
+    const fetchSubject = async(userId, token) =>{
+        
+        try {
+            
+            const response = await axiosInstance.get(
+                `/subject/user/${userId}`, 
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+            );
+
+  
+            if (response.status === 200) {
+                return response.data
+            }
+            else{
+                console.log(response)
+            } 
+            
+
+        } catch (error) {
+            console.error('Erro ao buscar disciplinas');
+            
+            
+        }
+
+    }
+
+    
 
     return (
 
@@ -38,15 +110,20 @@ export default function SubjectsListPage (){
                 </div>
 
                 <div className="subjects-list">
-                    <SubjectBox
-                        yearSemester="2024/1"
-                        name="Fundamentos de Sistemas Operacionais"
-                        code="FGA-123"
-                        createdAt="01/01/2024"
-                    
-                    />
+                    {subjectsList && 
+                        subjectsList.map((subject, index) => (
 
-
+                            <SubjectBox
+                                yearSemester={subject.yearSemester}
+                                name={subject.subjectName}
+                                code={subject.subjectCode}
+                                createdAt={getDate(subject.createdAt)}
+                                subjectId={subject.id}
+                                key={index}
+                            />
+                        
+                        ))
+                    }
                 </div>
 
 
