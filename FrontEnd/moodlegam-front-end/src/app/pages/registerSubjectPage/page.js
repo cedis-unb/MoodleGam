@@ -5,6 +5,7 @@ import Background from "@/app/components/Background";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
 import React, { useEffect, useState } from "react";
+import {jwtDecode} from "jwt-decode"; 
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
 import dotenv from 'dotenv'
@@ -21,30 +22,72 @@ export default function RegisterSubjectPage(){
     })
 
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
-    const [confirmPassword, setConfirmPassword] = useState('')
     const [modalOpen, setModalOpen] = useState(false)
-    
-
+    const [token, setToken] = useState('')
+    const [userId, setUserId] = useState(null);
     const [errorText, setErrorText] = useState('')
     const router = useRouter();
+
+
+    // useEffect(() => {
+    //     const fetchToken = async () =>{
+    //         const token = await localStorage.getItem("token");
+    //         setToken(token);
+    //     }
+    //     fetchToken()
+    // }, []);
+
+    // useEffect(() => {
+    //     // Perform localStorage action
+        
+    //     //setToken(localStorage.getItem("token"))
+        
+    //     const fetchData = async () => {
+    //         try {
+    //             if (token) {
+    //                 const decodedUser = await jwtDecode(token);
+                    
+    //                 setUserId(decodedUser.sub);
+    //             }
+    //         } catch (error) {
+    //             console.error('Erro ao buscar usuário:', error);
+    //         }
+    //     };
+
+    //     fetchData();
+        
+    // }, [token])
+
+    
     function validateUserData(e){
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!subject.email || !subject.name || !subject.password || !confirmPassword){
+        if(!subject.code && !subject.name && !subject.year && !subject.semester){
             
             setErrorText("Os campos estão vazios, preencha-os")
             e.preventDefault()
             return false
         }
-        else if(subject.password !== confirmPassword){
-            console.log(`Senha são diferentes ${subject.password} | ${confirmPassword}`)
-            
-            setErrorText("As senhas inseridas são diferentes")
+        else if(!subject.name){
+            setErrorText("Nome da disciplina está vazia, preencha-a")
             e.preventDefault()
             return false
         }
-        else if(!regex.test(subject.email)){
-            
-            setErrorText("E-mail em formato inválido")
+        else if(!subject.code){
+            setErrorText("Código da disciplina está vazia, preencha-o")
+            e.preventDefault()
+            return false
+        }
+        else if(!subject.year){
+            setErrorText("Ano está vazio, preencha-o")
+            e.preventDefault()
+            return false
+        }
+        else if(!subject.semester){
+            setErrorText("Semestre está vazio, preencha-o")
+            e.preventDefault()
+            return false
+        }
+        else if(subject.year > 2100 || subject.year < 1960){
+            setErrorText("Ano inválido, preencha-o novamente")
             e.preventDefault()
             return false
         }
@@ -58,15 +101,36 @@ export default function RegisterSubjectPage(){
         
         if(validateUserData(e)){
             
+            
             try {
-                console.log(`subject ${apiKey}`)
-    
+                console.log(`subject ${subject}`)
+                const token = localStorage.getItem("token")
+                var userId = null
+                var decodedUser = null
+                if (token) {
+                    decodedUser =  jwtDecode(token);
+                    
+                    userId = decodedUser.sub
+                }
+                const subjectName = subject.name
+                const subjectCode = subject.code
+                const note = subject.note
+                const yearSemester = `${subject.year}/${subject.semester}`
                 const response = await axiosInstance.post(
                     '/subject', 
-                    subject,
+                    {
+                        subjectName,
+                        subjectCode,
+                        note,
+                        yearSemester,
+                        userId
+
+                    },
+                    
                     {
                         headers: {
-                            'x-api-key': `${apiKey}`
+                            'x-api-key': `${apiKey}`,
+                            'Authorization': `Bearer ${token}`
                         }
                     }
                     
@@ -86,16 +150,17 @@ export default function RegisterSubjectPage(){
             } catch (error) {
                 // Tratar erros de rede
                 console.error('Erro de rede:', error.response);
-                setErrorText(error.response.data.message)
+                setErrorText("Erro no envio dos dados")
             }
         }
 
         
     }
 
-    const redirectToLoginPage = () => {
+    
+    const redirectToTecniquesPage = () => {
         
-        router.push('/pages/loginPage'); // Redireciona para a página de login
+        router.push('/pages/chooseTechniquesPage'); // Redireciona para a página de login
     };
 
     return(
@@ -103,9 +168,9 @@ export default function RegisterSubjectPage(){
             {modalOpen && (
 
                 <Modal
-                    bodyText="Usuário cadastrado com sucesso !"
-                    buttonText="Voltar para tela de login"
-                    onConfirm={redirectToLoginPage}
+                    bodyText="Disciplina cadastrada com sucesso !"
+                    buttonText="Próximo passo"
+                    onConfirm={redirectToTecniquesPage}
                 />
 
 
@@ -143,7 +208,7 @@ export default function RegisterSubjectPage(){
                                 onChange={(e) => setSubject({...subject, year: e.target.value})}
                             ></input>
 
-                            <select required>
+                            <select required onChange={(e) => setSubject({...subject, semester: e.target.value})}>
                                 <option value="">Semestre</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
