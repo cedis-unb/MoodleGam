@@ -5,11 +5,14 @@ const SubjectController = {
     try {
       const { subjectName, yearSemester, note, subjectCode, userId } = req.body
 
-      const subjectExists = await SubjectRepository.findByCode(subjectCode)
+      const subjectExists = await SubjectRepository.findByCodeAndYearSemester(
+        subjectCode,
+        yearSemester
+      )
 
       if (subjectExists) {
         return res.status(400).json({
-          message: 'Código da disciplina já cadastrado',
+          message: 'Disciplina já cadastrada.',
         })
       }
 
@@ -70,6 +73,22 @@ const SubjectController = {
           .json({ message: 'Disciplina excluída com sucesso' })
       } else {
         return res.status(404).json({ message: 'Disciplina não encontrada' })
+      }
+    } catch (error) {
+      return res.status(500).json({ message: error.message })
+    }
+  },
+
+  findByUser: async (req, res) => {
+    try {
+      const subjects = await SubjectRepository.findByUserId(req.params.id)
+
+      if (subjects.length > 0) {
+        return res.status(200).json(subjects)
+      } else {
+        return res.status(404).json({
+          message: 'Nenhuma disciplina encontrada',
+        })
       }
     } catch (error) {
       return res.status(500).json({ message: error.message })
