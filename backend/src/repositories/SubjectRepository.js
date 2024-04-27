@@ -33,6 +33,22 @@ const SubjectRepository = {
   findByCodeAndYearSemester: async (subjectCode, yearSemester) => {
     return await Subject.findOne({ subjectCode, yearSemester })
   },
+
+  addTechniqueToSubject: async (subjectId, techniqueId) => {
+    try {
+      const updatedSubject = await Subject.findByIdAndUpdate(
+        subjectId,
+        { $addToSet: { techniques: techniqueId } },
+        { new: true, safe: true, upsert: false }
+      )
+
+      return updatedSubject
+    } catch (error) {
+      throw new Error(
+        'Não foi possível adicionar a técnica a disciplina: ' + error.message
+      )
+    }
+  },
 }
 
 export default SubjectRepository

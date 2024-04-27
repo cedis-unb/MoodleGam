@@ -10,5 +10,10 @@ subjectRoutes.get('/user/:id', isAuthenticated, SubjectController.findByUser)
 subjectRoutes.post('/', isAuthenticated, SubjectController.createSubject)
 subjectRoutes.delete('/:id', isAuthenticated, SubjectController.deleteSubject)
 subjectRoutes.put('/:id', isAuthenticated, SubjectController.updateSubject)
+subjectRoutes.patch(
+  '/:techniqueId',
+  isAuthenticated,
+  SubjectController.addTechniqueToSubject
+)
 
 export default subjectRoutes
