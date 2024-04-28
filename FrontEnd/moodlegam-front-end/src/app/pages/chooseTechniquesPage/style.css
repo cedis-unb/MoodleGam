@@ -47,7 +47,7 @@
 }
 
 .technique-quantity{
-    width: 14vw;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -64,4 +64,16 @@
 #attention{
     font-weight: bold;
     color: var(--moodle-orange)
+}
+
+.choose-technique-box{
+    width: 20vw;
+    height: 7vh;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 1rem;
 }
