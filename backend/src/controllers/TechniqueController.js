@@ -82,9 +82,8 @@ const TechniqueController = {
 
   getTechniquesByCoreDriveId: async (req, res) => {
     try {
-      const { coreDriveId } = req.params
-      const techniques =
-        await TechniqueRepository.findByCoreDriveId(coreDriveId)
+      const { id } = req.params
+      const techniques = await TechniqueRepository.findByCoreDriveId(id)
       if (techniques.length > 0) {
         return res.status(200).json(techniques)
       } else {
