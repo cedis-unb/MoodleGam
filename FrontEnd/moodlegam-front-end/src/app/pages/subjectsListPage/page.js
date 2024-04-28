@@ -112,7 +112,7 @@ export default function SubjectsListPage (){
                 <div className="subjects-list">
                     {subjectsList && 
                         subjectsList.map((subject, index) => (
-
+                            
                             <SubjectBox
                                 yearSemester={subject.yearSemester}
                                 name={subject.subjectName}
