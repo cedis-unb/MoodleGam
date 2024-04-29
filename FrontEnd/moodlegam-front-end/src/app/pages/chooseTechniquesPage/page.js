@@ -3,11 +3,29 @@
 import Background from "../../components/Background";
 import Image from "next/image";
 import "./style.css"
+import Button from "@/app/components/Button";
 import "../subjectDetailsPage/style.css"
 import { useEffect, useState } from "react";
+import {axiosInstance} from '../../config/config'
 
-export default function ChooseTechniquePage(){
+export default function ChooseTechniquePage(searchParams){
 
+
+
+    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+    const recommendedQuantity = 10
+    const [techniqueQuantity, setTechniqueQuantity] = useState(0)
+    const [chosenTechniques, setChosenTechniques] = useState([])
+    const [risk, setRisk] = useState("Baixa")
+    const [coreDriveList, setCoreDriveList] = useState(null)
+    const [coreDrive1, setCoreDrive1] = useState(null)
+    const [coreDrive2, setCoreDrive2] = useState(null)
+    const [coreDrive3, setCoreDrive3] = useState(null)
+    const [coreDrive4, setCoreDrive4] = useState(null)
+    const [coreDrive5, setCoreDrive5] = useState(null)
+    const [coreDrive6, setCoreDrive6] = useState(null)
+    const [coreDrive7, setCoreDrive7] = useState(null)
+    const [coreDrive8, setCoreDrive8] = useState(null)
     const [coreDrive, setCoreDrive] = useState({
         nome: "Core Drive 1",
         id: 1,
@@ -26,26 +44,233 @@ export default function ChooseTechniquePage(){
         ]
     });
 
-    const recommendedQuantity = 10
+    useEffect(() => {
+        console.log(searchParams.searchParams.subjectId)
+        const fetchData = async () => {
+            try {
+                const coreDrives = await fetchCoreDrives()
+                fetchTechniques(coreDrives)
+                //setCoreDriveList(coreDrives)
 
-    const [techniqueQuantity, setTechniqueQuantity] = useState(0)
-    const [risk, setRisk] = useState("Baixa")
+                
+            } catch (error) {
+                console.error('Erro ao buscar Core Drives', error.response);
+            }
+
+            
+                
+        };
+
+        fetchData();
+        
+    }, [])
+
+
+    const fetchTechniques = async(coreDrives) =>{
+        console.log(coreDrives[0]._id)
+        if (coreDrives) {
+            coreDrives.forEach(async coreDrive => {
+                
+                try {
+            
+                    const response = await axiosInstance.get(
+                        `/technique/getByCoreDrive/${coreDrive._id}`, 
+                        {
+                            headers: {
+                                'x-api-key': `${apiKey}`
+                            }
+                        }
+                    );
+        
+            
+                    if (response.status === 200) {
+
+
+                        if(coreDrive.coreDriveName.includes("Core Drive 1")){
+                            setCoreDrive1({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                               
+                            
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 2")){
+                            setCoreDrive2({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 3")){
+                            setCoreDrive3({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 4")){
+                            setCoreDrive4({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 5")){
+                            setCoreDrive5({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 6")){
+                            setCoreDrive6({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 7")){
+                            setCoreDrive7({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+                        else if(coreDrive.coreDriveName.includes("Core Drive 8")){
+                            setCoreDrive8({
+                                coreDriveName: coreDrive.coreDriveName,
+                                motivation: coreDrive.motivation,
+                                techniques: response.data
+                            });
+                        }
+
+
+
+                        return 
+                    }
+                    else{
+                        console.log(response)
+                    } 
+                    
+        
+                } catch (error) {
+                    console.error('Erro ao buscar tecnicas');
+                    
+                    
+                }
+
+            });
+        } else {
+            console.log("A lista de core drives está vazia.");
+        }
+
+        
+    }
+
+
+    const fetchCoreDrives = async() =>{
+        
+        try {
+            
+            const response = await axiosInstance.get(
+                `/coreDrive`, 
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`
+                    }
+                }
+            );
+
+  
+            if (response.status === 200) {
+                return response.data
+            }
+            
+            
+
+        } catch (error) {
+            console.error('Erro ao buscar disciplinas');
+            
+            
+        }
+
+    }
+
+    
+    
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+    
+        try {
+
+            const response = await axiosInstance.put(
+                `/subject/${searchParams.searchParams.subjectId}`, 
+                {
+                    techniques: chosenTechniques 
+                },
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${localStorage.getItem("token")}`
+                    }
+                }
+                
+            )
+            
+        
+            if (response.status === 200) {
+               
+                console.log('Disiplina atualizada:', response.data);
+                
+               
+                
+            } else {
+            
+                console.error('Erro ao atualizar disciplina:', response.statusText);
+            }
+        } catch (error) {
+            
+            console.error('Erro de rede:', error.response);
+        }
+    }
+
     function addTechnique(){
+
         setTechniqueQuantity(techniqueQuantity + 1)
+        
     }
 
     function subtractTechnique(){
         setTechniqueQuantity(techniqueQuantity - 1)
     }
 
-    function handleCheckboxChange(techniqueId, isChecked) {
-        if (isChecked) {
+    // function handleCheckboxChange(isChecked) {
+    //     if (isChecked) {
+    //         addTechnique();
+    //     } else {
+    //         subtractTechnique();
+    //     }
+
+        
+        
+    // }
+
+    const handleCheckboxChange = (e) =>{
+        const { value, checked } = e.target;
+        var updatedTechniques = null
+        if (checked) {
+            updatedTechniques = [...chosenTechniques, value]
             addTechnique();
         } else {
+            updatedTechniques = chosenTechniques.filter((technique) => technique !== value);
             subtractTechnique();
         }
 
-        updateRisk()
+        setChosenTechniques(updatedTechniques)
+
+        
         
     }
 
@@ -127,96 +352,361 @@ export default function ChooseTechniquePage(){
                     </div>
                 </div>
 
-                <div className="core-drive-box">
-                    <div className="core-drive-header">
-                        <h2>CORE DRIVE 1 - Significado Épico & Chamado (Epic Meaning & Calling)</h2>
-                        <div className="motivation-box">
-                            <span>White Hat</span>
-                        </div>
-                    </div>
+                {coreDrive1 && (
 
-                    <div className="core-drive-techniques">
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive1 !== null ? coreDrive1.coreDriveName : ''}</h2>
 
-                        {coreDrive && 
-                            coreDrive.tecnicas.map((technique, index) => (
-
-                            <div className="choose-technique-box">
-                                <input 
-                                    type="checkbox" 
-                                    id={`technique-${technique.id}`} 
-                                    onChange={(e) => handleCheckboxChange(technique.id, e.target.checked)}
-                                
-                                />
-
-                                <label htmlFor={`technique-${technique.id}`}>
-                                    {technique.nome}
-                                </label>
-
+                            <div className="white-hat-box">
+                                <span>White Hat</span>
                             </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive1 && 
+                                coreDrive1.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
                                 
+                                ))
+                            }
                             
-                            ))
-                        }
+
                         
-
-                       
+                        </div>
                     </div>
+                )}   
+
+
+                {coreDrive2 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive2 !== null ? coreDrive2.coreDriveName : ''}</h2>
+
+                            <div className="white-hat-box">
+                                <span>White Hat</span>
+                            </div>
+
+                            <div className="extrinsic-box">
+                                <span>Motivação extrínseca</span>
+                            </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive2 && 
+                                coreDrive2.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+
+                {coreDrive3 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive3 !== null ? coreDrive3.coreDriveName : ''}</h2>
+
+                            <div className="white-hat-box">
+                                <span>White Hat</span>
+                            </div>
+
+                            <div className="intrinsic-box">
+                                <span>Motivação intrínseca</span>
+                            </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive3 && 
+                                coreDrive3.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}              
+                
+
+
+                {coreDrive4 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive4 !== null ? coreDrive4.coreDriveName : ''}</h2>
+                            <div className="extrinsic-box">
+                                <span>Motivação extrínseca</span>
+                            </div>
+                            
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive4 && 
+                                coreDrive4.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+                
+
+                {coreDrive5 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive5 !== null ? coreDrive5.coreDriveName : ''}</h2>
+                            <div className="intrinsic-box">
+                                <span>Motivação intrínseca</span>
+                            </div>
+                            
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive5 && 
+                                coreDrive5.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+
+
+
+                {coreDrive6 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive6 !== null ? coreDrive6.coreDriveName : ''}</h2>
+
+                            <div className="black-hat-box">
+                                <span>Black Hat</span>
+                            </div>
+
+                            <div className="extrinsic-box">
+                                <span>Motivação extrínseca</span>
+                            </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive6 && 
+                                coreDrive6.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+               
+               {coreDrive7 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive7 !== null ? coreDrive7.coreDriveName : ''}</h2>
+
+                            <div className="black-hat-box">
+                                <span>Black Hat</span>
+                            </div>
+                            <div className="intrinsic-box">
+                                <span>Motivação intrínseca</span>
+                            </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive7 && 
+                                coreDrive7.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+
+
+                {coreDrive8 && (
+
+                    <div className="core-drive-box">
+                        <div className="core-drive-header">
+                            <h2>{coreDrive8 !== null ? coreDrive8.coreDriveName : ''}</h2>
+
+                            <div className="black-hat-box">
+                                <span>Black Hat</span>
+                            </div>
+                        </div>
+
+                        <div className="core-drive-techniques">
+
+                            {coreDrive8 && 
+                                coreDrive8.techniques.map((technique, index) => (
+
+                                <div key={technique._id} className="choose-technique-box">
+                                    <input 
+                                        type="checkbox" 
+                                        id={`technique-${technique._id}`} 
+                                        onChange={handleCheckboxChange}
+                                        value={technique._id}
+                                    />
+
+                                    <label htmlFor={`technique-${technique._id}`}>
+                                        {technique.techniqueName}
+                                    </label>
+
+                                </div>
+                                    
+                                
+                                ))
+                            }
+                            
+
+                        
+                        </div>
+                    </div>
+                )}
+                
+
+                <div className="techniques-button-wrapper">
+                    <Button
+                        text="Finalizar"
+                        type="submit"
+                        onClick={handleSubmit}
+                    />
                 </div>
-
-                <div className="core-drive-box">
-                    <div className="core-drive-header">
-                        <h2>CORE DRIVE 1 - Significado Épico & Chamado (Epic Meaning & Calling)</h2>
-                        <div className="motivation-box">
-                            <span>White Hat</span>
-                        </div>
-                    </div>
-
-                    <div className="core-drive-techniques">
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Filho do destino</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Narrativa</span>
-                        </div>
-
-                        <div className="technique-box">
-                            <span>Filho do destino</span>
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-
-
-
 
             </div>
             
-
-
+            
+            
         </Background>
 
     );

@@ -1,10 +1,13 @@
-
-import React from "react";
 import './style.css'
 import PropTypes from 'prop-types';
 import Button from "../Button/index";
+import React, { useEffect, useState } from "react";
+import Link from "next/link"
 
-function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel }) {
+function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkProps}) {
+  useEffect(() => {
+    console.log(`linkprops: ${linkProps.path} ${linkProps.subjectId}`)
+  }, []);
   return (
     <div className="modal-background">
       <div className="modal-container">
@@ -13,11 +16,37 @@ function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel }) {
 
         <div className="modal-footer">
 
-          <Button
-            text={buttonText}
-            onClick={onConfirm}
-            type="button"
-          />
+          {linkProps !== null ? 
+            (
+              <Link
+              
+                href={{
+                  pathname: linkProps.path,
+                  query: {
+                    subjectId: linkProps.subjectId
+                  }
+                }}
+              >
+              
+                <Button
+                  text={buttonText}
+                  type="button"
+                />
+
+              </Link>
+            )
+
+            :
+            (
+              <Button
+                text={buttonText}
+                onClick={onConfirm}
+                type="button"
+              />
+            )
+          
+          }
+
           
           {cancelOption && (
             <Button
@@ -32,18 +61,7 @@ function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel }) {
   );
 }
 
-// Modal.propTypes = {
-//   setOpenModal: PropTypes.func,
-//   title: PropTypes.string
-// }
-// Modal.propTypes = {
-//   setOpenModal: PropTypes.func,
-//   bodytext: PropTypes.string
-// }
-// Modal.propTypes = {
-//   setOpenModal: PropTypes.func,
-//   onConfirm: PropTypes.func
-// }
+
 
 export default Modal;
 

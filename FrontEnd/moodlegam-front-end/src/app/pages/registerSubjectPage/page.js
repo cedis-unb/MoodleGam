@@ -26,37 +26,12 @@ export default function RegisterSubjectPage(){
     const [token, setToken] = useState('')
     const [userId, setUserId] = useState(null);
     const [errorText, setErrorText] = useState('')
+    const [subjectId, setSubjectId] = useState(null)
+    const [linkProps, setLinkProps] = useState(null);
     const router = useRouter();
 
 
-    // useEffect(() => {
-    //     const fetchToken = async () =>{
-    //         const token = await localStorage.getItem("token");
-    //         setToken(token);
-    //     }
-    //     fetchToken()
-    // }, []);
-
-    // useEffect(() => {
-    //     // Perform localStorage action
-        
-    //     //setToken(localStorage.getItem("token"))
-        
-    //     const fetchData = async () => {
-    //         try {
-    //             if (token) {
-    //                 const decodedUser = await jwtDecode(token);
-                    
-    //                 setUserId(decodedUser.sub);
-    //             }
-    //         } catch (error) {
-    //             console.error('Erro ao buscar usuário:', error);
-    //         }
-    //     };
-
-    //     fetchData();
-        
-    // }, [token])
+   
 
     
     function validateUserData(e){
@@ -140,8 +115,13 @@ export default function RegisterSubjectPage(){
                 if (response.status === 201) {
                   // Cadastro bem-sucedido
                   console.log('Disciplina cadastrada:', response.data);
+                  setLinkProps({
+                    subjectId: response.data._id,
+                    path: '/pages/chooseTechniquesPage'
+                  })
+                  //setSubjectId(response.data.id)
                   setErrorText('')
-                  setModalOpen(true)
+                  //setModalOpen(true)
                   
                 } else {
                   // Tratar erros de requisição
@@ -157,7 +137,11 @@ export default function RegisterSubjectPage(){
         
     }
 
-    
+    useEffect(() => {
+        if (linkProps) {
+            setModalOpen(true);
+        }
+    }, [linkProps]);
     const redirectToTecniquesPage = () => {
         
         router.push('/pages/chooseTechniquesPage'); // Redireciona para a página de login
@@ -170,7 +154,7 @@ export default function RegisterSubjectPage(){
                 <Modal
                     bodyText="Disciplina cadastrada com sucesso !"
                     buttonText="Próximo passo"
-                    onConfirm={redirectToTecniquesPage}
+                    linkProps={linkProps !== null ? linkProps : null}
                 />
 
 

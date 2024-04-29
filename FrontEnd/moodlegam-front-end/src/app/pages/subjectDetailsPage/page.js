@@ -107,7 +107,7 @@ export default function SubjectDetailsPage(searchParams){
 
                     <div className="core-drive-header">
                         <h2>CORE DRIVE 1 - Significado Épico & Chamado (Epic Meaning & Calling)</h2>
-                        <div className="motivation-box">
+                        <div className="white-hat-box">
                             <span>White Hat</span>
                         </div>
                     </div>
