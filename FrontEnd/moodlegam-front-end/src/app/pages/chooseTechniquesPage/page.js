@@ -2,22 +2,27 @@
 "use client"
 import Background from "../../components/Background";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import "./style.css"
 import Button from "@/app/components/Button";
 import "../subjectDetailsPage/style.css"
 import { useEffect, useState } from "react";
+import Modal from "@/app/components/Modal"
+
 import {axiosInstance} from '../../config/config'
 
 export default function ChooseTechniquePage(searchParams){
 
-
+    const router = useRouter();
 
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const recommendedQuantity = 10
     const [techniqueQuantity, setTechniqueQuantity] = useState(0)
     const [chosenTechniques, setChosenTechniques] = useState([])
-    const [risk, setRisk] = useState("Baixa")
     const [coreDriveList, setCoreDriveList] = useState(null)
+    const [confirmModalOpen, setConfirmModalOpen] = useState(false)
+    const [infoModalOpen, setinfoModalOpen] = useState(false)
+    const [modalData, setModalData] = useState()
     const [coreDrive1, setCoreDrive1] = useState(null)
     const [coreDrive2, setCoreDrive2] = useState(null)
     const [coreDrive3, setCoreDrive3] = useState(null)
@@ -26,23 +31,7 @@ export default function ChooseTechniquePage(searchParams){
     const [coreDrive6, setCoreDrive6] = useState(null)
     const [coreDrive7, setCoreDrive7] = useState(null)
     const [coreDrive8, setCoreDrive8] = useState(null)
-    const [coreDrive, setCoreDrive] = useState({
-        nome: "Core Drive 1",
-        id: 1,
-        tecnicas: [
-            { id: 1, nome: "Preguiça como Status Quo" },
-            { id: 2, nome: "Sorte de Principiante" },
-            { id: 3, nome: "Pontos" },
-            { id: 4, nome: "Preguiça como Status Quo" },
-            { id: 5, nome: "Preguiça como Status Quo" },
-            { id: 6, nome: "Preguiça como Status Quo" },
-            { id: 7, nome: "Preguiça como Status Quo" },
-            { id: 8, nome: "Preguiça como Status Quo" },
-            { id: 9, nome: "Preguiça como Status Quo" },
-            { id: 10, nome: "Preguiça como Status Quo" },
-            { id: 11, nome: "Preguiça como Status Quo" }
-        ]
-    });
+    
 
     useEffect(() => {
         console.log(searchParams.searchParams.subjectId)
@@ -202,7 +191,7 @@ export default function ChooseTechniquePage(searchParams){
 
     const handleSubmit = async e => {
         e.preventDefault();
-    
+        setConfirmModalOpen(false)
         try {
 
             const response = await axiosInstance.put(
@@ -223,7 +212,7 @@ export default function ChooseTechniquePage(searchParams){
             if (response.status === 200) {
                
                 console.log('Disiplina atualizada:', response.data);
-                
+                setinfoModalOpen(true)
                
                 
             } else {
@@ -246,17 +235,7 @@ export default function ChooseTechniquePage(searchParams){
         setTechniqueQuantity(techniqueQuantity - 1)
     }
 
-    // function handleCheckboxChange(isChecked) {
-    //     if (isChecked) {
-    //         addTechnique();
-    //     } else {
-    //         subtractTechnique();
-    //     }
-
-        
-        
-    // }
-
+   
     const handleCheckboxChange = (e) =>{
         const { value, checked } = e.target;
         var updatedTechniques = null
@@ -274,17 +253,7 @@ export default function ChooseTechniquePage(searchParams){
         
     }
 
-    function updateRisk(){
-        if(techniqueQuantity < recommendedQuantity){
-            setRisk("Baixa")
-        }
-        else if(techniqueQuantity == recommendedQuantity){
-            setRisk("Moderada")
-        }
-        else if(techniqueQuantity > recommendedQuantity){
-            setRisk("Alta")
-        }
-    }
+    
 
     function getRiskLevel(techniqueQuantity) {
         if (techniqueQuantity > recommendedQuantity) {
@@ -311,9 +280,51 @@ export default function ChooseTechniquePage(searchParams){
     const riskLevel = getRiskLevel(techniqueQuantity);
     const riskColor = getRiskColor(riskLevel)
 
-    return (
-        <Background>
+    const closeModal = () =>{
+        setinfoModalOpen(false)
+        setConfirmModalOpen(false)
+    }
 
+    const handleConfirm = () =>{
+        setConfirmModalOpen(true)
+    }
+
+    const redirectToHomepage = () =>{
+        router.push("/pages/homepage")
+    }
+    return (
+
+        <>
+            {confirmModalOpen && (
+
+                <Modal
+                    bodyText="Você tem certeza que deseja escolher essas técnicas?"
+                    buttonText="Sim"
+                    linkProps={null}
+                    onConfirm={handleSubmit}
+                    cancelOption={true}
+                    onCancel={closeModal}
+                />
+
+
+            )}
+
+            {infoModalOpen && (
+
+                <Modal
+                    bodyText="Técnicas adicionadas a Disciplina !"
+                    buttonText="Voltar a tela inicial"
+                    linkProps={null}
+                    onConfirm={redirectToHomepage}
+                    
+                />
+
+
+            )}
+        
+        
+        <Background>
+            
             <div className="choose-technique-background">
 
                 <div className="choose-technique-header">
@@ -699,7 +710,7 @@ export default function ChooseTechniquePage(searchParams){
                     <Button
                         text="Finalizar"
                         type="submit"
-                        onClick={handleSubmit}
+                        onClick={handleConfirm}
                     />
                 </div>
 
@@ -708,6 +719,7 @@ export default function ChooseTechniquePage(searchParams){
             
             
         </Background>
+        </>
 
     );
 }

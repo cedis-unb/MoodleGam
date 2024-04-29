@@ -148,7 +148,8 @@ export default function RegisterSubjectPage(){
     };
 
     return(
-        <Background>
+
+        <>
             {modalOpen && (
 
                 <Modal
@@ -159,66 +160,71 @@ export default function RegisterSubjectPage(){
 
 
             )}
-            
         
-            <div className="background-register-subject-page">
-                <h1>Passo 1 - Preencher dados da nova disciplina</h1>
-                <form className="fields-register-subject" onSubmit={handleSubmit}>
-                    <div className="input-row-register-subject">
-                        <input 
-                            type="text" 
-                            placeholder="Nome"
-                            onChange={(e) => setSubject({...subject, name: e.target.value})}
-                        ></input>
-                        <input 
-                            type="text" 
-                            placeholder="Código"
-                            onChange={(e) => setSubject({...subject, code: e.target.value})}
-                        ></input>
-                    </div>
-
-                    <div className="input-row-register-subject">
-                        <textarea 
-                            rows="4" 
-                            cols="45"
-                            placeholder="Observação"
-                            onChange={(e) => setSubject({...subject, note: e.target.value})}
-                        >
-                        </textarea>
-                        <div className="input-year-semester">
+        
+            <Background>
+                
+                
+            
+                <div className="background-register-subject-page">
+                    <h1>Passo 1 - Preencher dados da nova disciplina</h1>
+                    <form className="fields-register-subject" onSubmit={handleSubmit}>
+                        <div className="input-row-register-subject">
                             <input 
                                 type="text" 
-                                placeholder="Ano"
-                                onChange={(e) => setSubject({...subject, year: e.target.value})}
+                                placeholder="Nome"
+                                onChange={(e) => setSubject({...subject, name: e.target.value})}
                             ></input>
+                            <input 
+                                type="text" 
+                                placeholder="Código"
+                                onChange={(e) => setSubject({...subject, code: e.target.value})}
+                            ></input>
+                        </div>
 
-                            <select required onChange={(e) => setSubject({...subject, semester: e.target.value})}>
-                                <option value="">Semestre</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
+                        <div className="input-row-register-subject">
+                            <textarea 
+                                rows="4" 
+                                cols="45"
+                                placeholder="Observação"
+                                onChange={(e) => setSubject({...subject, note: e.target.value})}
+                            >
+                            </textarea>
+                            <div className="input-year-semester">
+                                <input 
+                                    type="text" 
+                                    placeholder="Ano"
+                                    onChange={(e) => setSubject({...subject, year: e.target.value})}
+                                ></input>
+
+                                <select required onChange={(e) => setSubject({...subject, semester: e.target.value})}>
+                                    <option value="">Semestre</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+
+                            </div>
+                            
+                        </div>
+                        <p id="info-observation">O campo observação armazena anotações do criador de conteúdo sobre a sua experiência com aquela Gamificação específica. Não é um campo obrigatório no ato do cadastro</p>
+                        <div className="error-register-wrapper">
+                            <span id="error-text-register-subject">{errorText}</span>
 
                         </div>
                         
-                    </div>
-                    <p id="info-observation">O campo observação armazena anotações do criador de conteúdo sobre a sua experiência com aquela Gamificação específica. Não é um campo obrigatório no ato do cadastro</p>
-                    <div className="error-register-wrapper">
-                        <span id="error-text-register-subject">{errorText}</span>
-
-                    </div>
+                        
+                        <div className="button-wrapper-register-subject">
+                            <Button
+                                text="Finalizar cadastro"
+                                type="submit"
+                                onClick={handleSubmit}
+                            />
+                        </div>
+                    </form>
                     
-                    
-                    <div className="button-wrapper-register-subject">
-                        <Button
-                            text="Finalizar cadastro"
-                            type="submit"
-                            onClick={handleSubmit}
-                        />
-                    </div>
-                </form>
-                
 
-            </div>
-        </Background>
+                </div>
+            </Background>
+        </>
     );
 }

@@ -5,9 +5,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link"
 
 function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkProps}) {
-  useEffect(() => {
-    console.log(`linkprops: ${linkProps.path} ${linkProps.subjectId}`)
-  }, []);
+  
   return (
     <div className="modal-background">
       <div className="modal-container">
