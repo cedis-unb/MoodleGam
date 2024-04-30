@@ -1,12 +1,13 @@
 .background-subject-details{
     width: 100vw;
-    height: 70vw;
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-left: 4rem;
     padding-top: 3rem;
     color: white;
+    padding-bottom: 1rem;
 }
 
 .header-subject-details{

@@ -118,7 +118,7 @@ export default function SubjectsListPage (){
                                 name={subject.subjectName}
                                 code={subject.subjectCode}
                                 createdAt={getDate(subject.createdAt)}
-                                subjectId={subject.id}
+                                subjectId={subject._id}
                                 key={index}
                             />
                         
