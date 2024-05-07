@@ -28,6 +28,7 @@ export default function RegisterSubjectPage(){
     const [errorText, setErrorText] = useState('')
     const [subjectId, setSubjectId] = useState(null)
     const [linkProps, setLinkProps] = useState(null);
+    const [secondOption, setSecondOption] = useState(null)
     const router = useRouter();
 
 
@@ -113,15 +114,19 @@ export default function RegisterSubjectPage(){
                
             
                 if (response.status === 201) {
-                  // Cadastro bem-sucedido
-                  console.log('Disciplina cadastrada:', response.data);
-                  setLinkProps({
-                    subjectId: response.data._id,
-                    path: '/pages/chooseTechniquesPage'
-                  })
-                  //setSubjectId(response.data.id)
-                  setErrorText('')
-                  //setModalOpen(true)
+                 
+                    console.log('Disciplina cadastrada:', response.data);
+                    setLinkProps({
+                        subjectId: response.data._id,
+                        path: '/pages/chooseTechniquesPage'
+                    })
+                    setSecondOption({
+                        subjectId: response.data._id,
+                        path: '/pages/reuseSubjectGamification',
+                        text: "Reutilizar Gamificação"
+                    })
+                    setErrorText('')
+                    
                   
                 } else {
                   // Tratar erros de requisição
@@ -138,10 +143,11 @@ export default function RegisterSubjectPage(){
     }
 
     useEffect(() => {
-        if (linkProps) {
+        if (secondOption) {
             setModalOpen(true);
         }
-    }, [linkProps]);
+    }, [secondOption]);
+    
     const redirectToTecniquesPage = () => {
         
         router.push('/pages/chooseTechniquesPage'); // Redireciona para a página de login
@@ -153,9 +159,10 @@ export default function RegisterSubjectPage(){
             {modalOpen && (
 
                 <Modal
-                    bodyText="Disciplina cadastrada com sucesso !"
-                    buttonText="Próximo passo"
+                    bodyText="Disciplina cadastrada com sucesso ! Você pode escolher as técnicas de gamificação ou reutilizar a gamificação de outra disciplina"
+                    buttonText="Escolher técnicas"
                     linkProps={linkProps !== null ? linkProps : null}
+                    secondOption={secondOption !== null ? secondOption : null}
                 />
 
 

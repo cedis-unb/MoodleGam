@@ -11,7 +11,7 @@ import {useRouter} from "next/navigation";
 
 
 
-export default function ReuseSubjectGamification(){
+export default function ReuseSubjectGamification(searchParams){
     const subjectId = "66301fd926f093a263e049fc"
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [accordionOpen, setAccordionOpen] = useState(false);
@@ -24,7 +24,7 @@ export default function ReuseSubjectGamification(){
     };
     useEffect(() => {
         const token = localStorage.getItem("token");
-        
+        console.log("subjectid ", searchParams.searchParams.subjectId)
         const fetchData = async () => {
             try {
                 if(token){
@@ -201,7 +201,7 @@ export default function ReuseSubjectGamification(){
                                
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="relative">
                             {subjects && subjects.map((subject) =>([
                                 
                                     <tr key={subject._id}>

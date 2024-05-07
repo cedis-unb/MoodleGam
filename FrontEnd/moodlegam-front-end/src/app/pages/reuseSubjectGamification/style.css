@@ -10,6 +10,11 @@
     
 }
 
+.reuse-subject-background h1{
+    font-size: 28px;
+    font-weight: bold;
+}
+
 .reuse-subjects-list{
     width: 90vw;
     background-color: var(--option-subject);
@@ -83,7 +88,10 @@
 }
 
 .core-drive-information{
+    display: flex;
+    flex-direction: column;
     padding: 0.5rem;
+    gap: 0.5rem;
     border-radius: 5px;
     border-width: 0.5px;
     border-color: var(--light-gray-2);

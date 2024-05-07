@@ -4,7 +4,7 @@ import Button from "../Button/index";
 import React, { useEffect, useState } from "react";
 import Link from "next/link"
 
-function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkProps}) {
+function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkProps, secondOption}) {
   
   return (
     <div className="modal-background">
@@ -32,6 +32,8 @@ function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkPr
                 />
 
               </Link>
+
+              
             )
 
             :
@@ -45,6 +47,25 @@ function Modal({ bodyText, buttonText, onConfirm, cancelOption, onCancel, linkPr
           
           }
 
+          {secondOption !== null ? (
+            <Link
+          
+              href={{
+                pathname: secondOption.path,
+                query: {
+                  subjectId: secondOption.subjectId
+                }
+              }}
+            >
+          
+            <Button
+              text={secondOption.text}
+              type="button"
+            />
+
+            </Link>
+
+          ) : ''}
           
           {cancelOption && (
             <Button
