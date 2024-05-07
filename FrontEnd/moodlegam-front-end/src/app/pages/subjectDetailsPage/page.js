@@ -4,6 +4,8 @@ import Background from "../../components/Background";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
+import Link from "next/link"
+
 
 export default function SubjectDetailsPage(searchParams){
 
@@ -198,7 +200,16 @@ export default function SubjectDetailsPage(searchParams){
                             unoptimized={true}
                         />
 
-                        <p id="edit-button">Editar dados</p>
+                        <Link
+                            href={{
+                                pathname: "/pages/editSubjectPage",
+                                query: {
+                                    subjectId: searchParams.searchParams.subjectId
+                                }
+                            }}
+                        >
+                            <p id="edit-button">Editar dados</p>
+                        </Link>
 
                     </a>
                 </div>

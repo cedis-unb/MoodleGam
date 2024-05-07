@@ -1,0 +1,83 @@
+
+.subject-inputs{
+    width: 70vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    overflow-y: visible;
+    padding-bottom: 2rem;
+    gap: 2rem;
+}
+
+.subject-inputs input{
+    width: 35vw;
+    height: 7vh;
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+.subject-inputs input::placeholder{
+    font-size: 22px;
+    font-weight: light;
+}
+
+.subject-inputs input:focus{
+    outline: none;
+}
+
+.subject-inputs textarea{
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+
+.subject-inputs textarea:focus{
+    outline: none;
+}
+
+.subject-inputs select{
+    width: 10vw;
+    background-color: var(--primary-dark-grey) ;
+    font-size: 22px;
+    border-bottom-width: 1px;
+}
+
+.subject-inputs select:invalid{
+    color: #9DA0B0;
+}
+
+.choose-technique-box{
+    width: 20vw;
+    height: 7vh;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.technique-quantity{
+    padding-left: 0.2rem;
+    border-left-width: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: var(--moodle-orange);
+}
+
+.edit-subject-button-wrapper{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-bottom: 2rem;
+}
+
+#error-text-register-user{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+}
