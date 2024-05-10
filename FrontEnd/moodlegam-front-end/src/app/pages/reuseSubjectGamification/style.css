@@ -108,3 +108,9 @@
     border-bottom-width: 0.5px;
     border-color: var(--light-gray-2);
 }
+
+.reuse-subject-button-wrapper{
+    display: flex;
+    justify-content: center;
+    color: white;
+}

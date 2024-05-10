@@ -17,11 +17,17 @@ export default function ReuseSubjectGamification(searchParams){
     const [accordionOpen, setAccordionOpen] = useState(false);
     const [expandedSubjectId, setExpandedSubjectId] = useState(null);
     const [subjects, setSubjects] = useState([])
+    const [confirmModalOpen, setConfirmModalOpen] = useState(false)
+    const [infoModalOpen, setinfoModalOpen] = useState(false)
+    const [chosenSubjectId, setChosenSubjectId] = useState('')
+
+    const router = useRouter();
 
     const handleShowMoreClick = (subjectId) => {
 
         setExpandedSubjectId(subjectId); 
     };
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         console.log("subjectid ", searchParams.searchParams.subjectId)
@@ -45,8 +51,10 @@ export default function ReuseSubjectGamification(searchParams){
                         subject.coredrives = updatedCoreDrives
                     });
 
+
+
                     console.log(subjectData)
-                    setSubjects(subjectData)
+                    setSubjects(subjectData.filter(subject => subject.techniques.length > 0))
                     
                 }
                 
@@ -58,6 +66,57 @@ export default function ReuseSubjectGamification(searchParams){
         fetchData();
         
     }, [])
+
+    const handleSubmit = async() =>{
+        //closeModal()
+        const token = localStorage.getItem("token")
+        const chosenSubject = await fetchSubject(chosenSubjectId, token)
+
+
+        try {
+            
+        
+            const techniques = chosenSubject.techniques 
+
+            const response = await axiosInstance.put(
+                `/subject/${searchParams.searchParams.subjectId}`, 
+                {
+                    techniques
+                },
+                
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+                
+            )
+           
+        
+            if (response.status === 200) {
+              
+              console.log('Disciplina atualizada:', response.data);
+              setinfoModalOpen(true)
+              
+              
+              
+              
+            } else {
+              
+              console.error('Erro ao atualizar a disciplina:', response.statusText);
+            }
+        } catch (error) {
+            
+            console.error('Erro de rede:', error);
+            setErrorText("Erro no envio dos dados")
+        }
+    }
+
+    const handleConfirm = (subjectId) =>{
+        setConfirmModalOpen(true)
+        setChosenSubjectId(subjectId)
+    }
 
     const fetchCoreDrives = async() =>{
         
@@ -114,6 +173,37 @@ export default function ReuseSubjectGamification(searchParams){
         return filteredCoreDrivesData;
     }
 
+    const fetchSubject = async(subjectId, token) =>{
+        
+        try {
+            
+            const response = await axiosInstance.get(
+                `/subject/${subjectId}`, 
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+            );
+
+            
+            if (response.status === 200) {
+                
+                return response.data
+            }
+            else{
+                console.log(response)
+            } 
+            
+
+        } catch (error) {
+            console.error('Erro ao buscar disciplina');
+            
+            
+        }
+
+    }
     const fetchAllSubjects = async(userId, token) =>{
         
         try {
@@ -182,105 +272,154 @@ export default function ReuseSubjectGamification(searchParams){
     
         return `${dia}/${mes}/${ano}`;
     }
+
+    const redirectToHomePage = () => {
+        
+        router.push('/pages/homepage'); 
+    };
+
+    const closeModal = () =>{
+        setinfoModalOpen(false)
+        setConfirmModalOpen(false)
+    }
+
+
+    // useEffect(() => {
+    //     setConfirmModalOpen(true)
+    // }, [chosenSubjectId])
+
     return(
     
-        
-        <Background>
-            <div className="reuse-subject-background">
-                <h1>Passo 2 - Escolher disciplina para reaproveitar Gamificação</h1>
-                <div className="reuse-subjects-list">
-                    <table className="subject-table">
-                        <thead>
-                            <tr>
-                                <th>Semestre</th>
-                                <th>Disciplina</th>
-                                <th>Código</th>
-                                <th>Criada em</th>
-                                <th></th>
-                                <th></th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody className="relative">
-                            {subjects && subjects.map((subject) =>([
+        <>
+            {confirmModalOpen && (
+
+                <Modal
+                    bodyText="Você tem certeza que deseja escolher essa Gamificação?"
+                    buttonText="Sim"
+                    linkProps={null}
+                    onConfirm={handleSubmit}
+                    cancelOption={true}
+                    onCancel={closeModal}
+                    secondOption={null}
+                />
+
+
+            )}
+
+
+            {infoModalOpen && (
+
+                <Modal
+                    bodyText="Técnicas cadastradas com sucesso !"
+                    buttonText="Voltar a tela inicial"
+                    linkProps={null}
+                    onConfirm={redirectToHomePage}
+                    secondOption={null}
+                />
+
+
+            )}
+            <Background>
+                <div className="reuse-subject-background">
+                    <h1>Passo 2 - Escolher disciplina para reaproveitar Gamificação</h1>
+                    <div className="reuse-subjects-list">
+                        <table className="subject-table">
+                            <thead>
+                                <tr>
+                                    <th>Semestre</th>
+                                    <th>Disciplina</th>
+                                    <th>Código</th>
+                                    <th>Criada em</th>
+                                    <th></th>
+                                    <th></th>
                                 
-                                    <tr key={subject._id}>
-                                        <td>
-                                            {subject.yearSemester}   
-                                        </td>
-                                        <td>
-                                            {subject.subjectName}
-                                        </td>
-                                        <td>
-                                            {subject.subjectCode}
-                                        </td>
+                                </tr>
+                            </thead>
+                            <tbody className="relative">
+                                {subjects && subjects.map((subject) =>([
+                                    
+                                        <tr key={subject._id}>
+                                            <td>
+                                                {subject.yearSemester}   
+                                            </td>
+                                            <td>
+                                                {subject.subjectName}
+                                            </td>
+                                            <td>
+                                                {subject.subjectCode}
+                                            </td>
 
-                                        <td>
-                                            {getDate(subject.createdAt)}
-                                        </td>
-                                        <td>
-                                            <a 
-                                                onClick={subject._id === expandedSubjectId ? () => setExpandedSubjectId('')  : () => setExpandedSubjectId(subject._id)} 
-                                                id="see-more-button"
-                                            >
-                                                Ver mais
-                                            </a>
-                                        
-                                        </td>
-                                        <td>
-                                            <button id="select-subject-button" className="text-white font-bold py-1 px-2 rounded">
-                                                Selecionar
-                                            </button>
-                                        </td>
-                                    </tr>,
-
-
-                                    <tr className={`transition-opacity duration-700 ease-in-out ${subject._id === expandedSubjectId ? 'visible opacity-100' : 'opacity-0 invisible  absolute'}`}>
-                                        <td colSpan="6">
-                                            <div className="selected-core-drives">
-                                                {subject.coredrives.map((coredrive) =>(
-
-                                                    <div key={coredrive._id} className="core-drive-information">
-                                                        <h2>{coredrive.coreDriveName}</h2>
-                                                        <div id="header-line"></div>
-                                                        {coredrive.techniques.map((technique) =>(
-                                                            <p key={technique._id}>{technique.techniqueName}</p>
+                                            <td>
+                                                {getDate(subject.createdAt)}
+                                            </td>
+                                            <td>
+                                                <a 
+                                                    onClick={subject._id === expandedSubjectId ? () => setExpandedSubjectId('')  : () => setExpandedSubjectId(subject._id)} 
+                                                    id="see-more-button"
+                                                >
+                                                    Ver mais
+                                                </a>
+                                            
+                                            </td>
+                                            <td>
+                                                <button 
+                                                    id="select-subject-button" 
+                                                    className="text-white font-bold py-1 px-2 rounded"
+                                                    onClick={() => handleConfirm(subject._id)}
+                                                >
+                                                    Selecionar
+                                                </button>
+                                            </td>
+                                        </tr>,
 
 
-                                                        ))}
-                                                        
-                                                    </div>
+                                        <tr className={`transition-opacity duration-700 ease-in-out ${subject._id === expandedSubjectId ? 'visible opacity-100' : 'opacity-0 invisible  absolute'}`}>
+                                            <td colSpan="6">
+                                                <div className="selected-core-drives">
+                                                    {subject.coredrives.map((coredrive) =>(
+
+                                                        <div key={coredrive._id} className="core-drive-information">
+                                                            <h2>{coredrive.coreDriveName}</h2>
+                                                            <div id="header-line"></div>
+                                                            {coredrive.techniques.map((technique) =>(
+                                                                <p key={technique._id}>{technique.techniqueName}</p>
 
 
-                                                ))}
-                                                
-                                                
-
-                                            </div>
-                                        </td>
-                                
-
-                                    </tr>
-
-                                
-                                
+                                                            ))}
+                                                            
+                                                        </div>
 
 
-                            ]))}
-                           
+                                                    ))}
+                                                    
+                                                    
+
+                                                </div>
+                                            </td>
+                                    
+
+                                        </tr>
+
+                                    
+                                    
+
+
+                                ]))}
                             
-                        </tbody>
-                    </table>
-                
+                                
+                            </tbody>
+                        </table>
+                    
+                        
+                    </div>
                     
                 </div>
-            </div>
-            
-            
-
-
-            
-        </Background>
+                
+                
+            </Background>
+        
+        </>
+        
 
     
     
