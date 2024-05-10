@@ -40,6 +40,10 @@
     font-size: 22px;
 }
 
+.input-row-register-user input:invalid{
+   border-bottom-color: var(--moodle-red);
+}
+
 .input-row-register-user input::placeholder{
     font-size: 22px;
     font-weight: light;

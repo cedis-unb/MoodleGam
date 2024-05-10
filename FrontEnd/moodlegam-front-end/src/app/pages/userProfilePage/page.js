@@ -33,9 +33,9 @@ export default function UserProfilePage(){
     const redirectEditUser = () =>{
         router.push("/pages/editUserPage")
     }
-    useEffect(() => {
-        console.log(`User: ${JSON.stringify(user)}`);
-    }, [user]);
+    // useEffect(() => {
+    //     console.log(`User: ${JSON.stringify(user)}`);
+    // }, [user]);
 
     useEffect(() => {
         // Perform localStorage action

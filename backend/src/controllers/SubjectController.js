@@ -3,7 +3,14 @@ import SubjectRepository from '../repositories/SubjectRepository.js'
 const SubjectController = {
   createSubject: async (req, res) => {
     try {
-      const { subjectName, yearSemester, note, subjectCode, userId } = req.body
+      const {
+        subjectName,
+        yearSemester,
+        note,
+        subjectCode,
+        userId,
+        techniques,
+      } = req.body
 
       const subjectExists = await SubjectRepository.findByCodeAndYearSemester(
         subjectCode,
@@ -22,6 +29,7 @@ const SubjectController = {
         note,
         subjectCode,
         userId,
+        techniques,
       })
 
       return res.status(201).json(newSubject)
@@ -92,6 +100,33 @@ const SubjectController = {
       }
     } catch (error) {
       return res.status(500).json({ message: error.message })
+    }
+  },
+
+  addTechniqueToSubject: async (req, res) => {
+    try {
+      const { techniqueId } = req.body
+      const { subjectId } = req.params
+
+      const subject = await SubjectRepository.findById(subjectId)
+      const technique = await TechniqueRepository.findById(techniqueId)
+
+      if (!subject || !technique) {
+        return res.status(404).json({
+          message: 'Error ao encontrar plugin ou technique',
+        })
+      }
+
+      const updatedSubject = await SubjectRepository.addTechniqueToPlugin(
+        subjectId,
+        techniqueId
+      )
+
+      return res.status(200).json(updatedSubject)
+    } catch (error) {
+      return res.status(500).json({
+        message: 'Error ao adicionar técnica ao plugin' + error.message,
+      })
     }
   },
 }

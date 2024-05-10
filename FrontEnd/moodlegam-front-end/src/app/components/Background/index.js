@@ -77,6 +77,9 @@ export default function Background(props){
         
     }
 
+    const redirectToSubjects = () => {
+        router.push('/pages/subject')
+    }
     const redirectToLoginPage = () => {
         
         router.push('/pages/loginPage'); // Redireciona para a página de login
@@ -121,7 +124,10 @@ export default function Background(props){
                 </h1>
                 
                 <div className="navbar-buttons">
-                    <div className="button-navbar">
+                    <a 
+                        className="button-navbar"
+                        onClick={redirectToSubjects}
+                    >
                         <Image 
                             src="/img/books.svg"
                             width={30}
@@ -130,7 +136,7 @@ export default function Background(props){
                         />
                         <h2>Disciplinas</h2>
                         
-                    </div>
+                    </a>
 
                     <div className="button-navbar">
                         

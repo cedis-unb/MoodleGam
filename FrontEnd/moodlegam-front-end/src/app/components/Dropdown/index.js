@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 const DropdownMenu = ({isOpen}) => {
     const router = useRouter();
-    console.log(`Drop: ${isOpen}`)
+    
     const userLogOut = async (e) => {
         e.preventDefault();
 

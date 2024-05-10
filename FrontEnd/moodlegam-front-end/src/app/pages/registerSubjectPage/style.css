@@ -1,0 +1,104 @@
+.background-register-subject-page{
+    font-family: Lato, sans-serif;
+    font-size: 38px;
+    color: white;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.background-register-subject-page h1{
+    font-weight: bold;
+    padding-left: 10rem;
+    width: 75vw;
+}
+
+.fields-register-subject{
+    height: 55vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-row-register-subject{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-left: 10rem;
+    width: 70vw;
+}
+
+.input-row-register-subject input{
+    width: 35vw;
+    height: 7vh;
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+
+.input-row-register-subject textarea{
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 22px;
+}
+
+.input-row-register-subject input::placeholder{
+    font-size: 22px;
+    font-weight: light;
+}
+.input-row-register-subject input:focus{
+    outline: none;
+}
+
+.button-wrapper-register-subject{
+    display: flex;
+    justify-content: center;
+}
+
+#error-text-register-subject{
+    color: var(--moodle-red);
+    font-size:20px;
+    width: 25vw;
+    text-align: center;
+    
+}
+
+.input-year-semester{
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;    
+}
+.input-year-semester input{
+    width: 10vw;
+}
+
+.input-year-semester select{
+    width: 10vw;
+    background-color: var(--primary-dark-grey) ;
+    font-size: 22px;
+    border-bottom-width: 1px;
+}
+
+.input-year-semester select:invalid{
+    color: #9DA0B0;
+}
+
+
+.error-register-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+#info-observation{
+    font-size: 11px;
+    font-weight: light;
+    margin-left: 10rem;
+    width: 35vw;
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+}

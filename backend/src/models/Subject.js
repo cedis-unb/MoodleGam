@@ -26,6 +26,12 @@ const subjectSchema = new Schema(
       ref: 'User',
       required: true,
     },
+    techniques: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Technique',
+      },
+    ],
   },
   {
     timestamps: true,
