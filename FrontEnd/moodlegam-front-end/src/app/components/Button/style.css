@@ -5,6 +5,7 @@
     height: 7vh;
     box-shadow: 7px 7px 7px -6px black;
     border-radius: 5px;
+    transition: all 0.25s ease;
 }
 .button-component:hover{
     background-color: var(--moodle-orange);
