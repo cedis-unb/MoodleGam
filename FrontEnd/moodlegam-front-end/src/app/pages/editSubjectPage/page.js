@@ -407,6 +407,7 @@ export default function EditSubjectPage(searchParams){
                     onConfirm={handleSubmit}
                     cancelOption={true}
                     onCancel={closeModal}
+                    secondOption={null}
                 />
 
 
@@ -420,7 +421,7 @@ export default function EditSubjectPage(searchParams){
                     buttonText="Voltar a tela inicial"
                     linkProps={null}
                     onConfirm={redirectToHomePage}
-                    
+                    secondOption={null}
                 />
 
 

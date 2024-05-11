@@ -105,6 +105,8 @@ export default function RegisterUserPage(){
                     bodyText="Usuário cadastrado com sucesso !"
                     buttonText="Voltar para tela de login"
                     onConfirm={redirectToLoginPage}
+                    linkProps={null}
+                    secondOption={null}
                 />
 
 

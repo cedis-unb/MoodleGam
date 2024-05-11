@@ -304,6 +304,7 @@ export default function ChooseTechniquePage(searchParams){
                     onConfirm={handleSubmit}
                     cancelOption={true}
                     onCancel={closeModal}
+                    secondOption={null}
                 />
 
 
@@ -316,7 +317,7 @@ export default function ChooseTechniquePage(searchParams){
                     buttonText="Voltar a tela inicial"
                     linkProps={null}
                     onConfirm={redirectToHomepage}
-                    
+                    secondOption={null}
                 />
 
 

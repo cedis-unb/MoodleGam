@@ -173,6 +173,8 @@ export default function EditUserPage(){
                     onConfirm={handleSubmit}
                     cancelOption={true}
                     onCancel={closeModal}
+                    secondOption={null}
+                    linkProps={null}
                 />
 
 
