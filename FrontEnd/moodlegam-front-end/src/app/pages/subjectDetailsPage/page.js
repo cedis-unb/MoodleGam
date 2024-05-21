@@ -10,6 +10,7 @@ import BlackHatBox from "@/app/components/BlackHatBox"
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import RadarGraph from "@/app/components/RadarGraph"
 
 export default function SubjectDetailsPage(searchParams){
     const router = useRouter()
@@ -17,8 +18,9 @@ export default function SubjectDetailsPage(searchParams){
     
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
-    const [techniques, setTechniques] = useState([])
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
     const [coreDrives, setCoreDrives] = useState([])
+
     
     
     
@@ -48,8 +50,47 @@ export default function SubjectDetailsPage(searchParams){
                 
 
                 const updatedCoreDrives = await sortCoreDrives(techniquesData, coreDrivesData)
+                console.log(updatedCoreDrives)
                 setCoreDrives(updatedCoreDrives)
+                var techniqueQuantity = [0,0,0,0,0,0,0,0]
 
+                updatedCoreDrives.forEach((coreDrive) =>{
+                    if(coreDrive.coreDriveName.includes("1")){
+                        techniqueQuantity[0] = coreDrive.techniques.length 
+                    }
+                    else if(coreDrive.coreDriveName.includes("2")){
+                        techniqueQuantity[7] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("3")){
+                        techniqueQuantity[1] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("4")){
+                        techniqueQuantity[6] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("5")){
+                        techniqueQuantity[2] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("6")){
+                        techniqueQuantity[5] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("7")){
+                        techniqueQuantity[3] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("8")){
+                        techniqueQuantity[4] = coreDrive.techniques.length
+                    }
+                })
+                
+                
+                
+                
+                
+                
+                
+                
+
+                setTechniqueQuantitys(techniqueQuantity)
+                
                 
             } catch (error) {
                 console.error('Erro ao buscar disciplina', error.response);
@@ -271,8 +312,12 @@ export default function SubjectDetailsPage(searchParams){
                         </span>
                     </p>
                 </div>
-
-
+                <div className="radar-chart">
+                    <RadarGraph
+                        techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                    />
+                </div>
+                
                 {coreDrives && coreDrives.map((coreDrive) => (
 
                     <div key={coreDrive._id} className="core-drive-box">

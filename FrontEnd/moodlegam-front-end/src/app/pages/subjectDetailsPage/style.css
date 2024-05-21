@@ -105,5 +105,14 @@
     justify-content: center;
 }
 
+.radar-chart{
+    display: flex;
+    justify-content: center;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
+    width: 100vw;
+    height: 75vh;
+}
+
 
 
