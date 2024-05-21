@@ -7,7 +7,11 @@ import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
-
+import Link from "next/link"
+import BlackHatBox from "@/app/components/BlackHatBox"
+import WhiteHatBox from "@/app/components/WhiteHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
 export default function EditSubjectPage(searchParams){
 
@@ -393,6 +397,43 @@ export default function EditSubjectPage(searchParams){
         setinfoModalOpen(false)
         setConfirmModalOpen(false)
     }
+
+    const getFileName = (techniqueName) =>{
+        var fileName = techniqueName.toLowerCase()
+        fileName = fileName.split(' ').join('')
+
+        fileName = fileName.replace('ç', 'c')
+
+        fileName = fileName.replace('ã', 'a')
+        fileName = fileName.replace('á', 'a')
+        fileName = fileName.replace('â', 'a')
+        fileName = fileName.replace('à', 'a')
+
+        fileName = fileName.replace('ẽ', 'e')
+        fileName = fileName.replace('é', 'e')
+        fileName = fileName.replace('ê', 'e')
+        fileName = fileName.replace('è', 'e')
+
+        fileName = fileName.replace('ĩ', 'i')
+        fileName = fileName.replace('í', 'i')
+        fileName = fileName.replace('î', 'i')
+        fileName = fileName.replace('ì', 'i')
+
+
+        fileName = fileName.replace('õ', 'o')
+        fileName = fileName.replace('ó', 'o')
+        fileName = fileName.replace('ô', 'o')
+        fileName = fileName.replace('ò', 'o')
+
+
+        fileName = fileName.replace('ũ', 'u')
+        fileName = fileName.replace('ú', 'u')
+        fileName = fileName.replace('û', 'u')
+        fileName = fileName.replace('ù', 'u')
+
+        return fileName
+    }
+
     const riskLevel = getRiskLevel(techniqueQuantity);
     const riskColor = getRiskColor(riskLevel)
 
@@ -473,7 +514,7 @@ export default function EditSubjectPage(searchParams){
 
                         </div>
 
-                        <div className="technique-quantity">
+                        <div className="edit-technique-quantity">
                             <div className="technique-quantity-text">
                                 <span>Quantidade de técnicas escolhidas: <span className="font-bold">{techniqueQuantity}</span></span>
                             </div>
@@ -492,7 +533,24 @@ export default function EditSubjectPage(searchParams){
 
                             <div className="core-drive-header">
                                 <h2>{coreDrive !== null ? coreDrive.coreDriveName : ''}</h2>
-                                
+
+                                {coreDrive.hat != null ? 
+                                    coreDrive.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive.motivation != null ? 
+                                    coreDrive.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
                             </div>
 
                             <div className="core-drive-techniques">
@@ -512,7 +570,24 @@ export default function EditSubjectPage(searchParams){
                                                 <label htmlFor={`technique-${technique._id}`}>
                                                     {technique.techniqueName}
                                                 </label>
-        
+
+                                                <Link
+                                                    href={{
+                                                        pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                                    }}
+
+                                                    passHref
+                                                    legacyBehavior
+                                                >
+                                                    <a target="_blank">
+                                                        <Image 
+                                                            src="/img/help.svg"
+                                                            width={25}
+                                                            height={25}
+                                                            unoptimized={true}
+                                                        />
+                                                    </a>
+                                                </Link>
                                             </div>
                                         
                                 ))}

@@ -5,10 +5,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Link from "next/link"
-
+import {useRouter} from "next/navigation";
+import BlackHatBox from "@/app/components/BlackHatBox"
+import WhiteHatBox from "@/app/components/WhiteHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
 export default function SubjectDetailsPage(searchParams){
-
+    const router = useRouter()
    
     
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
@@ -154,6 +158,7 @@ export default function SubjectDetailsPage(searchParams){
     }
 
 
+
     const fetchSubject = async(subjectId, token) =>{
         
         try {
@@ -185,13 +190,56 @@ export default function SubjectDetailsPage(searchParams){
         }
 
     }
+
+
+    const redirect= (techniqueName) => {
+        
+        router.push(`/pages/tutorials/${techniqueName.toLowerCase()}`); 
+    };
+
+    const getFileName = (techniqueName) =>{
+        var fileName = techniqueName.toLowerCase()
+        fileName = fileName.split(' ').join('')
+
+        fileName = fileName.replace('ç', 'c')
+
+        fileName = fileName.replace('ã', 'a')
+        fileName = fileName.replace('á', 'a')
+        fileName = fileName.replace('â', 'a')
+        fileName = fileName.replace('à', 'a')
+
+        fileName = fileName.replace('ẽ', 'e')
+        fileName = fileName.replace('é', 'e')
+        fileName = fileName.replace('ê', 'e')
+        fileName = fileName.replace('è', 'e')
+
+        fileName = fileName.replace('ĩ', 'i')
+        fileName = fileName.replace('í', 'i')
+        fileName = fileName.replace('î', 'i')
+        fileName = fileName.replace('ì', 'i')
+
+
+        fileName = fileName.replace('õ', 'o')
+        fileName = fileName.replace('ó', 'o')
+        fileName = fileName.replace('ô', 'o')
+        fileName = fileName.replace('ò', 'o')
+
+
+        fileName = fileName.replace('ũ', 'u')
+        fileName = fileName.replace('ú', 'u')
+        fileName = fileName.replace('û', 'u')
+        fileName = fileName.replace('ù', 'u')
+
+        return fileName
+    }
+
     return (
         <Background>
             <div className="background-subject-details">
                 <div className="header-subject-details">
                    
                     <h1>{subject !== null ? subject.subjectName : ''}</h1>
-                    <a className="edit-subject-wrapper">
+                    <div className="edit-subject-wrapper">
                         
                         <Image
                             src="/img/edit.svg"
@@ -211,7 +259,7 @@ export default function SubjectDetailsPage(searchParams){
                             <p id="edit-button">Editar dados</p>
                         </Link>
 
-                    </a>
+                    </div>
                 </div>
 
                 <div className="subject-details">
@@ -227,11 +275,27 @@ export default function SubjectDetailsPage(searchParams){
 
                 {coreDrives && coreDrives.map((coreDrive) => (
 
-                    <div className="core-drive-box">
+                    <div key={coreDrive._id} className="core-drive-box">
 
                         <div className="core-drive-header">
                             <h2>{coreDrive !== null ? coreDrive.coreDriveName : ''}</h2>
-                            
+                            {coreDrive.hat != null ? 
+                                coreDrive.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive.motivation != null ? 
+                                coreDrive.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -239,9 +303,27 @@ export default function SubjectDetailsPage(searchParams){
                             {coreDrive && 
                                     coreDrive.techniques.map((technique, index) => (
 
-                                    <div key={technique._id} className="technique-box">
-                                        <span>{technique.techniqueName}</span>
-                                    </div>
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                    >
+                                        <div 
+                                            key={technique._id} 
+                                            className="technique-box" 
+                                            title="Clique para ver o tutorial dessa técnica"
+                                            
+                                        >
+
+                                            
+                                
+                                            
+                                            <span>{technique.techniqueName}</span>
+                                            
+                                            
+                                        </div>
+                                    </Link>
+                                
                                     
                             ))}
                             

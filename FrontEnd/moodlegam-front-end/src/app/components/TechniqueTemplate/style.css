@@ -1,0 +1,111 @@
+.tech-template-body{
+    width: 100vw;
+    padding-top: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tech-template-header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.tech-template-header h1{
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+}
+
+.tech-template-subheader{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.tech-template-subheader h2{
+    font-size: 20px;
+    color: white;
+}
+
+.tech-template-description{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 1rem;
+}
+
+.tech-template-description h2{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+}
+
+.tech-description-text{
+    color: white;
+    padding-left: 1rem;
+    border-left-width: 3px;
+    border-left-color: var(--light-gray);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tech-template-how{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 1rem;
+}
+
+.tech-template-how h2{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+}
+
+.tech-plugins{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    
+}
+
+#plugin-title {
+    color: var(--moodle-orange)
+}
+
+#plugin-name {
+    color: white;
+    font-weight: bold;
+}
+
+.plugin-name-link{
+    display: flex;
+    color: white;
+    gap: 1rem;
+}
+
+.plugin-name-link a{
+    text-decoration: underline;
+}
+
+.plugin-name-link a:hover{
+    cursor: pointer;
+    color: var(--light-gray)
+}
+
+.how-to-install{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+

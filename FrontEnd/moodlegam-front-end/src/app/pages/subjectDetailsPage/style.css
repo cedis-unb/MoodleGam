@@ -71,71 +71,7 @@
     font-size: 22px;
 }
 
-.white-hat-box{
-    padding: 0.4rem;
-    color: black;
-    height: 4vh;
-    background-color: white;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-}
 
-.black-hat-box span{
-    text-align: center;
-}
-
-
-.black-hat-box{
-    padding: 0.4rem;
-    color: white;
-    height: 4vh;
-    background-color: black;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-}
-
-.black-hat-box span{
-    text-align: center;
-}
-
-.extrinsic-box{
-    padding: 0.4rem;
-    color: black;
-    height: 4vh;
-    background-color: var(--moodle-yellow);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-}
-
-.extrinsic-box span{
-    text-align: center;
-}
-
-
-.intrinsic-box{
-    padding: 0.4rem;
-    color: white;
-    height: 4vh;
-    background-color: var(--moodle-blue);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-}
-
-.intrinsic-box span{
-    text-align: center;
-}
 
 
 .technique-box{
@@ -146,7 +82,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.25s ease;
+   
+
 }
+
+.technique-box:hover{
+    cursor: pointer;
+    background-color: var(--moodle-blue);
+    font-weight: bold;
+}
+
+
 
 .core-drive-techniques{
     width: 90vw;

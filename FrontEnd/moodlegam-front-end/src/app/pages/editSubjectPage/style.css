@@ -54,17 +54,21 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 1rem;
     padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
-.technique-quantity{
+.choose-technique-box label{
+    text-align: center;
+}
+
+.edit-technique-quantity{
     padding-left: 0.2rem;
-    border-left-width: 3px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-color: var(--moodle-orange);
+    
 }
 
 .edit-subject-button-wrapper{
