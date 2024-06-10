@@ -1,0 +1,64 @@
+.gamification-body{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+}
+.gamification-text{
+    padding-left: 4rem;
+    padding-top: 4rem;
+    padding-right: 2rem;
+}
+.gamification-text ol {
+    list-style-type: decimal; /* Garante que a lista seja numerada */
+    
+}
+.gamification-text li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.gamification-text h4{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+}
+.gamification-text p{
+    font-size: 17px;
+    font-weight: normal;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.gamification-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.gamification-header h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.gamification-header h4{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.gamification-references{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+.gamification-references h3{
+    font-size: 20px;
+}
+.gamification-references ol{
+    list-style-type: decimal
+}
+
+.gamification-references li{
+    font-weight: normal;
+    font-style: italic;
+}

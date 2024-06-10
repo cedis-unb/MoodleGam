@@ -77,6 +77,10 @@ export default function Background(props){
         
     }
 
+    const redirectToContent = () => {
+        router.push('/pages/content')
+    }
+
     const redirectToSubjects = () => {
         router.push('/pages/subject')
     }
@@ -139,15 +143,20 @@ export default function Background(props){
                     </a>
 
                     <div className="button-navbar">
+                        <a 
+                            className="button-navbar"
+                            onClick={redirectToContent}
+                        >
+                            <Image 
+                                src="/img/content.svg"
+                                width={25}
+                                height={30}
+                                unoptimized={true}
+                            />
                         
-                        <Image 
-                            src="/img/content.svg"
-                            width={25}
-                            height={30}
-                            unoptimized={true}
-                        />
-                        <h2>Conteúdos</h2>
-
+                        
+                            <h2>Conteúdos</h2>
+                        </a>
                     </div>
 
                     <div className="button-navbar">

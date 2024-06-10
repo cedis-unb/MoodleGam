@@ -81,14 +81,7 @@ export default function SubjectDetailsPage(searchParams){
                     }
                 })
                 
-                
-                
-                
-                
-                
-                
-                
-
+            
                 setTechniqueQuantitys(techniqueQuantity)
                 
                 

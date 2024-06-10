@@ -1,0 +1,77 @@
+.octalysis-body{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+}
+.octalysis-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 4rem;
+    padding-top: 4rem;
+    padding-right: 2rem;
+}
+.octalysis-text h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.octalysis-text ol {
+    list-style-type: decimal; /* Garante que a lista seja numerada */
+    
+}
+.octalysis-text li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.octalysis-text h4{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+}
+.octalysis-text p{
+    font-size: 17px;
+    font-weight: normal;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.octalysis-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.octalysis-header h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.octalysis-header h4{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.octalysis-references{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+.octalysis-references h3{
+    font-size: 20px;
+}
+.octalysis-references ol{
+    list-style-type: decimal
+}
+
+.octalysis-references li{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.octalysis-img-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
