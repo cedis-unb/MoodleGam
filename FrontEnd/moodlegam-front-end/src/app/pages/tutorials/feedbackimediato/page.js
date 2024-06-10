@@ -26,16 +26,14 @@ export default function FeedbackImediato(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
-                                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                                    also the leap into electronic typesetting, remaining essentially unchanged. It was popularised 
-                                    in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
+                                Permite ao jogador reconhecer imediatamente os resultados do seu trabalho. 
+                                "Feedback Imediato" é uma estratégia de gamificação que envolve fornecer aos usuários uma resposta 
+                                rápida e clara sobre suas ações ou desempenho. Isso pode ajudar a motivar os usuários, fornecer 
+                                reforço positivo para comportamentos desejados e ajudar os usuários a aprender e melhorar.
 
                                 </p>
                             </div>
+                            <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                         </div>
 
                         <div className="tech-template-how">

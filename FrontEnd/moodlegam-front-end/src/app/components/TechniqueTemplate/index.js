@@ -33,7 +33,9 @@ export default function TechniqueTemplate(){
                         Lorem Ipsum.
 
                     </p>
+                    
                 </div>
+                <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
             </div>
 
             <div className="tech-template-how">

@@ -27,16 +27,15 @@ export default function GanharOPremio(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
-                                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                                    also the leap into electronic typesetting, remaining essentially unchanged. It was popularised 
-                                    in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
+                                "Ganhar Prêmio" é uma estratégia de gamificação que envolve a concessão de recompensas 
+                                tangíveis ou intangíveis aos usuários com base em seu desempenho, conquistas ou comportamento. 
+                                Essa técnica tem como objetivo motivar e engajar os usuários, encorajando-os a continuar 
+                                interagindo com o sistema e a se esforçarem para alcançar seus objetivos.
 
                                 </p>
                             </div>
+                            <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
+
                         </div>
 
                         <div className="tech-template-how">

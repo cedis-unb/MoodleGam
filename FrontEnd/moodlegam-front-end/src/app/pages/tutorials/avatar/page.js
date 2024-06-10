@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsiccBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
 export default function Avatar(){
 
@@ -26,16 +26,17 @@ export default function Avatar(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
-                            type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised 
-                            in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                            more recently with desktop publishing software like Aldus PageMaker including versions of 
-                            Lorem Ipsum.
+                        Quando o jogador cria uma representação virtual de si mesmo, ele se sente naturalmente envolvido 
+                        com esta imagem. Um "Avatar" é uma representação gráfica de um usuário dentro de um jogo ou 
+                        ambiente digital. Através desta representação, os usuários podem expressar sua 
+                        individualidade, alcançar objetivos e interagir com o ambiente e outros usuários. 
+                        O uso de avatares em gamificação pode aumentar o engajamento e a sensação de pertencimento 
+                        dos usuários.
 
                         </p>
+                        
                     </div>
+                    <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                 </div>
 
                 <div className="tech-template-how">

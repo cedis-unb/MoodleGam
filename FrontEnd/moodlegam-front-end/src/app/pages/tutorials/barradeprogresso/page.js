@@ -26,16 +26,18 @@ export default function BarraDeProgresso(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
-                                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                                    also the leap into electronic typesetting, remaining essentially unchanged. It was popularised 
-                                    in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
+                                A "Barra de Progresso" é uma estratégia na gamificação que proporciona aos usuários uma representação 
+                                visual do seu progresso em direção a um objetivo ou uma tarefa. Ela oferece um feedback instantâneo e 
+                                contínuo sobre o progresso do usuário, o que pode aumentar a motivação e a sensação de realização. 
+                                <br></br> <br></br>
+                                Essa técnica permite ao jogador visualizar claramente o seu desenvolvimento na direção de um dado objetivo. 
+                                Geralmente são utilizados valores percentuais para indicar o progresso, mas a unidade de contagem varia de 
+                                acordo com o objetivo a ser alcançado.
 
                                 </p>
+                                
                             </div>
+                            <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                         </div>
 
                         <div className="tech-template-how">

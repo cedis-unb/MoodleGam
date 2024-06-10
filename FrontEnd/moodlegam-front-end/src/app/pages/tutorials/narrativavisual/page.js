@@ -28,16 +28,20 @@ export default function NarrativaVisual(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
-                            type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised 
-                            in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                            more recently with desktop publishing software like Aldus PageMaker including versions of 
-                            Lorem Ipsum.
+                        A "Narrativa Visual" é uma estratégia de gamificação que utiliza imagens, gráficos, infográficos, vídeos 
+                        ou outros elementos visuais para contar uma história ou transmitir informações. 
+                        A narrativa visual pode ser uma ferramenta poderosa para aumentar o engajamento dos usuários, pois 
+                        muitas pessoas respondem melhor a informações visuais do que a textos escritos.
+                        <br></br> <br></br>
+                        
+                        Enquanto uma abordagem de jogo ou gamificação não precisa necessariamente de uma narrativa, uma 
+                        história pode adicionar fantasia e um tema à experiência. Uma narrativa visual pode ajudar um 
+                        jogador a mergulhar melhor em um exercício mundano e chato e experimentar um significado e 
+                        propósito completos de fantasia.
 
                         </p>
                     </div>
+                    <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                 </div>
 
                 <div className="tech-template-how">

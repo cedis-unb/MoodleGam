@@ -39,6 +39,11 @@
     gap: 1rem;
 }
 
+.tech-template-description h3{
+    color: white;
+    font-style: italic;
+}
+
 .tech-template-description h2{
     color: white;
     font-size: 25px;
