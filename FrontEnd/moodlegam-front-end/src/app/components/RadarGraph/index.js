@@ -6,15 +6,27 @@ export default function RadarGraph(props){
 
 
     const data = {
-        labels: [
+        labels: props.miniature === true ?
+          [ 
+            '1',
+            '3',
+            '5',
+            '7',
+            '8',
+            '6',
+            '4',
+            '2'
+
+          ]  
+        :[
             'Significado Épico & Chamado', 
-            'Desenvolvimento & Realização', 
+            'Empoderamento da Criatividade & Feedback',
             'Influência Social & Pertencimento', 
             'Imprevisibilidade & Curiosidade',
             'Perda & Rejeição',
             'Escassez & Impaciência',
             'Propriedade & Posse',
-            'Empoderamento da Criatividade & Feedback'
+            'Desenvolvimento & Realização'
             
         ],
         datasets: [
@@ -31,8 +43,20 @@ export default function RadarGraph(props){
           },
         ],
       };
+
+      const descriptions = {
+        '1': 'Significado Épico & Chamado',
+        '3': 'Empoderamento da Criatividade & Feedback',
+        '5': 'Influência Social & Pertencimento',
+        '7': 'Imprevisibilidade & Curiosidade',
+        '8': 'Perda & Rejeição',
+        '6': 'Escassez & Impaciência',
+        '4': 'Propriedade & Posse',
+        '2': 'Desenvolvimento & Realização'
+      };
     
       const options = {
+        
         maintainAspectRatio: false,
         scales: {
           r: {
@@ -58,10 +82,21 @@ export default function RadarGraph(props){
           },
           
         },
+
         plugins: {
-            legend: {
-              display: false, // Hide the legend
+          tooltip: {
+            callbacks: {
+              title: function (tooltipItems) {
+                // Map the tooltip title to the full description
+                const tooltipItem = tooltipItems[0];
+                return descriptions[tooltipItem.label];
+              },
             },
+          },
+
+          legend: {
+            display: false, // Hide the legend
+          },
         },
 
         

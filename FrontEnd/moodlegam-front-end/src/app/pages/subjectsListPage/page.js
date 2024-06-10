@@ -33,7 +33,7 @@ export default function SubjectsListPage (){
                     const decodedUser = jwtDecode(token);
                     
                     const subjectData = await fetchSubject(decodedUser.sub, token);
-
+                    console.log("Disciplina:", subjectData)
                     setSubjectsList(subjectData)
                 }
                 
@@ -120,6 +120,7 @@ export default function SubjectsListPage (){
                                 createdAt={getDate(subject.createdAt)}
                                 subjectId={subject._id}
                                 key={index}
+                                techniques={subject.techniques}
                             />
                         
                         ))
