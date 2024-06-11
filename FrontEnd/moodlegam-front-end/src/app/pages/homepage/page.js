@@ -1,11 +1,68 @@
-
+"use client"
 import Background from "../../components/Background";
 import MenuOption from "@/app/components/MenuOption"
+import {jwtDecode} from "jwt-decode"; 
+import { useEffect, useState } from "react";
+import { axiosInstance } from "@/app/config/config";
 import Image from "next/image";
 import "./style.css"
 
 export default function Homepage(){
+    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+    const [isAdmin, setIsAdmin] = useState(false);
+    useEffect(() => {
+        
+        const token = localStorage.getItem("token");
+        const fetchData = async () => {
+            try {
+                if (token) {
+                    const decodedUser = jwtDecode(token);
+                    
+                    const userData = await fetchUser(decodedUser.sub, token);
+                    if(userData.role === 'admin'){
+                        setIsAdmin(true)
+                    }
+                    
+                }
+                else{
+                    console.error('Erro ao buscar usuário:', error);
+                }
+            } catch (error) {
+                console.error('Erro ao buscar usuário:', error);
+            }
+        };
 
+        fetchData();
+        
+    }, [])
+
+
+    const fetchUser = async(userId, token) =>{
+        try {
+            
+            const response = await axiosInstance.get(
+                `/users/${userId}`, 
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+            );
+
+  
+            if (response.status === 200) {
+                return response.data
+            } 
+            
+
+        } catch (error) {
+            console.error('Erro ao buscar usuário por id');
+            
+            
+        }
+
+    }
     
 
 
@@ -31,6 +88,7 @@ export default function Homepage(){
                 <MenuOption
                     title="Conteúdos"
                     text="Veja conteúdos sobre Gamificação, além de tutoriais sobre como utilizar o Moodle"
+                    redirect="content"
                 >
                     <Image 
                         src="/img/content.svg"
@@ -63,6 +121,24 @@ export default function Homepage(){
                         unoptimized={true}
                     />
                 </MenuOption>
+
+                {isAdmin && 
+                    <div className="manage-users">
+                        <MenuOption
+                            title="Gerenciar usuários"
+                            text="visualizar, alterar ou bloquear usuários"
+                            redirect="manageUsers"
+                        >
+                            <Image 
+                                src="/img/two_users.svg"
+                                width={50}
+                                height={50}
+                                unoptimized={true}
+                            />
+                        </MenuOption>
+                    </div>
+                }
+                
 
             </div>
             

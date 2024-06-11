@@ -1,23 +1,28 @@
 "use client"
 import Background from "../../components/Background";
 import Button from "@/app/components/Button";
-import "./style.css"
+import "../editUserPage/style.css"
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
-import {jwtDecode} from "jwt-decode"; 
 import Modal from "@/app/components/Modal"
+import {jwtDecode} from "jwt-decode"; 
 
-export default function EditUserPage(){
+export default function EditUserData(searchParams){
+
     const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [user, setUser] = useState(null);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [errorText, setErrorText] = useState('')
-    const [modalOpen, setModalOpen] = useState(false)
+    const [confirmModalOpen, setConfirmModalOpen] = useState(false)
     const [userId, setUserId] = useState('')
+    const [newPassword, setNewPassword] = useState('')
+    const [newPassModalOpen, setNewPassModalOpen] = useState(false)
 
     const router = useRouter();
+
+    
 
     const redirectChangePassword = () =>{
         router.push("/pages/changePassword")
@@ -25,23 +30,29 @@ export default function EditUserPage(){
     }
 
   
-    useEffect(() => {
-        console.log(`User: ${JSON.stringify(user)}`);
-    }, [name]);
+    
 
     useEffect(() => {
-        // Perform localStorage action
+        
+        
         const token = localStorage.getItem("token");
         const fetchData = async () => {
             try {
                 if (token) {
                     const decodedUser = jwtDecode(token);
                     
-                    const userData = await fetchUser(decodedUser.sub, token);
+                    const thisUser = await fetchUser(decodedUser.sub, token);
+                    console.log(thisUser)
+                    if(thisUser.role !== 'admin'){
+                        router.push('/pages/unauthorized')
+                    }
+                    
+                    
+                    const userData = await fetchUser(searchParams.searchParams.userId, token);
                     setUser(userData);
                     setName(userData.name)
                     setEmail(userData.email)
-                    setUserId(decodedUser.sub)
+                    setUserId(userData._id)
                 }
                 
             } catch (error) {
@@ -104,13 +115,53 @@ export default function EditUserPage(){
     const handleFormConfirm = (e) =>{
         e.preventDefault()
         if(validateUserData(e)){
-            setModalOpen(true)
+            setConfirmModalOpen(true)
         }
         else{
             return
         }
 
     }
+
+    const handleResetPassword = async e => {
+        e.preventDefault()
+        const pass = generateNewPassword()
+        setNewPassword(pass)
+        try {
+
+            const response = await axiosInstance.put(
+                `/users/${userId}`, 
+                {
+                    "password": pass
+                },
+                {
+                    headers: {
+                        'x-api-key': `${apiKey}`,
+                        'Authorization': `Bearer ${localStorage.getItem("token")}`
+                    }
+                }
+                
+            )
+            
+        
+            if (response.status === 200) {
+               
+                console.log('Senha atualizada:', response.data);
+                closeModal()
+                
+                
+                
+            } else {
+            
+                console.error('Erro ao atualizar senha', response.statusText);
+            }
+        } catch (error) {
+            
+            console.error('Erro de rede:', error.response);
+            
+        }
+    }
+
     const handleSubmit = async e => {
         e.preventDefault()
         
@@ -136,8 +187,8 @@ export default function EditUserPage(){
             if (response.status === 200) {
                
                 console.log('Usuário atualizado:', response.data);
-                setModalOpen(false)
-                redirectToHomepage()
+                setConfirmModalOpen(false)
+                redirectToManageUsers()
                 
                 
             } else {
@@ -155,18 +206,45 @@ export default function EditUserPage(){
     }
 
     const closeModal = () =>{
-        setModalOpen(false)
+        setConfirmModalOpen(false)
+        setNewPassModalOpen(false)
     }
 
-    const redirectToHomepage = () =>{
-        router.push("/pages/homepage")
+    const redirectToManageUsers = () =>{
+        router.push("/pages/manageUsers")
     }
+
+    function generateNewPassword() {
+        const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let password = '';
+        for (let i = 0; i < 5; i++) {
+          const indice = Math.floor(Math.random() * characters.length);
+          password += characters.charAt(indice);
+        }
+        return password
+    }
+
     return(
         <>
-            {modalOpen && (
+            {newPassModalOpen && (
 
                 <Modal
-                    bodyText="Você tem certeza que deseja atualizar seus dados?"
+                    bodyText="Você tem certeza que deseja gerar uma nova senha? A senha atual do usuário será substituída por uma nova"
+                    buttonText="Gerar"
+                    onConfirm={handleResetPassword}
+                    cancelOption={true}
+                    onCancel={closeModal}
+                    secondOption={null}
+                    linkProps={null}
+                />
+
+
+            )}
+
+            {confirmModalOpen && (
+
+                <Modal
+                    bodyText="Você tem certeza que deseja atualizar os dados?"
                     buttonText="Atualizar"
                     onConfirm={handleSubmit}
                     cancelOption={true}
@@ -199,8 +277,18 @@ export default function EditUserPage(){
 
                     <span id="error-text-edit-user">{errorText}</span>
                 
+                    {   newPassword &&
+                        <p>
+                            Nova senha: {newPassword} <p class="text-red-500">A senha irá sumir após sair dessa página</p>
+                        </p>
+                    }
 
-                    <a onClick={redirectChangePassword}>Alterar senha</a>
+                    <a 
+                        onClick={() => setNewPassModalOpen(true)}
+                    
+                    >
+                        Gerar nova senha
+                    </a>
                     <div className="button-wrapper-edit-user">
 
                         <Button

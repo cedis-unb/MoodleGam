@@ -2,7 +2,6 @@
 import "./style.css"
 import { useEffect, useState, useRef, Fragment } from "react";
 import Background from "../../components/Background";
-import Image from "next/image";
 import {jwtDecode} from "jwt-decode"; 
 import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
