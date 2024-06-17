@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Dropdown from "@/app/components/Dropdown/index"
 import { useRouter } from 'next/navigation';
+
 export default function Background(props){
     const router = useRouter();
     const [user, setUser] = useState(null);
@@ -79,6 +80,10 @@ export default function Background(props){
 
     const redirectToContent = () => {
         router.push('/pages/content')
+    }
+
+    const redirectToAboutUs = () => {
+        router.push('/pages/aboutUs')
     }
 
     const redirectToSubjects = () => {
@@ -160,15 +165,20 @@ export default function Background(props){
                     </div>
 
                     <div className="button-navbar">
-                        
-                        <Image 
-                            src="/img/info.svg"
-                            width={30}
-                            height={30}
-                            unoptimized={true}
-                        />
+                        <a 
+                            className="button-navbar"
+                            onClick={redirectToAboutUs}
+                        >
+                            <Image 
+                                src="/img/info.svg"
+                                width={30}
+                                height={30}
+                                unoptimized={true}
+                            />
 
-                        <h2>Sobre nós</h2>
+                            <h2>Sobre nós</h2>
+                        </a>
+                        
                     </div>
 
                     <div  className="button-navbar">
