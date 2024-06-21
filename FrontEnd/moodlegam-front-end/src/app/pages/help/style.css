@@ -1,0 +1,59 @@
+.help-conteiner{
+    padding-top: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.help-header{
+    display: flex;
+    justify-content: center;
+}
+
+.help-header h1{
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 3rem;
+}
+
+.help-index{
+    padding-left: 3rem;
+    font-size: 20px;
+}
+
+.help-index ul{
+    list-style-type: disc;
+}
+
+.help-index a:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--moodle-orange);
+    cursor: pointer;
+}
+
+.help-content{
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.help-question{
+    border-left: solid 4px var(--moodle-orange);
+    padding-left: 2rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.help-question h2{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.help-explanation{
+    padding-left: 1rem;
+}
+.help-explanation p{
+    font-size: 20px;
+}

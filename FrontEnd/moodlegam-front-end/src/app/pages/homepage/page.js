@@ -101,6 +101,7 @@ export default function Homepage(){
                 <MenuOption
                     title="Sobre nós"
                     text="Saiba  sobre os criadores do MoodleGam"
+                    redirect="aboutUs"
                 >
                     <Image 
                         src="/img/info.svg"
@@ -113,6 +114,7 @@ export default function Homepage(){
                 <MenuOption
                     title="Ajuda"
                     text="Instruções sobre como utilizar o MoodleGam, e dúvidas mais frequentes"
+                    redirect="help"
                 >
                     <Image 
                         src="/img/help.svg"

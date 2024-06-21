@@ -98,6 +98,10 @@ export default function Background(props){
         router.push('/pages/homepage');
     }
 
+    const redirectToHelp = () =>{
+        router.push('/pages/help')
+    }
+
     useEffect(() => {
         console.log(`User: ${JSON.stringify(user)}`);
     }, [user]); 
@@ -182,14 +186,20 @@ export default function Background(props){
                     </div>
 
                     <div  className="button-navbar">
+                        <a
+                           className="button-navbar"
+                           onClick={redirectToHelp} 
+                        >
+                            <Image 
+                                src="/img/help.svg"
+                                width={30}
+                                height={30}
+                                unoptimized={true}
+                            />
+                            <h2>Ajuda</h2>
+
+                        </a>
                         
-                        <Image 
-                            src="/img/help.svg"
-                            width={30}
-                            height={30}
-                            unoptimized={true}
-                        />
-                        <h2>Ajuda</h2>
 
                     </div>
                 </div>
