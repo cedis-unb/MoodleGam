@@ -13,7 +13,7 @@ import BlackHatBox from "@/app/components/BlackHatBox"
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-
+import RadarGraph from "@/app/components/RadarGraph"
 
 import {axiosInstance} from '../../config/config'
 
@@ -38,6 +38,7 @@ export default function ChooseTechniquePage(searchParams){
     const [coreDrive7, setCoreDrive7] = useState(null)
     const [coreDrive8, setCoreDrive8] = useState(null)
     
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
 
     useEffect(() => {
         console.log(searchParams.searchParams.subjectId)
@@ -245,16 +246,112 @@ export default function ChooseTechniquePage(searchParams){
         setTechniqueQuantity(techniqueQuantity - 1)
     }
 
-   
+    function updateRadarGraph(techniqueId, operation){
+        
+        var quantity = [...techniqueQuantitys]
+
+        if(coreDrive1.techniques.some(technique => technique._id === techniqueId)){
+            if(operation === "add"){
+                quantity[0] =  quantity[0] + 1
+            }
+            else{
+                quantity[0] =  quantity[0] - 1
+            }
+            
+
+        }
+        else if(coreDrive2.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[7] = quantity[7] + 1
+            }
+            else{
+                quantity[7] = quantity[7] - 1
+            }
+            
+
+        }
+        else if(coreDrive3.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[1] = quantity[1] + 1
+            }
+            else{
+                quantity[1] = quantity[1] - 1
+            }
+            
+
+        }
+        else if(coreDrive4.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[6] = quantity[6] + 1
+            }
+            else{
+                quantity[6] = quantity[6] - 1
+            }
+            
+
+        }
+        else if(coreDrive5.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[2] = quantity[2] + 1
+            }
+            else{
+                quantity[2] = quantity[2] - 1
+            }
+            
+
+        }
+        else if(coreDrive6.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[5] = quantity[5] + 1
+            }
+            else{
+                quantity[5] = quantity[5] - 1
+            }
+            
+
+        }
+        else if(coreDrive7.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[3] = quantity[3] + 1
+            }
+            else{
+                quantity[3] = quantity[3] - 1
+            }
+            
+
+        }
+        else if(coreDrive8.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[4] = quantity[4] + 1
+            }
+            else{
+                quantity[4] = quantity[4] - 1
+            }
+
+            
+
+        }
+        //console.log("quantity ", quantity)
+        setTechniqueQuantitys(quantity)
+    }
     const handleCheckboxChange = (e) =>{
         const { value, checked } = e.target;
         var updatedTechniques = null
         if (checked) {
             updatedTechniques = [...chosenTechniques, value]
             addTechnique();
+            updateRadarGraph(value, "add")
         } else {
             updatedTechniques = chosenTechniques.filter((technique) => technique !== value);
             subtractTechnique();
+            updateRadarGraph(value, "subtract")
         }
 
         setChosenTechniques(updatedTechniques)
@@ -412,6 +509,13 @@ export default function ChooseTechniquePage(searchParams){
                         </div>
                         
                     </div>
+                </div>
+
+
+                <div className="radar-chart">
+                    <RadarGraph
+                        techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                    />
                 </div>
 
                 {coreDrive1 && (
