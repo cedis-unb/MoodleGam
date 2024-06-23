@@ -196,9 +196,9 @@ export default function OctalysisContent(){
                             <p>
                                 Chou em sua busca por entender o que deixam os jogos tão cativantes desenvolveu
                                 um Framework de design de gamificação que agrupa suas técnicas, no que ele chamou
-                                de Core Drives. Cada Core Drive reúne um sentimento que a pessoa pode sentir ao
-                                experimentar as técnicas do Core Drive específico, por exemplo, um deles recebeu o nome:
-                                perda e rejeição. Ao todo, conseguiu reunir oito Core Drives e os distribuiu
+                                de Core Drives, cada Core Drive reúne elementos que alimentam a motivação de cada 
+                                pessoa, como por exemplo: Influência Social, Imprevisibilidade, Realização, 
+                                Impaciência, etc. Ao todo, conseguiu reunir oito Core Drives e os distribuiu
                                 em uma representação gráfica de um octógono, e nomeou o Framework como Octalysis.
                             </p>
                         </li>

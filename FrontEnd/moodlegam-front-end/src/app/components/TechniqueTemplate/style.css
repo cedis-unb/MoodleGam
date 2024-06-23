@@ -55,6 +55,7 @@
 .tech-description-text{
     color: white;
     padding-left: 1rem;
+    padding-right: 2rem;
     border-left-width: 3px;
     border-left-color: var(--light-gray);
     border-top-left-radius: 5px;
