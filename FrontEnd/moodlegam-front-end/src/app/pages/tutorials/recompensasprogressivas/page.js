@@ -1,10 +1,10 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function RitmoDePremios(){
+export default function RecompensasProgressivas(){
 
 
 
@@ -13,24 +13,26 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Recompensas Progressivas</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Rolling Rewards</i></h2>
                     
-                    <ExtrinsicBox/>
+                    
                     <BlackHatBox/>
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            "Recompensas Progressivas" é uma estratégia de gamificação que envolve o 
+                            fornecimento de prêmios ou benefícios aos usuários de maneira gradual ou sequencial. 
+                            Isso pode aumentar o engajamento dos usuários, incentivando a continuidade e o 
+                            progresso constante.
 
                         </p>
                     </div>

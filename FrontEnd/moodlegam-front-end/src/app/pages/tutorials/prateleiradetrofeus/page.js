@@ -1,10 +1,9 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-import BlackHatBox from "@/app/components/BlackHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 
-export default function RitmoDePremios(){
+export default function PrateleiraDeTrofeus(){
 
 
 
@@ -13,25 +12,27 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Prateleira de Troféus</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Trophy Shelves</i></h2>
                     
-                    <ExtrinsicBox/>
-                    <BlackHatBox/>
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
-
+                            São mecanismos que permitem ao usuário mostrar 
+                            implicitamente do que se orgulha. "Prateleira de 
+                            Troféus" é uma estratégia de gamificação que 
+                            permite aos usuários exibir suas conquistas e 
+                            recompensas. Isso cria um senso de realização e 
+                            progresso, incentivando a continuidade e a 
+                            dedicação do usuário à tarefa ou atividade.
                         </p>
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>

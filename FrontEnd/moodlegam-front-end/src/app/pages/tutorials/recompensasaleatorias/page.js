@@ -1,10 +1,10 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function RitmoDePremios(){
+export default function RecompensasAleatorias(){
 
 
 
@@ -13,24 +13,26 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Recompensas Aleatórias</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Mystery Boxes / Random Rewards</i></h2>
                     
-                    <ExtrinsicBox/>
+                    
                     <BlackHatBox/>
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            "Caixas Misteriosas" ou "Recompensas Aleatórias" é uma estratégia de gamificação que 
+                            envolve oferecer recompensas ou prêmios que são desconhecidos pelo usuário até que 
+                            ele os receba ou os desbloqueie. Isso pode criar um senso de expectativa e emoção, 
+                            pois os usuários não sabem o que vão receber.
 
                         </p>
                     </div>

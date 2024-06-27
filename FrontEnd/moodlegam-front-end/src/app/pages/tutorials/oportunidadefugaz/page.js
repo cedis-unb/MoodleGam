@@ -1,10 +1,9 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function RitmoDePremios(){
+export default function OportunidadeFugaz(){
 
 
 
@@ -13,24 +12,32 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Oportunidade Fugaz</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
                     
-                    <ExtrinsicBox/>
+                    
                     <BlackHatBox/>
+                    
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
+                            o usuário não tomar a ação necessária imediatamente.
+
+                            "Oportunidade Fugaz" é uma estratégia de 
+                            gamificação que cria uma sensação de urgência ao 
+                            apresentar uma oportunidade ou recompensa que 
+                            está disponível por tempo limitado. 
+                            Essa técnica utiliza a psicologia do medo 
+                            de perder algo (FOMO) para motivar os usuários 
+                            a agirem rapidamente.
 
                         </p>
                     </div>

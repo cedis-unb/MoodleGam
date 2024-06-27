@@ -1,10 +1,9 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-import BlackHatBox from "@/app/components/BlackHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 
-export default function RitmoDePremios(){
+export default function Mentoria(){
 
 
 
@@ -13,24 +12,26 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Mentoria</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Mentorship</i></h2>
                     
-                    <ExtrinsicBox/>
-                    <BlackHatBox/>
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            Quando alguém mais experiente (mentor) orienta um novato com suas tarefas.
+                            Muito útil em gamificações que requerem motivação sustentada. "Mentoria" é uma 
+                            estratégia de gamificação que envolve a orientação de um usuário mais experiente 
+                            para ajudar um usuário menos experiente. Isso pode aumentar a confiança do usuário 
+                            novato, acelerar a curva de aprendizado e fortalecer a comunidade de usuários ao 
+                            promover a cooperação e o compartilhamento de conhecimento.
 
                         </p>
                     </div>

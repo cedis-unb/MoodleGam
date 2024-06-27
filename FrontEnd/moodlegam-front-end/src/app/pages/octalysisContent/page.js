@@ -397,7 +397,10 @@ export default function OctalysisContent(){
                                     coreDrive.hat === 'white' ?
                                     (<WhiteHatBox/>)
                                     :
+                                    coreDrive.hat === 'black' ?
                                     (<BlackHatBox/>)
+                                    :
+                                    ''
                                     :
                                     ''
                                 }
@@ -406,7 +409,10 @@ export default function OctalysisContent(){
                                     coreDrive.motivation === 'intrinsic' ?
                                     (<IntrinsicBox/>)
                                     :
+                                    coreDrive.motivation === 'extrinsic'?
                                     (<ExtrinsicBox/>)
+                                    :
+                                    ''
                                     :
                                     ''
                                 }

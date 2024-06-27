@@ -1,10 +1,10 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function RitmoDePremios(){
+export default function IntervalosFixos(){
 
 
 
@@ -13,26 +13,29 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Intervalos Fixos</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Fixed Intervals</i></h2>
                     
-                    <ExtrinsicBox/>
                     <BlackHatBox/>
+                    <ExtrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
-
+                            "Intervalos Fixos" é uma estratégia de gamificação que 
+                            envolve a entrega de recompensas ou o acionamento de eventos 
+                            em períodos regulares. Esta técnica pode ajudar a manter a 
+                            participação e o engajamento do usuário, incentivando-o a 
+                            retornar ao sistema de jogo ou à atividade após o término 
+                            de cada intervalo.
                         </p>
+                        
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                 </div>
@@ -47,19 +50,19 @@ export default function RitmoDePremios(){
                         </div>
                         
                         <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <Image 
+                                src="/img/logo_image.png"
+                                width={500}
+                                height={500}
+                                unoptimized={true}
+                            />
 
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
-                                </p>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
+                                more recently with desktop publishing software like Aldus PageMaker including versions of 
+                                Lorem Ipsum.
+                            </p>
                             </div>
                     </div>
                     

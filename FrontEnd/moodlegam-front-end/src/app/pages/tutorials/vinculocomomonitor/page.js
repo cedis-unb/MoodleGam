@@ -2,9 +2,8 @@ import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function RitmoDePremios(){
+export default function VinculoComOMonitor(){
 
 
 
@@ -13,24 +12,34 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Vínculo com o Monitor</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Monitor Attachment</i></h2>
                     
                     <ExtrinsicBox/>
-                    <BlackHatBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            Esta técnica de jogo que permite que as pessoas 
+                            desenvolvem de forma acentuada a sensação de propriedade 
+                            de (ou em direção) a algo. Isto é feito através da 
+                            indução de um monitoramento constante ou atenção foca 
+                            sobre um determinado item de propriedade do jogador. 
+                            "Vínculo com o Monitor" é uma estratégia de 
+                            gamificação que envolve criar uma conexão 
+                            emocional entre o usuário e um elemento ou 
+                            personagem do jogo, neste caso, o monitor, 
+                            guia ou mentor. 
+                            Esta técnica de gamificação tem o objetivo 
+                            de aumentar o engajamento e a lealdade do
+                            usuário através do estabelecimento de um relacionamento 
+                            emocional.
 
                         </p>
                     </div>

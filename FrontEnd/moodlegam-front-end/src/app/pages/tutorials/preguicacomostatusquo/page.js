@@ -1,10 +1,9 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function RitmoDePremios(){
+export default function PreguicaComoStatusQuo(){
 
 
 
@@ -13,24 +12,32 @@ export default function RitmoDePremios(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Ritmo de Premios</h1>
+                    <h1>Preguiça Como Status Quo</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Prize Pacing</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Status Quo Sloth</i></h2>
                     
-                    <ExtrinsicBox/>
+                    
                     <BlackHatBox/>
+                    
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
-                            recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
-                            Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
+                            "Preguiça como Status Quo" é uma estratégia de gamificação 
+                            que se baseia na tendência humana de resistir a mudanças e 
+                            preferir manter as coisas como estão. Ao criar um sistema 
+                            em que manter o status quo é atraente ou recompensado, 
+                            os usuários podem ser incentivados a continuar um certo 
+                            comportamento ou atividade.
+
+                            Às vezes parte a Perda & Rejeição vem sob a forma de 
+                            simplesmente não querer mudar o seu comportamento, 
+                            a tendência preguiçosa de manter o estado comportamental por inércia.
 
                         </p>
                     </div>
