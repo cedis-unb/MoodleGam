@@ -5,7 +5,7 @@ import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import Link from "next/link";
 
-export default function Pontos(){
+export default function EmblemasOuInsignias(){
 
 
 
@@ -14,12 +14,12 @@ export default function Pontos(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Pontos</h1>
+                    <h1>Emblemas ou Insígnias</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Points</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Badges</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -28,10 +28,23 @@ export default function Pontos(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A pontuação é utilizada para manter a contagem do progresso do jogador. "Pontos" é uma estratégia de gamificação 
-                        muito comum que envolve conceder aos usuários pontos por completar certas ações ou atingir certos objetivos. 
-                        Os pontos funcionam como um sistema de recompensa quantificável que pode aumentar a motivação do usuário, 
-                        proporcionar feedback imediato e criar uma sensação de progresso e realização.
+                            "Emblemas" ou "Insígnias" são uma estratégia 
+                            popular de gamificação que envolve premiar os 
+                            usuários com distintivos virtuais para 
+                            reconhecer suas conquistas ou habilidades. 
+                            Este método é eficaz para incentivar os 
+                            usuários a alcançar objetivos, aprender 
+                            novas habilidades ou participar de certas 
+                            atividades.
+
+                            Os emblemas podem vir de várias formas - estrelas, 
+                            cintos, chapéus, uniformes, troféus, 
+                            medalhas, etc. 
+                            Estes símbolos permitem 
+                            que o jogador demonstre de maneira clara, tanto para sim quanto para os outros, 
+                            suas conquistas e realizações.
+
+
 
                         </p>
                     </div>
@@ -62,24 +75,36 @@ export default function Pontos(){
                         </div>
 
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">BlockGame</span></h3>
-                            <a target="_blank" href="https://moodle.org/plugins/block_game">(https://moodle.org/plugins/block_game)</a>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Open Badge Factory</span></h3>
+                            <a target="_blank" href="https://moodle.org/plugins/local_obf">(https://moodle.org/plugins/local_obf)</a>
                         </div>
 
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Level UP XP</span></h3>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Level UP XP+</span></h3>
                             <a target="_blank" href="https://moodle.org/plugins/block_xp">(https://moodle.org/plugins/block_xp)</a>
                         </div>
                         
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Ranking Block</span></h3>
-                            <a target="_blank" href="https://moodle.org/plugins/block_ranking">(https://moodle.org/plugins/block_ranking)</a>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">UNEDTrivial</span></h3>
+                            <a target="_blank" href="https://moodle.org/plugins/mod_unedtrivial">(https://moodle.org/plugins/mod_unedtrivial)</a>
                         </div>
 
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">H5P</span></h3>
-                            <a target="_blank" href="https://h5p.org/content-types-and-applications">(https://h5p.org/content-types-and-applications)</a>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Completion Levels</span></h3>
+                            <a target="_blank" href="https://moodle.org/plugins/block_completion_levels">(https://moodle.org/plugins/block_completion_levels)</a>
                         </div>
+
+                        <div className="plugin-name-link">
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Badge Ladder</span></h3>
+                            <a target="_blank" href="https://moodle.org/plugins/local_bs_badge_ladder">(https://moodle.org/plugins/local_bs_badge_ladder)</a>
+                        </div>
+
+                        <div className="plugin-name-link">
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Stamp Collection</span></h3>
+                            <a target="_blank" href="https://moodle.org/plugins/mod_stampcoll">(https://moodle.org/plugins/mod_stampcoll)</a>
+                        </div>
+
+                        
                         
                         <div className="how-to-install">
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>

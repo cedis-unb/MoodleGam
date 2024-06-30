@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function EscolhaBrilhante(){
+export default function AlmocoConquistado(){
 
 
 
@@ -13,12 +13,12 @@ export default function EscolhaBrilhante(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Escolha Brilhante</h1>
+                    <h1>Lista de Missões</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Glowing Choice</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Quest List</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,11 +27,12 @@ export default function EscolhaBrilhante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Escolha Brilhante" é uma estratégia de gamificação que envolve 
-                            destacar ou ressaltar uma opção específica para orientar os 
-                            usuários em uma determinada direção. Isso pode facilitar a 
-                            tomada de decisão e ajudar os usuários a entenderem melhor qual 
-                            ação eles devem realizar em seguida.
+                            A "Lista de Missões" é uma estratégia na gamificação que envolve apresentar 
+                            aos usuários uma série de tarefas ou objetivos a serem alcançados. As missões 
+                            fornecem uma estrutura clara para o engajamento do usuário e criam um senso de 
+                            progresso e realização à medida que cada tarefa é concluída. A conclusão de missões 
+                            muitas vezes leva a recompensas, aumentando ainda mais a motivação.
+
 
                         </p>
                     </div>
@@ -57,10 +58,14 @@ export default function EscolhaBrilhante(){
                                 
 
                                 <p>
-                                    Em uma plataforma de aprendizado online, a "Escolha Brilhante" pode ser usada 
-                                    para destacar um curso específico ou um recurso de aprendizado que os alunos 
-                                    devem utilizar. Isso pode orientar os alunos na direção certa e facilitar a 
-                                    navegação pela plataforma.
+                                    Em um curso online, a "lista de missões" pode ser uma série de aulas, 
+                                    tarefas ou projetos que os estudantes precisam concluir para passar no curso.
+                                    <br></br><br></br>
+                                    Ao discutir a técnica da "Lista de Missões", é importante notar seu potencial para aumentar o engajamento e a motivação do usuário. Ao fornecer uma estrutura clara e um caminho para o progresso, a "Lista de Missões" pode ajudar os usuários a se sentirem mais envolvidos e a alcançar seus objetivos.
+
+                                    No entanto, é crucial garantir que as missões sejam relevantes, interessantes e 
+                                    desafiadoras para os usuários. Além disso, as recompensas por completar as missões 
+                                    devem ser significativas e proporcionais ao esforço necessário para completá-las.
                                 </p>
                             </div>
                     </div>

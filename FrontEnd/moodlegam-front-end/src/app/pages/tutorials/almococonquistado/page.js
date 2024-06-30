@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function EscolhaBrilhante(){
+export default function AlmocoConquistado(){
 
 
 
@@ -13,12 +13,12 @@ export default function EscolhaBrilhante(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Escolha Brilhante</h1>
+                    <h1>Almoço Conquistado</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Glowing Choice</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Earned Lunch/Fixed Actions Rewards</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,11 +27,11 @@ export default function EscolhaBrilhante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Escolha Brilhante" é uma estratégia de gamificação que envolve 
-                            destacar ou ressaltar uma opção específica para orientar os 
-                            usuários em uma determinada direção. Isso pode facilitar a 
-                            tomada de decisão e ajudar os usuários a entenderem melhor qual 
-                            ação eles devem realizar em seguida.
+                            A técnica "Almoço Conquistado" que também é conhecida como "Recompensas por 
+                            Ações Fixas" é uma estratégia de gamificação que envolve dar aos usuários recompensas 
+                            previsíveis e consistentes em resposta a ações específicas. Esta estrátegia é eficaz 
+                            porque cria uma conexão direta e clara entre o comportamento do usuário e a 
+                            recompensa recebida, incentivando os usuários a repetirem essas ações.
 
                         </p>
                     </div>
@@ -57,10 +57,18 @@ export default function EscolhaBrilhante(){
                                 
 
                                 <p>
-                                    Em uma plataforma de aprendizado online, a "Escolha Brilhante" pode ser usada 
-                                    para destacar um curso específico ou um recurso de aprendizado que os alunos 
-                                    devem utilizar. Isso pode orientar os alunos na direção certa e facilitar a 
-                                    navegação pela plataforma.
+                                    Em uma plataforma de aprendizado online, os estudantes podem 
+                                    ganhar pontos ou emblemas cada vez que concluem um curso ou passam em um teste. 
+                                    Esses pontos podem, então, ser usados para desbloquear conteúdos adicionais ou 
+                                    benefícios especiais.
+                                    <br></br> <br></br>
+                                    Ao refletir sobre a técnica "Recompensas por Ações Fixas" ou "Almoço Conquistado", 
+                                    é importante considerar sua eficácia em estabelecer uma conexão clara entre ações e 
+                                    recompensas, incentivando comportamentos desejados.
+
+                                    No entanto, é necessário garantir que as recompensas sejam valiosas e relevantes 
+                                    para o usuário, e que as ações necessárias para ganhar as recompensas sejam claras, 
+                                    alcançáveis e alinhadas com os objetivos gerais do sistema.
                                 </p>
                             </div>
                     </div>

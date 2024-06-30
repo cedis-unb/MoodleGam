@@ -45,8 +45,13 @@ export default function BarraDeProgresso(){
                             
                             <div className="tech-plugins">
                                 <div className="plugin-name-link">
-                                    <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                                    <a>(www.moodle.com.br)</a>
+                                    <h3 id="plugin-title">Plugin: <span id="plugin-name">BlockGame</span></h3>
+                                    <a href="https://moodle.org/plugins/block_game">(https://moodle.org/plugins/block_game)</a>
+                                </div>
+
+                                <div className="plugin-name-link">
+                                    <h3 id="plugin-title">Plugin: <span id="plugin-name">Completion Levels</span></h3>
+                                    <a href="https://moodle.org/plugins/block_completion_levels">(https://moodle.org/plugins/block_completion_levels)</a>
                                 </div>
                                 
                                 <div className="how-to-install">

@@ -54,26 +54,29 @@ export default function Elitismo(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
+                    <div className="plugin-name-link">
+                            <h3 id="plugin-title">
+                                Plugin: 
+                                <span id="plugin-name">
+                                    No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
+                                    existe uma forma de implementar em uma disciplina, que é descrita abaixo.
+                                </span>
+                            </h3>
+                        
                         </div>
                         
                         <div className="how-to-install">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <Image 
-                                src="/img/logo_image.png"
-                                width={500}
-                                height={500}
-                                unoptimized={true}
-                            />
+
 
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                Lorem Ipsum.
+                                Em programas de treinamento ou aprendizagem, a técnica "Elitismo" 
+                                pode ser utilizada para motivar os participantes a se esforçarem e 
+                                alcançarem um alto nível de desempenho. Por exemplo, um programa de 
+                                treinamento corporativo pode premiar os melhores desempenhos com 
+                                certificações especiais, acesso a eventos exclusivos ou oportunidades 
+                                de avanço na carreira.
                             </p>
-                            </div>
+                        </div>
                     </div>
                     
                 </div>

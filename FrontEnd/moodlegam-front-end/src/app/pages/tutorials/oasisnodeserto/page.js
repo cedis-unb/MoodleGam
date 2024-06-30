@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function EscolhaBrilhante(){
+export default function OasisNoDeserto(){
 
 
 
@@ -13,12 +13,12 @@ export default function EscolhaBrilhante(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Escolha Brilhante</h1>
+                    <h1>Oásis no Deserto</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Glowing Choice</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Desert Oasis</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,11 +27,12 @@ export default function EscolhaBrilhante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Escolha Brilhante" é uma estratégia de gamificação que envolve 
-                            destacar ou ressaltar uma opção específica para orientar os 
-                            usuários em uma determinada direção. Isso pode facilitar a 
-                            tomada de decisão e ajudar os usuários a entenderem melhor qual 
-                            ação eles devem realizar em seguida.
+                            Essa técnica vem do conceito de Oasis (verde e suculento) o que sugere, 
+                            inconscientemente, que há um objetivo por detrás desta opção. "Oásis no Deserto" 
+                            é uma estratégia de gamificação que envolve proporcionar um alívio ou recompensa 
+                            aos usuários após uma tarefa difícil ou um período de esforço intenso. 
+                            Este método pode ajudar a manter a motivação do usuário, dando-lhe algo para 
+                            esperar e recompensando-o pelo seu trabalho duro.
 
                         </p>
                     </div>
@@ -57,10 +58,18 @@ export default function EscolhaBrilhante(){
                                 
 
                                 <p>
-                                    Em uma plataforma de aprendizado online, a "Escolha Brilhante" pode ser usada 
-                                    para destacar um curso específico ou um recurso de aprendizado que os alunos 
-                                    devem utilizar. Isso pode orientar os alunos na direção certa e facilitar a 
-                                    navegação pela plataforma.
+                                    Em um contexto educacional, um professor pode planejar uma atividade divertida ou 
+                                    um dia de jogo após uma série de testes ou exames. Este "oásis" proporciona aos 
+                                    alunos uma pausa bem-vinda do estudo intensivo e uma oportunidade para relaxar 
+                                    e recarregar as energias.
+                                    <br></br><br></br>
+                                    Ao discutir a técnica "Oásis no Deserto", é importante entender seu papel na 
+                                    manutenção da motivação do usuário. Ao proporcionar um alívio ou recompensa após um 
+                                    período de esforço intenso, você pode ajudar a manter a motivação do usuário e a 
+                                    evitar a fadiga ou o desgaste.
+
+                                    No entanto, é crucial que o "oásis" seja relevante e valioso para o usuário, 
+                                    e que seja visto como uma recompensa justa pelo seu trabalho árduo.
                                 </p>
                             </div>
                     </div>

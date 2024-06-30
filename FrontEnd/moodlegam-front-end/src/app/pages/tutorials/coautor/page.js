@@ -3,7 +3,8 @@ import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 
-export default function Narrativa(){
+
+export default function Coautor(){
 
 
 
@@ -11,11 +12,11 @@ export default function Narrativa(){
         <Background>
             <div className="tech-template-body">
                 <div className="tech-template-header">
-                    <h1>Narrativa</h1>
+                    <h1>Coautor</h1>
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Narrative</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Co-Creator</i></h2>
                     <WhiteHatBox/>
                 </div>
 
@@ -23,13 +24,15 @@ export default function Narrativa(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A maioria dos jogos começam com uma narrativa que dá ao jogador algum contexto sobre por que eles deveriam jogar o jogo.
-                        <br></br> <br></br>
-                        A técnica da "Narrativa" é um recurso amplamente utilizado em gamificação para envolver e motivar os usuários através da contação de histórias. 
-                        Esse método pode criar um contexto atraente e imersivo para uma experiência de gamificação, tornando-a mais envolvente e interessante. 
-                        A narrativa também pode fornecer estrutura e significado para as atividades e metas de gamificação, ajudando os usuários a entenderem e 
-                        se conectarem com a gamificação em um nível mais profundo
+                            Essa técnica refere-se à incorporação de elementos de jogo que envolvem os
+                            participantes como coautores ou colaboradores ativos na criação ou 
+                            construção de algo dentro do contexto em que a gamificação é aplicada.
 
+                            A técnica "Coautor" ou "Co-Criador" busca promover a participação ativa e a 
+                            criatividade dos participantes, permitindo que eles contribuam com ideias, 
+                            soluções ou conteúdos para moldar a experiência de jogo ou o resultado 
+                            final de um projeto. Essa abordagem incentiva a colaboração, o senso de 
+                            propriedade e a sensação de realização dos participantes.
                         </p>
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
@@ -54,11 +57,12 @@ export default function Narrativa(){
 
 
                             <p>
-                                Muitos cursos on-line e sistemas de aprendizagem usam a 
-                                narrativa para tornar o conteúdo do curso mais envolvente. 
-                                Por exemplo, um curso de história pode apresentar o conteúdo 
-                                como uma série de histórias interligadas, com cada lição 
-                                apresentando um novo "capítulo" na história.
+                                Na área da educação e treinamento, a técnica "Coautor" pode ser aplicada para 
+                                envolver os alunos como coautores no processo de aprendizagem. Por exemplo, 
+                                em um curso online, os participantes podem ser convidados a criar conteúdos, 
+                                como apresentações ou projetos colaborativos, que serão compartilhados com a turma. 
+                                Essa abordagem gamificada estimula a participação ativa, o compartilhamento de 
+                                conhecimento e a co-criação de um ambiente de aprendizagem enriquecedor.
                             </p>
                         </div>
 
