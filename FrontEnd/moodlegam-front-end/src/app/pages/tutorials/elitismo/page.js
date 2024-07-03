@@ -54,30 +54,31 @@ export default function Elitismo(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                    <div className="plugin-name-link">
-                            <h3 id="plugin-title">
-                                Plugin: 
-                                <span id="plugin-name">
-                                    No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
-                                    existe uma forma de implementar em uma disciplina, que é descrita abaixo.
-                                </span>
-                            </h3>
-                        
-                        </div>
-                        
-                        <div className="how-to-install">
+
+                        <div className="plugin-name-link">
+                                <h3 id="plugin-title">
+                                    Plugin: 
+                                    <span id="plugin-name">
+                                        No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
+                                        existe uma forma de implementar em uma disciplina, que é descrita abaixo.
+                                    </span>
+                                </h3>
+                            
+                            </div>
+                            
+                            <div className="how-to-install">
 
 
-                            <p>
-                                Em programas de treinamento ou aprendizagem, a técnica "Elitismo" 
-                                pode ser utilizada para motivar os participantes a se esforçarem e 
-                                alcançarem um alto nível de desempenho. Por exemplo, um programa de 
-                                treinamento corporativo pode premiar os melhores desempenhos com 
-                                certificações especiais, acesso a eventos exclusivos ou oportunidades 
-                                de avanço na carreira.
-                            </p>
+                                <p>
+                                    Em programas de treinamento ou aprendizagem, a técnica "Elitismo" 
+                                    pode ser utilizada para motivar os participantes a se esforçarem e 
+                                    alcançarem um alto nível de desempenho. Por exemplo, um programa de 
+                                    treinamento corporativo pode premiar os melhores desempenhos com 
+                                    certificações especiais, acesso a eventos exclusivos ou oportunidades 
+                                    de avanço na carreira.
+                                </p>
+                            </div>
                         </div>
-                    </div>
                     
                 </div>
             
