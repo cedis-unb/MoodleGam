@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function CeuDeBrigadeiro(){
+export default function ControleEmTempoReal(){
 
 
 
@@ -13,12 +13,12 @@ export default function CeuDeBrigadeiro(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Céu de Brigadeiro</h1>
+                    <h1>Controle em Tempo Real</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evergreen Mechanics</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Real-Time Control</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,14 +27,11 @@ export default function CeuDeBrigadeiro(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Onde o designer já não precisa adicionar continuamente 
-                            mais conteúdo para manter as atividades envolventes. 
-                            "Céu de Brigadeiro" é uma estratégia de gamificação 
-                            que envolve criar elementos do jogo que têm valor contínuo 
-                            e podem ser usados repetidamente sem perder seu apelo. 
-                            Isso ajuda a manter o engajamento e interesse do usuário 
-                            a longo prazo.
-
+                            Permite aos jogadores controlarem suas opções em tempo real em direção a uma meta. 
+                            "Controle em Tempo Real" é uma estratégia de gamificação que envolve permitir que 
+                            os usuários influenciem ou controlem eventos em tempo real. Isso pode ajudar a aumentar o 
+                            engajamento dos usuários, proporcionando uma sensação de agência e influência direta 
+                            sobre o resultado.
                         </p>
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
@@ -61,11 +58,20 @@ export default function CeuDeBrigadeiro(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, um sistema de emblemas que reconhece a 
-                                conclusão de cursos ou aquisição de novas habilidades pode ser considerado um 
-                                "céu de brigadeiro". Os alunos são incentivados a continuar aprendendo e 
-                                adquirindo novas insígnias.
-                                
+                                Em uma aula online ao vivo, os alunos podem ser convidados a responder 
+                                a perguntas ou participar de atividades em tempo real. Este é um exemplo 
+                                de "Controle em Tempo Real", pois permite que os alunos influenciem diretamente a aula.
+                                <br></br><br></br>
+                                Ao discutir a técnica de "Controle em Tempo Real", é 
+                                importante entender seu papel em aumentar o engajamento dos 
+                                usuários e proporcionar uma sensação de agência.
+
+                                No entanto, é crucial garantir que os usuários tenham as informações e o 
+                                suporte necessários para fazer escolhas informadas e que o controle em 
+                                tempo real não leve a situações de pressão ou estresse indevidos. 
+                                Além disso, é importante considerar a possibilidade de os usuários 
+                                fazerem escolhas que possam ter consequências negativas e planejar 
+                                como essas situações serão gerenciadas.
                             </p>
                         </div> 
                         

@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function CeuDeBrigadeiro(){
+export default function Impulsionadores(){
 
 
 
@@ -13,12 +13,12 @@ export default function CeuDeBrigadeiro(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Céu de Brigadeiro</h1>
+                    <h1>Impulsionadores</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evergreen Mechanics</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Boosters</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,13 +27,12 @@ export default function CeuDeBrigadeiro(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Onde o designer já não precisa adicionar continuamente 
-                            mais conteúdo para manter as atividades envolventes. 
-                            "Céu de Brigadeiro" é uma estratégia de gamificação 
-                            que envolve criar elementos do jogo que têm valor contínuo 
-                            e podem ser usados repetidamente sem perder seu apelo. 
-                            Isso ajuda a manter o engajamento e interesse do usuário 
-                            a longo prazo.
+                            Itens que deixam o jogador mais poderoso e eficaz por um certo tempo. 
+                            "Impulsionadores" é uma estratégia de gamificação que envolve fornecer aos 
+                            usuários melhorias temporárias ou permanentes que podem ajudá-los a progredir 
+                            mais rapidamente ou superar desafios mais facilmente. Isso pode aumentar o engajamento 
+                            dos usuários, ao proporcionar alívio de dificuldades, acelerar o progresso ou adicionar 
+                            um elemento de estratégia e tomada de decisões.
 
                         </p>
                     </div>
@@ -61,10 +60,11 @@ export default function CeuDeBrigadeiro(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, um sistema de emblemas que reconhece a 
-                                conclusão de cursos ou aquisição de novas habilidades pode ser considerado um 
-                                "céu de brigadeiro". Os alunos são incentivados a continuar aprendendo e 
-                                adquirindo novas insígnias.
+                                Em uma plataforma de aprendizado online, os alunos 
+                                podem ter acesso a "impulsionadores" como tutoriais adicionais, dicas ou 
+                                ferramentas de estudo que podem ajudá-los a entender melhor os materiais 
+                                do curso ou passar nos testes. Este é um exemplo de "Impulsionadores", 
+                                pois pode auxiliar os alunos em seu processo de aprendizado.
                                 
                             </p>
                         </div> 

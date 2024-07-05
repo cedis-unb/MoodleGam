@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function CeuDeBrigadeiro(){
+export default function EscolhasSignificativas(){
 
 
 
@@ -13,12 +13,12 @@ export default function CeuDeBrigadeiro(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Céu de Brigadeiro</h1>
+                    <h1>Escolhas Significativas / Escolha de Plantas</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evergreen Mechanics</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Plant Picker / Meaningful Choices</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,13 +27,19 @@ export default function CeuDeBrigadeiro(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Onde o designer já não precisa adicionar continuamente 
-                            mais conteúdo para manter as atividades envolventes. 
-                            "Céu de Brigadeiro" é uma estratégia de gamificação 
-                            que envolve criar elementos do jogo que têm valor contínuo 
-                            e podem ser usados repetidamente sem perder seu apelo. 
-                            Isso ajuda a manter o engajamento e interesse do usuário 
-                            a longo prazo.
+                            Além das escolhas que permitem que as pessoas se sentem como eles estão 
+                            habilitadas, existem opções que são verdadeiramente significativas e 
+                            demonstram preferências. Tais preferências são pessoais e não são 
+                            necessariamente superiores a outras. 
+                            Esta técnica assemelha-se a decidir o que plantar em um jardim, é muitas
+                            vezes uma preferência de estilo e estratégia, algo que é o cerne desta Motivação Básica.
+                            <br></br><br></br>
+                            "Escolha de Plantas / Escolhas Significativas" é uma estratégia de 
+                            gamificação que envolve permitir que os usuários façam escolhas 
+                            que têm um impacto real e significativo na sua experiência. 
+                            Isso pode ajudar a aumentar o engajamento dos usuários, 
+                            proporcionando uma sensação de agência e tornando a 
+                            experiência mais pessoal e relevante para eles.
 
                         </p>
                     </div>
@@ -61,10 +67,11 @@ export default function CeuDeBrigadeiro(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, um sistema de emblemas que reconhece a 
-                                conclusão de cursos ou aquisição de novas habilidades pode ser considerado um 
-                                "céu de brigadeiro". Os alunos são incentivados a continuar aprendendo e 
-                                adquirindo novas insígnias.
+                                Em uma plataforma de aprendizado online, os alunos podem 
+                                ter a opção de escolher entre diferentes trajetórias de aprendizado 
+                                ou tópicos de estudo, cada um dos quais pode levar a diferentes 
+                                resultados de aprendizado. Este é um exemplo de "Escolha de Plantas / Escolhas 
+                                Significativas", pois permite que os alunos moldem sua própria experiência de aprendizado.
                                 
                             </p>
                         </div> 

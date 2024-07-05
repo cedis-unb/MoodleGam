@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
@@ -41,26 +41,45 @@ export default function DesbloqueioDeMarco(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
+                        
+
+                        <div className="install-plugin-link">
+                            <h3 id="plugin-title">Tutorial de como instalar um plugin no Moodle:</h3>
+                            
+                            
+                            <Link
+                                href={{
+                                    pathname: `/pages/tutorials/instalarplugin`
+                                }}
+
+                                passHref
+                                legacyBehavior
+                            >
+                                <a target="_blank">
+                                    Clique para ver o tutorial
+                                </a>
+                            </Link>
+                        </div>
+
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Trail Format</span></h3>
+                            
+                            <div className="how-to-install">
+                                <p>Link para a página do plugin: <a  target="_blank" href="https://moodle.org/plugins/format_trail">https://moodle.org/plugins/format_trail</a></p>
+                                
+                            </div>
+                        </div>
+
+                        <div className="plugin-name-link">
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Level UP XP</span></h3>
+                            
+                            <div className="how-to-install">
+                                <p>Link para a página do plugin: <a  target="_blank" href="https://moodle.org/plugins/block_xp">https://moodle.org/plugins/block_xp</a></p>
+                                
+                            </div>
                         </div>
                         
-                        <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
-
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
+                        
                     </div>
                     
                 </div>

@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function CeuDeBrigadeiro(){
+export default function CombinacoesEmCadeia(){
 
 
 
@@ -13,12 +13,12 @@ export default function CeuDeBrigadeiro(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Céu de Brigadeiro</h1>
+                    <h1>Combinações em Cadeia</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evergreen Mechanics</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Chain Combos</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -27,13 +27,12 @@ export default function CeuDeBrigadeiro(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Onde o designer já não precisa adicionar continuamente 
-                            mais conteúdo para manter as atividades envolventes. 
-                            "Céu de Brigadeiro" é uma estratégia de gamificação 
-                            que envolve criar elementos do jogo que têm valor contínuo 
-                            e podem ser usados repetidamente sem perder seu apelo. 
-                            Isso ajuda a manter o engajamento e interesse do usuário 
-                            a longo prazo.
+                            Quando um conjunto encadeado de ações produz um efeito maior do que a soma individual 
+                            das partes. As "Combinações em Cadeia" são uma estratégia de gamificação que envolve 
+                            recompensar os usuários quando eles realizam uma série de ações ou tarefas em 
+                            uma sequência específica. Isso pode ajudar a motivar os usuários a se 
+                            envolverem mais profundamente e a explorar diferentes aspectos de uma experiência.
+
 
                         </p>
                     </div>
@@ -61,11 +60,11 @@ export default function CeuDeBrigadeiro(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, um sistema de emblemas que reconhece a 
-                                conclusão de cursos ou aquisição de novas habilidades pode ser considerado um 
-                                "céu de brigadeiro". Os alunos são incentivados a continuar aprendendo e 
-                                adquirindo novas insígnias.
-                                
+                                Em uma plataforma de aprendizado online, os alunos podem 
+                                receber uma recompensa extra por completar uma série de cursos 
+                                relacionados em uma ordem específica. Este é um exemplo de 
+                                "Combinações em Cadeia", pois incentiva os alunos a aprofundar 
+                                seu conhecimento em uma área específica.
                             </p>
                         </div> 
                         
