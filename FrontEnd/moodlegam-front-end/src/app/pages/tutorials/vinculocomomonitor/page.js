@@ -50,26 +50,28 @@ export default function VinculoComOMonitor(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
-                        </div>
-                        
-                        <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
+                        <h3 id="plugin-title">
+                            Plugin: 
+                            <span id="plugin-name">
+                                No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
+                                existe uma forma de implementar em uma disciplina, que é descrita abaixo.
+                            </span>
+                                
+                        </h3>
+                    </div>
 
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
+                    <div className="how-to-install">
+
+
+                        <p>
+                            Em plataformas de aprendizado online, tutores ou mentores virtuais podem estabelecer um 
+                            "vínculo com o monitor" com os alunos. Isso pode aumentar o engajamento dos alunos e 
+                            melhorar seu desempenho acadêmico.
+                            <br></br><br></br>
+                            Ao aplicar a técnica de "Vínculo com o Monitor", é importante garantir que a interação 
+                            seja autêntica, útil e agradável. A personalização também pode aumentar a eficácia 
+                            dessa técnica, pois ajuda a criar uma conexão mais forte.
+                        </p>
                     </div>
                     
                 </div>
