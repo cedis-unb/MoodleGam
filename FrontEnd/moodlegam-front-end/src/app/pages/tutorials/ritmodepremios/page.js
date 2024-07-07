@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
@@ -41,26 +41,52 @@ export default function RitmoDePremios(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
+
+                        <div className="install-plugin-link">
+                            <h3 id="plugin-title">Tutorial de como instalar um plugin no Moodle:</h3>
+                            
+                            
+                            <Link
+                                href={{
+                                    pathname: `/pages/tutorials/instalarplugin`
+                                }}
+
+                                passHref
+                                legacyBehavior
+                            >
+                                <a target="_blank">
+                                    Clique para ver o tutorial
+                                </a>
+                            </Link>
                         </div>
-                        
-                        <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
+
+
+                        <div className="plugin-name-link">
+                            
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Stash</span></h3>
+
+                            <div className="how-to-install">
+                                <p>Link para a página do plugin: <a  target="_blank" href="https://moodle.org/plugins/block_stash">https://moodle.org/plugins/block_stash</a></p>
+                                <p>Link para a documentação do plugin: <a  target="_blank" href="https://docs.moodle.org/402/en/blocks/stash">https://docs.moodle.org/402/en/blocks/stash</a></p>
 
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
+                                    Como configurar: 
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/stash`
+                                        }}
+
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            Clique para ver o tutorial
+                                        </a>
+                                    </Link>
                                 </p>
                             </div>
+                        </div>
+
                     </div>
                     
                 </div>

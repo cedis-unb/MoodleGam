@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import BlackHatBox from "@/app/components/BlackHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function Pendente(){
+export default function DinamicasDeCompromisso(){
 
 
 
@@ -13,12 +13,12 @@ export default function Pendente(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Pendente</h1>
+                    <h1>Dinâmicas de Compromisso</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Dangling</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Appointment Dynamics</i></h2>
                     
                     <BlackHatBox/>
                     <ExtrinsicBox/>
@@ -28,14 +28,13 @@ export default function Pendente(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pendente" ou "Suspense" é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
-                            objetivo que está apenas
-                            fora do alcance do usuário, mas pode ser obtida através de mais esforço ou engajamento. 
-                            Isso pode estimular a motivação e incentivarem os usuários a continuar interagindo com o sistema.
+                            "Dinâmicas de Compromisso" é uma estratégia de gamificação que envolve criar um evento ou 
+                            atividade que ocorre em um horário específico, incentivando os usuários a retornar ou 
+                            participar naquele momento. Isso pode ajudar a criar um hábito ou rotina, além de aumentar 
+                            o engajamento dos usuários.
 
-                            Essa técnica se baseia na constância, ao mostrar diversas vezes ao usuário 
-                            algo que ele ainda não pode ter, mas que com esforço ou engajamento, 
-                            ele poderá ter o que deseja.
+                            A técnica dá um momento exato e absoluto para que o usuário possa agir e 
+                            provocar algo na gamificação.
                         </p>
                         
                     </div>
@@ -46,18 +45,16 @@ export default function Pendente(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        
                         <div className="plugin-name-link">
                             <h3 id="plugin-title">
                                 Plugin: 
                                 <span id="plugin-name">
                                     No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
-                                    existe uma forma de implementar em uma disciplina, que é descrita abaixo.
+                                    existe uma forma de implementar em uma disciplina, que é utilizando a tarefa (<a href="https://producao-cead.gitbook.io/aprender-moodle/v/docentes-configuracoes-pedagogicas/configuracoes-pedagogicas/atividades/tarefa">Clique aqui</a>)
+                                    , ou olhando descrição abaixo.
                                 </span>
                             </h3>
 
-
-                            
                         
                         </div>
                         
@@ -65,13 +62,12 @@ export default function Pendente(){
 
 
                             <p>
-                                Em aplicativos de aprendizado, "Pendente" pode ser usado ao desbloquear o 
-                                próximo nível ou curso apenas depois que o usuário completar uma série de tarefas ou 
-                                desafios. Isso incentiva o aprendizado contínuo e o compromisso com o aplicativo.
+                                Em aplicativos de aprendizado de idiomas, as "Dinâmicas de Compromisso" podem ser usadas para 
+                                organizar aulas ao vivo ou eventos de prática de idiomas em horários específicos. Isso incentiva 
+                                os alunos a retornarem ao aplicativo naquele horário específico e ajuda a criar uma rotina de aprendizado.
 
                             </p>
                         </div>
-
                     </div>
                     
                 </div>

@@ -3,7 +3,7 @@ import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 
-export default function Mentoria(){
+export default function BotaoDaOstentacao(){
 
 
 
@@ -12,12 +12,12 @@ export default function Mentoria(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Mentoria</h1>
+                    <h1>Botão da Ostentação</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Mentorship</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Brag Buttons</i></h2>
                     
                     <IntrinsicBox/>
                 </div>
@@ -26,12 +26,13 @@ export default function Mentoria(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Quando alguém mais experiente (mentor) orienta um novato com suas tarefas.
-                            Muito útil em gamificações que requerem motivação sustentada. "Mentoria" é uma 
-                            estratégia de gamificação que envolve a orientação de um usuário mais experiente 
-                            para ajudar um usuário menos experiente. Isso pode aumentar a confiança do usuário 
-                            novato, acelerar a curva de aprendizado e fortalecer a comunidade de usuários ao 
-                            promover a cooperação e o compartilhamento de conhecimento.
+                            Botões de Ostentação (Brag buttons) é quando uma pessoa de forma explícita e 
+                            vocalmente expressa suas realizações e conquistas, enquanto que um Trophy 
+                            Shelf permite ao jogador mostrar implicitamente o que têm feito, mesmo sem 
+                            falar a respeito. "Botões de Ostentação" é uma estratégia de gamificação que 
+                            permite aos usuários compartilhar suas conquistas ou progresso com outros. 
+                            Isso pode aumentar o engajamento ao estimular a motivação intrínseca dos usuários 
+                            e encorajá-los a buscar maiores realizações.
 
                         </p>
                     </div>

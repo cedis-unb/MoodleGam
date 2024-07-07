@@ -41,26 +41,31 @@ export default function ContagemRegressiva(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
-                        </div>
-                        
-                        <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
 
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
+                        <div className="plugin-name-link">
+                            <h3 id="plugin-title">
+                                Plugin: 
+                                <span id="plugin-name">
+                                    No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
+                                    existe uma forma de implementar em uma disciplina, que é utilizando a tarefa (<a href="https://producao-cead.gitbook.io/aprender-moodle/v/docentes-configuracoes-pedagogicas/configuracoes-pedagogicas/atividades/tarefa">Clique aqui</a>)
+                                    , ou olhando descrição abaixo.
+                                </span>
+                            </h3>
+
+                        
+                        </div>
+
+
+                        <div className="how-to-install">
+
+
+                            <p>
+                                Em plataformas de aprendizado online, a "Contagem Regressiva" pode ser 
+                                utilizada para testes ou tarefas, incentivando os alunos a gerenciar seu tempo 
+                                efetivamente.
+                            </p>
+                        </div>
+
                     </div>
                     
                 </div>

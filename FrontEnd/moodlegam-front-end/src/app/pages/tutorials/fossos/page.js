@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import BlackHatBox from "@/app/components/BlackHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function Pendente(){
+export default function Fossos(){
 
 
 
@@ -13,12 +13,12 @@ export default function Pendente(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Pendente</h1>
+                    <h1>Fossos</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Dangling</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Moats</i></h2>
                     
                     <BlackHatBox/>
                     <ExtrinsicBox/>
@@ -28,14 +28,10 @@ export default function Pendente(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pendente" ou "Suspense" é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
-                            objetivo que está apenas
-                            fora do alcance do usuário, mas pode ser obtida através de mais esforço ou engajamento. 
-                            Isso pode estimular a motivação e incentivarem os usuários a continuar interagindo com o sistema.
-
-                            Essa técnica se baseia na constância, ao mostrar diversas vezes ao usuário 
-                            algo que ele ainda não pode ter, mas que com esforço ou engajamento, 
-                            ele poderá ter o que deseja.
+                            "Fossos" é uma estratégia de gamificação que envolve a criação de barreiras ou desafios 
+                            que os usuários devem superar para alcançar um objetivo. Isso pode aumentar o 
+                            engajamento dos usuários, ao adicionar um elemento de desafio e satisfação ao superar 
+                            obstáculos.
                         </p>
                         
                     </div>
@@ -65,12 +61,13 @@ export default function Pendente(){
 
 
                             <p>
-                                Em aplicativos de aprendizado, "Pendente" pode ser usado ao desbloquear o 
-                                próximo nível ou curso apenas depois que o usuário completar uma série de tarefas ou 
-                                desafios. Isso incentiva o aprendizado contínuo e o compromisso com o aplicativo.
+                                Em uma plataforma de aprendizado online, um "fosso" pode ser um exame ou projeto 
+                                final que os alunos devem concluir com sucesso para passar no curso. Isso cria um 
+                                desafio que os alunos devem superar, aumentando a satisfação quando conseguem.
 
                             </p>
                         </div>
+
 
                     </div>
                     

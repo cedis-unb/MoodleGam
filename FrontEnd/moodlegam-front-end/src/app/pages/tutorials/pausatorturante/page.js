@@ -4,7 +4,7 @@ import Background from "../../../components/Background";
 import BlackHatBox from "@/app/components/BlackHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 
-export default function Pendente(){
+export default function PausaTorturante(){
 
 
 
@@ -13,12 +13,12 @@ export default function Pendente(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Pendente</h1>
+                    <h1>Pausa Torturante</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Dangling</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Torture Break</i></h2>
                     
                     <BlackHatBox/>
                     <ExtrinsicBox/>
@@ -28,14 +28,13 @@ export default function Pendente(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pendente" ou "Suspense" é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
-                            objetivo que está apenas
-                            fora do alcance do usuário, mas pode ser obtida através de mais esforço ou engajamento. 
-                            Isso pode estimular a motivação e incentivarem os usuários a continuar interagindo com o sistema.
+                            "Pausa Torturante" é uma estratégia de gamificação que envolve criar uma expectativa ou 
+                            suspense que faz o usuário querer voltar para ver o resultado ou a continuação de algo. 
+                            Isso pode aumentar o engajamento dos usuários, mantendo-os em suspense e incentivando-os a 
+                            retornar regularmente à plataforma ou jogo.
 
-                            Essa técnica se baseia na constância, ao mostrar diversas vezes ao usuário 
-                            algo que ele ainda não pode ter, mas que com esforço ou engajamento, 
-                            ele poderá ter o que deseja.
+                            Nessa técnica o usuário deve esperar um intervalo de tempo, independentemente de suas ações. 
+                            Se o jogador permanecer colado ao monitor por horas, será de grande valia para a gamificação
                         </p>
                         
                     </div>
@@ -65,12 +64,23 @@ export default function Pendente(){
 
 
                             <p>
-                                Em aplicativos de aprendizado, "Pendente" pode ser usado ao desbloquear o 
-                                próximo nível ou curso apenas depois que o usuário completar uma série de tarefas ou 
-                                desafios. Isso incentiva o aprendizado contínuo e o compromisso com o aplicativo.
+                                Em um curso online, uma "Pausa Torturante" pode ser a promessa de revelar uma informação 
+                                importante ou interessante na próxima aula, incentivando os alunos a continuarem com o 
+                                curso.
+                                <br></br><br></br>
+                                Na prática, essa técnica pode funcionar da seguinte forma: Um professor passa uma tarefa
+                                para a turma, e essa tarefa deve conter uma dificuldade média, de forma que os alunos
+                                pensem bastante ou tenham muito trabalho para resolver o problema, mas nada que seja 
+                                impossível ou desanimador. Isso gera uma certa expectativa para a próxima 
+                                aula, e os estudantes ficarão curiosos para saber a solução do problema dado na tarefa.
+                                Dessa forma, os alunos darão atenção para às intruções passadas pelo professor durante a aula,
+                                gerando engajamento.
+
+                        
 
                             </p>
                         </div>
+
 
                     </div>
                     

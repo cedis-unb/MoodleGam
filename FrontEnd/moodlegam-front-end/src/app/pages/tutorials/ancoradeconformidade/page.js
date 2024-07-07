@@ -1,10 +1,9 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import BlackHatBox from "@/app/components/BlackHatBox"
-import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 
-export default function Pendente(){
+export default function AncoraDeConformidade(){
 
 
 
@@ -13,31 +12,27 @@ export default function Pendente(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Pendente</h1>
+                    <h1>Âncora de Conformidade</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Dangling</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Conformy Anchor</i></h2>
                     
-                    <BlackHatBox/>
-                    <ExtrinsicBox/>
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pendente" ou "Suspense" é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
-                            objetivo que está apenas
-                            fora do alcance do usuário, mas pode ser obtida através de mais esforço ou engajamento. 
-                            Isso pode estimular a motivação e incentivarem os usuários a continuar interagindo com o sistema.
-
-                            Essa técnica se baseia na constância, ao mostrar diversas vezes ao usuário 
-                            algo que ele ainda não pode ter, mas que com esforço ou engajamento, 
-                            ele poderá ter o que deseja.
+                            Cedo nós aprendemos sobre o poder das normas sociais. Esta técnica implementa este efeito em 
+                            produtos ou experiências mostrando, através de feedbacks, o quanto os jogadores estão próximos de 
+                            uma convenção social. "Âncora de Conformidade" é uma estratégia de gamificação que utiliza o desejo 
+                            humano natural de conformidade para motivar comportamentos desejáveis. Isso é feito destacando como 
+                            a maioria das pessoas está se comportando ou o que elas estão fazendo, criando assim um 'padrão' que 
+                            os outros são incentivados a seguir.
                         </p>
-                        
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                 </div>
@@ -47,6 +42,7 @@ export default function Pendente(){
                     
                     <div className="tech-plugins">
                         
+
                         <div className="plugin-name-link">
                             <h3 id="plugin-title">
                                 Plugin: 
@@ -65,9 +61,11 @@ export default function Pendente(){
 
 
                             <p>
-                                Em aplicativos de aprendizado, "Pendente" pode ser usado ao desbloquear o 
-                                próximo nível ou curso apenas depois que o usuário completar uma série de tarefas ou 
-                                desafios. Isso incentiva o aprendizado contínuo e o compromisso com o aplicativo.
+                                Em um aplicativo de leitura, os usuários podem ser incentivados a formar 
+                                clubes de leitura, discutir livros e recomendar títulos para outros usuários para 
+                                ganhar "Tesouros Sociais" na forma de descontos em livros, acesso a títulos 
+                                exclusivos ou recursos adicionais.
+                                
 
                             </p>
                         </div>

@@ -588,34 +588,34 @@ export default function EditSubjectPage(searchParams){
         var fileName = techniqueName.toLowerCase()
         fileName = fileName.split(' ').join('')
 
-        fileName = fileName.replace('ç', 'c')
+        fileName = fileName.replace(/ç/g, 'c')
 
-        fileName = fileName.replace('ã', 'a')
-        fileName = fileName.replace('á', 'a')
-        fileName = fileName.replace('â', 'a')
-        fileName = fileName.replace('à', 'a')
+        fileName = fileName.replace(/ã/g, 'a')
+        fileName = fileName.replace(/á/g, 'a')
+        fileName = fileName.replace(/â/g, 'a')
+        fileName = fileName.replace(/à/g, 'a')
 
-        fileName = fileName.replace('ẽ', 'e')
-        fileName = fileName.replace('é', 'e')
-        fileName = fileName.replace('ê', 'e')
-        fileName = fileName.replace('è', 'e')
+        fileName = fileName.replace(/ẽ/g, 'e')
+        fileName = fileName.replace(/é/g, 'e')
+        fileName = fileName.replace(/ê/g, 'e')
+        fileName = fileName.replace(/è/g, 'e')
 
-        fileName = fileName.replace('ĩ', 'i')
-        fileName = fileName.replace('í', 'i')
-        fileName = fileName.replace('î', 'i')
-        fileName = fileName.replace('ì', 'i')
-
-
-        fileName = fileName.replace('õ', 'o')
-        fileName = fileName.replace('ó', 'o')
-        fileName = fileName.replace('ô', 'o')
-        fileName = fileName.replace('ò', 'o')
+        fileName = fileName.replace(/ĩ/g, 'i')
+        fileName = fileName.replace(/í/g, 'i')
+        fileName = fileName.replace(/î/g, 'i')
+        fileName = fileName.replace(/ì/g, 'i')
 
 
-        fileName = fileName.replace('ũ', 'u')
-        fileName = fileName.replace('ú', 'u')
-        fileName = fileName.replace('û', 'u')
-        fileName = fileName.replace('ù', 'u')
+        fileName = fileName.replace(/õ/g, 'o')
+        fileName = fileName.replace(/ó/g, 'o')
+        fileName = fileName.replace(/ô/g, 'o')
+        fileName = fileName.replace(/ò/g, 'o')
+
+
+        fileName = fileName.replace(/ũ/g, 'u')
+        fileName = fileName.replace(/ú/g, 'u')
+        fileName = fileName.replace(/û/g, 'u')
+        fileName = fileName.replace(/ù/g, 'u')
 
         return fileName
     }

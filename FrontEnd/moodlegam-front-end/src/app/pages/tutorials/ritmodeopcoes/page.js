@@ -1,10 +1,10 @@
 import Link from "next/link";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
-import BlackHatBox from "@/app/components/BlackHatBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function IntervalosFixos(){
+export default function RitmoDeOpcoes(){
 
 
 
@@ -13,29 +13,26 @@ export default function IntervalosFixos(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Intervalos Fixos</h1>
+                    <h1>Ritmo de Opções</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Fixed Intervals</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Options Pacing</i></h2>
                     
-                    <BlackHatBox/>
                     <ExtrinsicBox/>
+                    <BlackHatBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Intervalos Fixos" é uma estratégia de gamificação que 
-                            envolve a entrega de recompensas ou o acionamento de eventos 
-                            em períodos regulares. Esta técnica pode ajudar a manter a 
-                            participação e o engajamento do usuário, incentivando-o a 
-                            retornar ao sistema de jogo ou à atividade após o término 
-                            de cada intervalo.
+                            "Ritmo de Opções" é uma estratégia de gamificação que envolve o desbloqueio progressivo 
+                            de opções e escolhas para os usuários conforme avançam ou alcançam certos marcos. 
+                            Isso pode ajudar a manter os usuários engajados, incentivando-os a continuar a 
+                            participar para desbloquear mais opções.
                         </p>
-                        
                     </div>
                     <h3>Este texto foi retirado de um material com autoria do Professor Doutor Sergio Antonio Andrade de Freitas</h3>
                 </div>
@@ -44,6 +41,7 @@ export default function IntervalosFixos(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
+
                         <div className="install-plugin-link">
                             <h3 id="plugin-title">Tutorial de como instalar um plugin no Moodle:</h3>
                             
@@ -65,27 +63,12 @@ export default function IntervalosFixos(){
 
                         <div className="plugin-name-link">
                             
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Stash</span></h3>
+                            <h3 id="plugin-title">Plugin: <span id="plugin-name">Trail Format</span></h3>
 
                             <div className="how-to-install">
-                                <p>Link para a página do plugin: <a  target="_blank" href="https://moodle.org/plugins/block_stash">https://moodle.org/plugins/block_stash</a></p>
-                                <p>Link para a documentação do plugin: <a  target="_blank" href="https://docs.moodle.org/402/en/blocks/stash">https://docs.moodle.org/402/en/blocks/stash</a></p>
+                                <p>Link para a página do plugin: <a  target="_blank" href="https://moodle.org/plugins/format_trail">https://moodle.org/plugins/format_trail</a></p>
 
-                                <p>
-                                    Como configurar: 
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/stash`
-                                        }}
-
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            Clique para ver o tutorial
-                                        </a>
-                                    </Link>
-                                </p>
+                                
                             </div>
                         </div>
 
