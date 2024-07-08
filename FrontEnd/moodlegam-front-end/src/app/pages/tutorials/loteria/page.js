@@ -1,9 +1,9 @@
-import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function OportunidadeFugaz(){
+export default function Loteria(){
 
 
 
@@ -12,32 +12,26 @@ export default function OportunidadeFugaz(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Oportunidade Fugaz</h1>
+                    <h1>Loteria</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Lottery - Rolling Rewards</i></h2>
                     
                     
                     <BlackHatBox/>
-                    
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
-                            o usuário não tomar a ação necessária imediatamente.
-
-                            "Oportunidade Fugaz" é uma estratégia de 
-                            gamificação que cria uma sensação de urgência ao 
-                            apresentar uma oportunidade ou recompensa que 
-                            está disponível por tempo limitado. 
-                            Essa técnica utiliza a psicologia do medo 
-                            de perder algo (FOMO) para motivar os usuários 
-                            a agirem rapidamente.
+                            "Loteria" é uma estratégia de gamificação que envolve a introdução de elementos de 
+                            sorte e aleatoriedade, na qual os usuários têm a oportunidade de ganhar 
+                            recompensas através de um sorteio aleatório. Essa técnica pode aumentar a 
+                            excitação e a antecipação, incentivando a participação e o engajamento dos usuários.
 
                         </p>
                     </div>
@@ -67,9 +61,11 @@ export default function OportunidadeFugaz(){
 
 
                             <p>
-                                Alguns aplicativos de ensino de idiomas oferecem desafios diários que devem 
-                                ser concluídos dentro de um determinado tempo. Isso incentiva os usuários a 
-                                se envolverem com o aplicativo diariamente.
+                                Em um ambiente de aprendizado, a "Loteria" pode ser usada para incentivar 
+                                a participação dos alunos. Por exemplo, os professores podem criar um 
+                                sorteio onde os alunos ganham entradas de cinema por completar tarefas, 
+                                participar ativamente das aulas ou alcançar bons resultados, com prêmios 
+                                sendo sorteados no final de um período.
                             </p>
                         </div>
 

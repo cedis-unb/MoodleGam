@@ -96,8 +96,8 @@ export default function UserProfilePage(){
                         
                         <Image
                             src="/img/edit.svg"
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                             unoptimized={true}
                         />
 
@@ -106,8 +106,8 @@ export default function UserProfilePage(){
                     </a>
                 </div>
                 
-                <p>Nome:  <span id="user-data">{user !== null ? user.name : ''}</span></p>
-                <p>E-mail:  <span id="user-data">{user !== null ? user.email : ''}</span></p>
+                <p id="user-info-line">Nome:  <span id="user-data">{user !== null ? user.name : ''}</span></p>
+                <p id="user-info-line">E-mail:  <span id="user-data">{user !== null ? user.email : ''}</span></p>
                 <a onClick={redirectChangePassword}>Alterar senha</a>
             </div>
 

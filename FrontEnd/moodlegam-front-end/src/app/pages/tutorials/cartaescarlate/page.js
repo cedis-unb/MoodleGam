@@ -3,7 +3,7 @@ import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function OportunidadeFugaz(){
+export default function CartaEscarlate(){
 
 
 
@@ -12,12 +12,12 @@ export default function OportunidadeFugaz(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Oportunidade Fugaz</h1>
+                    <h1>Carta Escarlate</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Scarlet Letter</i></h2>
                     
                     
                     <BlackHatBox/>
@@ -28,16 +28,11 @@ export default function OportunidadeFugaz(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
-                            o usuário não tomar a ação necessária imediatamente.
-
-                            "Oportunidade Fugaz" é uma estratégia de 
-                            gamificação que cria uma sensação de urgência ao 
-                            apresentar uma oportunidade ou recompensa que 
-                            está disponível por tempo limitado. 
-                            Essa técnica utiliza a psicologia do medo 
-                            de perder algo (FOMO) para motivar os usuários 
-                            a agirem rapidamente.
+                            "Carta Escarlate" é uma estratégia de gamificação que envolve a exposição 
+                            de um erro ou fracasso de um jogador para motivar uma mudança de comportamento 
+                            ou incentivar a melhoria. O nome faz referência ao romance de Nathaniel Hawthorne, 
+                            onde a personagem principal é obrigada a usar uma letra "A" escarlate como uma 
+                            marca de sua transgressão.
 
                         </p>
                     </div>
@@ -48,7 +43,6 @@ export default function OportunidadeFugaz(){
                     <h2>Como implementar</h2>
                     
                     <div className="tech-plugins">
-                        
                         <div className="plugin-name-link">
                             <h3 id="plugin-title">
                                 Plugin: 
@@ -67,12 +61,11 @@ export default function OportunidadeFugaz(){
 
 
                             <p>
-                                Alguns aplicativos de ensino de idiomas oferecem desafios diários que devem 
-                                ser concluídos dentro de um determinado tempo. Isso incentiva os usuários a 
-                                se envolverem com o aplicativo diariamente.
+                                Em um aplicativo de aprendizado de idiomas, a "Carta Escarlate" pode 
+                                ser utilizada para marcar palavras ou frases que o usuário frequentemente erra. 
+                                Isso pode motivar o usuário a concentrar seus esforços de estudo nessas áreas problemáticas.
                             </p>
                         </div>
-
                     </div>
                     
                 </div>

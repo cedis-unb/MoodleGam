@@ -1,9 +1,9 @@
-import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function OportunidadeFugaz(){
+export default function MiniMissoes(){
 
 
 
@@ -12,32 +12,26 @@ export default function OportunidadeFugaz(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Oportunidade Fugaz</h1>
+                    <h1>Mini Missões</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Mini Quests</i></h2>
                     
                     
                     <BlackHatBox/>
-                    
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
-                            o usuário não tomar a ação necessária imediatamente.
-
-                            "Oportunidade Fugaz" é uma estratégia de 
-                            gamificação que cria uma sensação de urgência ao 
-                            apresentar uma oportunidade ou recompensa que 
-                            está disponível por tempo limitado. 
-                            Essa técnica utiliza a psicologia do medo 
-                            de perder algo (FOMO) para motivar os usuários 
-                            a agirem rapidamente.
+                            "Mini Missões" é uma estratégia de gamificação que envolve a criação de pequenos 
+                            desafios ou tarefas que os usuários podem completar para progredir ou ganhar recompensas. 
+                            Essa técnica pode aumentar o engajamento e a satisfação dos usuários, 
+                            proporcionando-lhes objetivos claros e realizáveis e um senso de progresso e realização.
 
                         </p>
                     </div>
@@ -67,9 +61,10 @@ export default function OportunidadeFugaz(){
 
 
                             <p>
-                                Alguns aplicativos de ensino de idiomas oferecem desafios diários que devem 
-                                ser concluídos dentro de um determinado tempo. Isso incentiva os usuários a 
-                                se envolverem com o aplicativo diariamente.
+                                Em um aplicativo de aprendizado de idiomas, as "Mini Missões" podem ser usadas 
+                                para incentivar os usuários a praticar regularmente. Por exemplo, os usuários 
+                                podem receber uma "Mini Missão" para aprender 10 novas palavras por dia ou para 
+                                praticar a pronúncia de um som particular.
                             </p>
                         </div>
 

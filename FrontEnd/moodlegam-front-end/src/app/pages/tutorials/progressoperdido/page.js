@@ -43,25 +43,28 @@ export default function ProgressoPerdido(){
                     
                     <div className="tech-plugins">
                         <div className="plugin-name-link">
-                            <h3 id="plugin-title">Plugin: <span id="plugin-name">MoodleGame</span></h3>
-                            <a>(www.moodle.com.br)</a>
+                            <h3 id="plugin-title">
+                                Plugin: 
+                                <span id="plugin-name">
+                                    No momento em que este trabalho foi realizado, não existe plugin que implementa esta técnica. Porém 
+                                    existe uma forma de implementar em uma disciplina, que é descrita abaixo.
+                                </span>
+                            </h3>
+
+
+                            
+                        
                         </div>
                         
                         <div className="how-to-install">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <Image 
-                                    src="/img/logo_image.png"
-                                    width={500}
-                                    height={500}
-                                    unoptimized={true}
-                                />
 
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. with the release of Letraset sheets containing Lorem Ipsum passages, and 
-                                    more recently with desktop publishing software like Aldus PageMaker including versions of 
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
+
+                            <p>
+                                Em um aplicativo de aprendizado de idiomas, a "Progresso Perdido" pode ser 
+                                implementada com um sistema de pontos que diminui se o usuário não praticar 
+                                regularmente. Isso incentiva o uso consistente do aplicativo.
+                            </p>
+                        </div>
                     </div>
                     
                 </div>

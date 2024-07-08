@@ -1,9 +1,10 @@
 import Image from "next/image";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
+import IntrinsicBox from "@/app/components/IntrinsicBox"
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function OportunidadeFugaz(){
+export default function QuebraCabecasTravesso(){
 
 
 
@@ -12,32 +13,27 @@ export default function OportunidadeFugaz(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Oportunidade Fugaz</h1>
+                    <h1>Quebra-cabeças Travesso</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Mischief Puzzle</i></h2>
                     
                     
                     <BlackHatBox/>
-                    
+                    <IntrinsicBox/>
                 </div>
 
                 <div className="tech-template-description">
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
-                            o usuário não tomar a ação necessária imediatamente.
-
-                            "Oportunidade Fugaz" é uma estratégia de 
-                            gamificação que cria uma sensação de urgência ao 
-                            apresentar uma oportunidade ou recompensa que 
-                            está disponível por tempo limitado. 
-                            Essa técnica utiliza a psicologia do medo 
-                            de perder algo (FOMO) para motivar os usuários 
-                            a agirem rapidamente.
+                            Quebra-cabeças Travesso" é uma estratégia de gamificação que envolve a 
+                            apresentação de desafios ou enigmas que os usuários devem resolver, 
+                            muitas vezes com uma reviravolta inesperada ou elementos surpresa. 
+                            Isso pode ajudar a engajar os usuários, estimulando a criatividade, 
+                            o pensamento crítico e a resolução de problemas.
 
                         </p>
                     </div>
@@ -67,9 +63,10 @@ export default function OportunidadeFugaz(){
 
 
                             <p>
-                                Alguns aplicativos de ensino de idiomas oferecem desafios diários que devem 
-                                ser concluídos dentro de um determinado tempo. Isso incentiva os usuários a 
-                                se envolverem com o aplicativo diariamente.
+                                Em uma sala de aula, o "Quebra-cabeças Travesso" pode ser usado para estimular o 
+                                pensamento crítico e a resolução de problemas dos alunos. Por exemplo, um professor 
+                                pode criar um enigma que exige que os alunos apliquem os conceitos que aprenderam de 
+                                maneiras novas e inesperadas
                             </p>
                         </div>
 

@@ -3,7 +3,7 @@ import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import BlackHatBox from "@/app/components/BlackHatBox"
 
-export default function OportunidadeFugaz(){
+export default function TragediaDaBancarrota(){
 
 
 
@@ -12,12 +12,12 @@ export default function OportunidadeFugaz(){
             <div className="tech-template-body">
                 <div className="tech-template-header">
 
-                    <h1>Oportunidade Fugaz</h1>
+                    <h1>Tragédia da Bancarrota</h1>
 
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Evanescence Opportunity</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Sunk-Cost Tragedy</i></h2>
                     
                     
                     <BlackHatBox/>
@@ -28,16 +28,11 @@ export default function OportunidadeFugaz(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
-                            o usuário não tomar a ação necessária imediatamente.
-
-                            "Oportunidade Fugaz" é uma estratégia de 
-                            gamificação que cria uma sensação de urgência ao 
-                            apresentar uma oportunidade ou recompensa que 
-                            está disponível por tempo limitado. 
-                            Essa técnica utiliza a psicologia do medo 
-                            de perder algo (FOMO) para motivar os usuários 
-                            a agirem rapidamente.
+                            "Tragédia da Bancarrota" é uma estratégia de gamificação que se baseia no 
+                            princípio econômico do custo afundado, que refere-se ao investimento de tempo, 
+                            esforço ou recursos que já foram feitos e que não podem ser recuperados. 
+                            A ideia é que os usuários sejam motivados a continuar um comportamento ou 
+                            uma ação para evitar a percepção de perda desse investimento.
 
                         </p>
                     </div>
@@ -67,9 +62,9 @@ export default function OportunidadeFugaz(){
 
 
                             <p>
-                                Alguns aplicativos de ensino de idiomas oferecem desafios diários que devem 
-                                ser concluídos dentro de um determinado tempo. Isso incentiva os usuários a 
-                                se envolverem com o aplicativo diariamente.
+                                Em um curso online, um estudante pode se sentir compelido a 
+                                completar um curso em que não está mais interessado, simplesmente porque 
+                                já investiu muito tempo e esforço nele.
                             </p>
                         </div>
 
