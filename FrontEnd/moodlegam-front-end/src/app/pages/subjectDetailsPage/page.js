@@ -11,12 +11,13 @@ import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function SubjectDetailsPage(searchParams){
     const router = useRouter()
    
     
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
     const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
     const [coreDrives, setCoreDrives] = useState([])
@@ -143,7 +144,7 @@ export default function SubjectDetailsPage(searchParams){
                     `/technique/${techniqueId}`,
                     {
                         headers: {
-                            'x-api-key': apiKey,
+                            'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                         }
                     }
                 );
@@ -171,7 +172,7 @@ export default function SubjectDetailsPage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -201,7 +202,7 @@ export default function SubjectDetailsPage(searchParams){
                 `/subject/${subjectId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }

@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Dropdown from "@/app/components/Dropdown/index"
 import { useRouter } from 'next/navigation';
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function Background(props){
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+   
     useEffect(() => {
         // Perform localStorage action
         const token = localStorage.getItem("token");
@@ -47,7 +49,7 @@ export default function Background(props){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }

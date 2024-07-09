@@ -7,9 +7,10 @@ import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
 import {jwtDecode} from "jwt-decode"; 
 import Modal from "@/app/components/Modal"
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function EditUserPage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [user, setUser] = useState(null);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -61,7 +62,7 @@ export default function EditUserPage(){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -125,7 +126,7 @@ export default function EditUserPage(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }

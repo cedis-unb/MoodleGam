@@ -14,14 +14,14 @@ import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
-
 import {axiosInstance} from '../../config/config'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function ChooseTechniquePage(searchParams){
 
     const router = useRouter();
 
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const recommendedQuantity = 10
     const [techniqueQuantity, setTechniqueQuantity] = useState(0)
     const [chosenTechniques, setChosenTechniques] = useState([])
@@ -73,7 +73,7 @@ export default function ChooseTechniquePage(searchParams){
                         `/technique/getByCoreDrive/${coreDrive._id}`, 
                         {
                             headers: {
-                                'x-api-key': `${apiKey}`
+                                'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                             }
                         }
                     );
@@ -177,7 +177,7 @@ export default function ChooseTechniquePage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -212,7 +212,7 @@ export default function ChooseTechniquePage(searchParams){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }

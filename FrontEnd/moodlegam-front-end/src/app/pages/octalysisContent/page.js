@@ -11,10 +11,10 @@ import BlackHatBox from "@/app/components/BlackHatBox"
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function OctalysisContent(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
     
     const [coreDrives, setCoreDrives] = useState([])
@@ -60,7 +60,7 @@ export default function OctalysisContent(){
                 `/technique/`,
                 {
                     headers: {
-                        'x-api-key': apiKey,
+                        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                     }
                 }
             );
@@ -114,7 +114,7 @@ export default function OctalysisContent(){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );

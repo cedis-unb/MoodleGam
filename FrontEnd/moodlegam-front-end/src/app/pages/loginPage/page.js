@@ -9,9 +9,8 @@ import { axiosInstance } from "@/app/config/config";
 dotenv.config()
 
 export default function LoginPage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     
-
+    
     const router = useRouter();
 
     const [email, setEmail] = useState('');
@@ -36,7 +35,7 @@ export default function LoginPage(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -77,7 +76,7 @@ export default function LoginPage(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );

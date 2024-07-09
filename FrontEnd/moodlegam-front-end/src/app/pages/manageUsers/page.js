@@ -8,11 +8,11 @@ import { axiosInstance } from "@/app/config/config";
 import { useEffect, useState } from "react";
 import {useRouter} from "next/navigation";
 import Link from 'next/link';
-
+import dotenv from 'dotenv'
+dotenv.config()
 export default function ManageUSers(){
 
     const router = useRouter();
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [users, setUsers] = useState([])
     const [searchTerm, setSearchTerm] = useState('');
     const [confirmModalOpen, setConfirmModalOpen] = useState(false)
@@ -29,7 +29,7 @@ export default function ManageUSers(){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -56,7 +56,7 @@ export default function ManageUSers(){
                 `/users`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -115,7 +115,7 @@ export default function ManageUSers(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }

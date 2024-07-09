@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Image from "next/image";
 import "./style.css"
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function Homepage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [isAdmin, setIsAdmin] = useState(false);
     useEffect(() => {
         
@@ -44,7 +45,7 @@ export default function Homepage(){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }

@@ -13,12 +13,15 @@ import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
+import dotenv from 'dotenv'
+dotenv.config()
+
+
 
 export default function EditSubjectPage(searchParams){
 
    
     const recommendedQuantity = 10
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
     const [year, setYear] = useState('')
     const [semester, setSemester] = useState('')
@@ -221,7 +224,7 @@ export default function EditSubjectPage(searchParams){
                     
                     {
                         headers: {
-                            'x-api-key': `${apiKey}`,
+                            'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                             'Authorization': `Bearer ${token}`
                         }
                     }
@@ -259,7 +262,6 @@ export default function EditSubjectPage(searchParams){
 
     //Recebe técnicas de gamificação e as aloca para seus respectivos core drives. Retorna Os core drives com as técnicas
     const sortCoreDrives = (techniquesData, coreDrivesData) =>{
-        //console.log("aqui ", techniquesData, coreDrivesData)
         
         try{
             coreDrivesData.forEach((coreDrive) => {
@@ -299,7 +301,7 @@ export default function EditSubjectPage(searchParams){
                 `/technique/`,
                 {
                     headers: {
-                        'x-api-key': apiKey,
+                        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                     }
                 }
             );
@@ -325,7 +327,7 @@ export default function EditSubjectPage(searchParams){
                     `/technique/${techniqueId}`,
                     {
                         headers: {
-                            'x-api-key': apiKey,
+                            'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                         }
                     }
                 );
@@ -353,7 +355,7 @@ export default function EditSubjectPage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -382,7 +384,7 @@ export default function EditSubjectPage(searchParams){
                 `/subject/${subjectId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -501,7 +503,7 @@ export default function EditSubjectPage(searchParams){
 
         })
         
-        //console.log("quantity ", quantity)
+        
         setTechniqueQuantitys(quantity)
     }
 
