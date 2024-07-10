@@ -44,6 +44,7 @@ export default function LoginPage(){
             if (response.status === 200) {
                 // Armazenar o token no localStorage
                 setSuccessText("Nova senha enviada para o E-mail")
+                setErrorText('');
             }
             
 
