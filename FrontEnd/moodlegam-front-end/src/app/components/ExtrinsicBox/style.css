@@ -1,0 +1,15 @@
+.extrinsic-box{
+    padding: 0.4rem;
+    color: black;
+    height: 4vh;
+    background-color: var(--moodle-yellow);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.extrinsic-box span{
+    text-align: center;
+}

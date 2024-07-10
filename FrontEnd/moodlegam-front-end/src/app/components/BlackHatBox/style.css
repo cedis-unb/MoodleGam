@@ -1,0 +1,15 @@
+.black-hat-box{
+    padding: 0.4rem;
+    color: white;
+    height: 4vh;
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.black-hat-box span{
+    text-align: center;
+}

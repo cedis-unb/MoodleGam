@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
 import {jwtDecode} from "jwt-decode"; 
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 export default function UserProfilePage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [user, setUser] = useState(null);
     const router = useRouter();
 
@@ -66,7 +66,7 @@ export default function UserProfilePage(){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -96,8 +96,8 @@ export default function UserProfilePage(){
                         
                         <Image
                             src="/img/edit.svg"
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                             unoptimized={true}
                         />
 
@@ -106,8 +106,8 @@ export default function UserProfilePage(){
                     </a>
                 </div>
                 
-                <p>Nome:  <span id="user-data">{user !== null ? user.name : ''}</span></p>
-                <p>E-mail:  <span id="user-data">{user !== null ? user.email : ''}</span></p>
+                <p id="user-info-line">Nome:  <span id="user-data">{user !== null ? user.name : ''}</span></p>
+                <p id="user-info-line">E-mail:  <span id="user-data">{user !== null ? user.email : ''}</span></p>
                 <a onClick={redirectChangePassword}>Alterar senha</a>
             </div>
 

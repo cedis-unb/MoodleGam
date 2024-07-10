@@ -7,11 +7,12 @@ import {axiosInstance} from '../../config/config'
 import {useRouter} from "next/navigation";
 import React, { useEffect, useState } from "react";
 import {jwtDecode} from "jwt-decode"; 
+import dotenv from 'dotenv'
 import "./style.css"
-
+dotenv.config()
 
 export default function EditUserPage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+    
     const [confirmPassword, setConfirmPassword] = useState('')
     const [errorText, setErrorText] = useState('')
     const [modalOpen, setModalOpen] = useState(false)
@@ -64,7 +65,7 @@ export default function EditUserPage(){
        
             
         try {
-            console.log(`user ${apiKey}`)
+            
 
             const response = await axiosInstance.put(
                 `/users/${userId}`, 
@@ -73,7 +74,7 @@ export default function EditUserPage(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }

@@ -7,13 +7,21 @@ import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
+import Link from "next/link"
+import BlackHatBox from "@/app/components/BlackHatBox"
+import WhiteHatBox from "@/app/components/WhiteHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import RadarGraph from "@/app/components/RadarGraph"
+import dotenv from 'dotenv'
+dotenv.config()
+
 
 
 export default function EditSubjectPage(searchParams){
 
    
     const recommendedQuantity = 10
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
     const [year, setYear] = useState('')
     const [semester, setSemester] = useState('')
@@ -24,18 +32,19 @@ export default function EditSubjectPage(searchParams){
     const [techniqueQuantity, setTechniqueQuantity] = useState(0)
     const [confirmModalOpen, setConfirmModalOpen] = useState(false)
     const [infoModalOpen, setinfoModalOpen] = useState(false)
-    
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([0,0,0,0,0,0,0,0])
     const topOfThePage = useRef(null)
     const router = useRouter();
 
+    
     useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log(`subjectid: ${searchParams.searchParams.subjectId}`)
+        
         
         const fetchData = async () => {
             try {
 
-
+                
                 const subjectData = await fetchSubject(searchParams.searchParams.subjectId, token);
                 setYearAndSemester(subjectData.yearSemester)
                 setChosenTechniques(subjectData.techniques)
@@ -47,10 +56,15 @@ export default function EditSubjectPage(searchParams){
                 
                 const coreDrivesData = await fetchCoreDrives() //pegar todos os coredrives
                 
-
-                const updatedCoreDrives = await sortCoreDrives(allTechniques, coreDrivesData)
+                const updatedCoreDrives = await sortCoreDrives(
+                    JSON.parse(JSON.stringify(allTechniques)),
+                    JSON.parse(JSON.stringify(coreDrivesData)) 
+                    
+                )
+                console.log("up ", updatedCoreDrives)
                 setCoreDrives(updatedCoreDrives)
-
+                
+               
                 
             } catch (error) {
                 console.error('Erro ao buscar disciplina', error);
@@ -60,6 +74,87 @@ export default function EditSubjectPage(searchParams){
         fetchData();
         
     }, [])
+
+
+
+    useEffect(() => {
+
+        const token = localStorage.getItem("token");
+
+        const fetchData = async() =>{
+            const subjectData = await fetchSubject(searchParams.searchParams.subjectId, token);
+            const allTechniques = await fetchAllTechniques() //pegar todas as técnicas
+                
+                
+            const coreDrivesData = await fetchCoreDrives() //pegar todos os coredrives
+            
+            const updatedCoreDrives = await sortCoreDrives(
+                JSON.parse(JSON.stringify(allTechniques)),
+                JSON.parse(JSON.stringify(coreDrivesData)) 
+                
+            )
+            
+
+            if(subjectData && updatedCoreDrives){
+                
+                const coreDrivesFromSubject = sortTechniquesIdsCoreDrives(subjectData.techniques, updatedCoreDrives)
+    
+                console.log("depois " ,coreDrivesFromSubject)
+                var techniqueQuantity = [0,0,0,0,0,0,0,0]
+        
+                coreDrivesFromSubject.forEach((coreDrive) =>{
+                    if(coreDrive.coreDriveName.includes("1")){
+                        techniqueQuantity[0] = coreDrive.techniques.length 
+                    }
+                    else if(coreDrive.coreDriveName.includes("2")){
+                        techniqueQuantity[7] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("3")){
+                        techniqueQuantity[1] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("4")){
+                        techniqueQuantity[6] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("5")){
+                        techniqueQuantity[2] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("6")){
+                        techniqueQuantity[5] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("7")){
+                        techniqueQuantity[3] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("8")){
+                        techniqueQuantity[4] = coreDrive.techniques.length
+                    }
+                })
+        
+                setTechniqueQuantitys(techniqueQuantity)
+            }
+        
+        }
+
+        function sortTechniquesIdsCoreDrives(techniquesIds, completeCoreDrives){
+            
+            
+            
+            return completeCoreDrives.map(coreDrive => {
+                const matchingTechniques = coreDrive.techniques.filter(technique => 
+                    techniquesIds.includes(technique._id) // Supondo que a propriedade seja _id
+                );
+                console.log("match: ", matchingTechniques)
+                return {
+                    ...coreDrive,
+                    techniques: matchingTechniques
+                };
+
+            }).filter(coreDrive => coreDrive.techniques.length !== 0)
+            
+        }
+
+        fetchData()
+        
+    },[coreDrives])
 
     function validateUserData(e){
         if(!subject.subjectCode && !subject.subjectName && !year && !semester){
@@ -129,7 +224,7 @@ export default function EditSubjectPage(searchParams){
                     
                     {
                         headers: {
-                            'x-api-key': `${apiKey}`,
+                            'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                             'Authorization': `Bearer ${token}`
                         }
                     }
@@ -165,7 +260,8 @@ export default function EditSubjectPage(searchParams){
         router.push('/pages/homepage'); 
     };
 
-    const sortCoreDrives = async(techniquesData, coreDrivesData) =>{
+    //Recebe técnicas de gamificação e as aloca para seus respectivos core drives. Retorna Os core drives com as técnicas
+    const sortCoreDrives = (techniquesData, coreDrivesData) =>{
         
         try{
             coreDrivesData.forEach((coreDrive) => {
@@ -175,11 +271,13 @@ export default function EditSubjectPage(searchParams){
     
                 techniquesData.forEach((technique) => {
                   if (technique.idCoreDrive === coreDrive._id) {
+                    
                     matchingTechniques.push(technique);
                   }
                 });
                 
                 coreDrive.techniques = [...coreDrive.techniques, ...matchingTechniques];
+                
             });
         } catch (error){
             console.log(error)
@@ -188,9 +286,12 @@ export default function EditSubjectPage(searchParams){
         
         
         const filteredCoreDrivesData = coreDrivesData.filter(coreDrive => coreDrive.techniques.length !== 0);
-
+        
         return filteredCoreDrivesData;
+        
     }
+
+    
    
 
 
@@ -200,7 +301,7 @@ export default function EditSubjectPage(searchParams){
                 `/technique/`,
                 {
                     headers: {
-                        'x-api-key': apiKey,
+                        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                     }
                 }
             );
@@ -226,7 +327,7 @@ export default function EditSubjectPage(searchParams){
                     `/technique/${techniqueId}`,
                     {
                         headers: {
-                            'x-api-key': apiKey,
+                            'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                         }
                     }
                 );
@@ -254,7 +355,7 @@ export default function EditSubjectPage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -283,7 +384,7 @@ export default function EditSubjectPage(searchParams){
                 `/subject/${subjectId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -317,15 +418,106 @@ export default function EditSubjectPage(searchParams){
     }
 
 
+    function updateRadarGraph(techniqueId, operation){
+        
+        var quantity = [...techniqueQuantitys]
+        //Procurando nos core drives
+        coreDrives.map((coreDrive) => {
+            //Procurando dentro das técnicas se elas possuem o id desejado
+            if(coreDrive.techniques.some(technique => technique._id === techniqueId)){
+
+                //Se o id foi encontrado nesse core drive, o vetor de quantidade de técnicas é atualizado
+                if(coreDrive.coreDriveName.includes("1")){
+
+                    if(operation === "add"){
+                        quantity[0] =  quantity[0] + 1
+                    }
+                    else{
+                        quantity[0] =  quantity[0] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("2")){
+
+                    if(operation === "add"){
+                        quantity[7] = quantity[7] + 1
+                    }
+                    else{
+                        quantity[7] = quantity[7] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("3")){
+
+                    if(operation === "add"){
+                        quantity[1] = quantity[1] + 1
+                    }
+                    else{
+                        quantity[1] = quantity[1] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("4")){
+                    
+                    if(operation === "add"){
+                        quantity[6] = quantity[6] + 1
+                    }
+                    else{
+                        quantity[6] = quantity[6] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("5")){
+                    
+                    if(operation === "add"){
+                        quantity[2] = quantity[2] + 1
+                    }
+                    else{
+                        quantity[2] = quantity[2] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("6")){
+                    
+                    if(operation === "add"){
+                        quantity[5] = quantity[5] + 1
+                    }
+                    else{
+                        quantity[5] = quantity[5] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("7")){
+                    
+                    if(operation === "add"){
+                        quantity[3] = quantity[3] + 1
+                    }
+                    else{
+                        quantity[3] = quantity[3] - 1
+                    }
+                }
+                else if(coreDrive.coreDriveName.includes("8")){
+                    
+                    if(operation === "add"){
+                        quantity[4] = quantity[4] + 1
+                    }
+                    else{
+                        quantity[4] = quantity[4] - 1
+                    }
+                }
+            }
+
+        })
+        
+        
+        setTechniqueQuantitys(quantity)
+    }
+
     const handleCheckboxChange = (e) =>{
         const { value, checked } = e.target;
         var updatedTechniques = null
         if (checked) {
             updatedTechniques = [...chosenTechniques, value]
             addTechnique();
+            updateRadarGraph(value, "add")
         } else {
             updatedTechniques = chosenTechniques.filter((technique) => technique !== value);
             subtractTechnique();
+            updateRadarGraph(value, "subtract")
         }
 
         setChosenTechniques(updatedTechniques)
@@ -393,6 +585,43 @@ export default function EditSubjectPage(searchParams){
         setinfoModalOpen(false)
         setConfirmModalOpen(false)
     }
+
+    const getFileName = (techniqueName) =>{
+        var fileName = techniqueName.toLowerCase()
+        fileName = fileName.split(' ').join('')
+
+        fileName = fileName.replace(/ç/g, 'c')
+
+        fileName = fileName.replace(/ã/g, 'a')
+        fileName = fileName.replace(/á/g, 'a')
+        fileName = fileName.replace(/â/g, 'a')
+        fileName = fileName.replace(/à/g, 'a')
+
+        fileName = fileName.replace(/ẽ/g, 'e')
+        fileName = fileName.replace(/é/g, 'e')
+        fileName = fileName.replace(/ê/g, 'e')
+        fileName = fileName.replace(/è/g, 'e')
+
+        fileName = fileName.replace(/ĩ/g, 'i')
+        fileName = fileName.replace(/í/g, 'i')
+        fileName = fileName.replace(/î/g, 'i')
+        fileName = fileName.replace(/ì/g, 'i')
+
+
+        fileName = fileName.replace(/õ/g, 'o')
+        fileName = fileName.replace(/ó/g, 'o')
+        fileName = fileName.replace(/ô/g, 'o')
+        fileName = fileName.replace(/ò/g, 'o')
+
+
+        fileName = fileName.replace(/ũ/g, 'u')
+        fileName = fileName.replace(/ú/g, 'u')
+        fileName = fileName.replace(/û/g, 'u')
+        fileName = fileName.replace(/ù/g, 'u')
+
+        return fileName
+    }
+
     const riskLevel = getRiskLevel(techniqueQuantity);
     const riskColor = getRiskColor(riskLevel)
 
@@ -473,7 +702,7 @@ export default function EditSubjectPage(searchParams){
 
                         </div>
 
-                        <div className="technique-quantity">
+                        <div className="edit-technique-quantity">
                             <div className="technique-quantity-text">
                                 <span>Quantidade de técnicas escolhidas: <span className="font-bold">{techniqueQuantity}</span></span>
                             </div>
@@ -485,6 +714,11 @@ export default function EditSubjectPage(searchParams){
                         </div>
                     </div>
 
+                    <div className="radar-chart">
+                        <RadarGraph
+                            techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                        />
+                    </div>
 
                     {coreDrives && coreDrives.map((coreDrive) => (
 
@@ -492,7 +726,24 @@ export default function EditSubjectPage(searchParams){
 
                             <div className="core-drive-header">
                                 <h2>{coreDrive !== null ? coreDrive.coreDriveName : ''}</h2>
-                                
+
+                                {coreDrive.hat != null ? 
+                                    coreDrive.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive.motivation != null ? 
+                                    coreDrive.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
                             </div>
 
                             <div className="core-drive-techniques">
@@ -512,7 +763,24 @@ export default function EditSubjectPage(searchParams){
                                                 <label htmlFor={`technique-${technique._id}`}>
                                                     {technique.techniqueName}
                                                 </label>
-        
+
+                                                <Link
+                                                    href={{
+                                                        pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                                    }}
+
+                                                    passHref
+                                                    legacyBehavior
+                                                >
+                                                    <a target="_blank">
+                                                        <Image 
+                                                            src="/img/help.svg"
+                                                            width={25}
+                                                            height={25}
+                                                            unoptimized={true}
+                                                        />
+                                                    </a>
+                                                </Link>
                                             </div>
                                         
                                 ))}

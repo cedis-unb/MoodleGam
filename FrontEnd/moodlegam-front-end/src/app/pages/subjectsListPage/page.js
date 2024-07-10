@@ -7,8 +7,10 @@ import {jwtDecode} from "jwt-decode";
 import Image from "next/image";
 import { axiosInstance } from "@/app/config/config";
 import SubjectBox from "@/app/components/SubjectBox"
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default function SubjectsListPage (){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
 
     const [subjectsList, setSubjectsList] = useState(null)
 
@@ -33,7 +35,7 @@ export default function SubjectsListPage (){
                     const decodedUser = jwtDecode(token);
                     
                     const subjectData = await fetchSubject(decodedUser.sub, token);
-
+                    console.log("Disciplina:", subjectData)
                     setSubjectsList(subjectData)
                 }
                 
@@ -55,7 +57,7 @@ export default function SubjectsListPage (){
                 `/subject/user/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -120,6 +122,7 @@ export default function SubjectsListPage (){
                                 createdAt={getDate(subject.createdAt)}
                                 subjectId={subject._id}
                                 key={index}
+                                techniques={subject.techniques}
                             />
                         
                         ))

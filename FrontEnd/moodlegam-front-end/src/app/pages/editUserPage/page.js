@@ -7,9 +7,10 @@ import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
 import {jwtDecode} from "jwt-decode"; 
 import Modal from "@/app/components/Modal"
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function EditUserPage(){
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [user, setUser] = useState(null);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -61,7 +62,7 @@ export default function EditUserPage(){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -125,7 +126,7 @@ export default function EditUserPage(){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }
@@ -162,9 +163,7 @@ export default function EditUserPage(){
         router.push("/pages/homepage")
     }
     return(
-        
-
-        <Background>
+        <>
             {modalOpen && (
 
                 <Modal
@@ -179,40 +178,48 @@ export default function EditUserPage(){
 
 
             )}
+
+            <Background>
             
-            <form className="fields-edit-user">
-                <p id="edit-user-title">Editar dados</p>
-                <input 
-                    type="text" 
-                    placeholder="Nome"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                ></input>
+            
+                <form className="fields-edit-user">
+                    <p id="edit-user-title">Editar dados</p>
+                    <input 
+                        type="text" 
+                        placeholder="Nome"
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                    ></input>
 
-                <input 
-                    type="email" 
-                    placeholder="E-mail"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                ></input>
+                    <input 
+                        type="email" 
+                        placeholder="E-mail"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                    ></input>
 
-                <span id="error-text-edit-user">{errorText}</span>
-               
+                    <span id="error-text-edit-user">{errorText}</span>
+                
 
-                <a onClick={redirectChangePassword}>Alterar senha</a>
-                <div className="button-wrapper-edit-user">
+                    <a onClick={redirectChangePassword}>Alterar senha</a>
+                    <div className="button-wrapper-edit-user">
 
-                    <Button
-                        type="submit"
-                        text="Salvar alterações"
-                        onClick={handleFormConfirm}
-                    />
-                </div>
+                        <Button
+                            type="submit"
+                            text="Salvar alterações"
+                            onClick={handleFormConfirm}
+                        />
+                    </div>
 
-            </form>
+                </form>
 
 
-        </Background>
+            </Background>
+
+
+        </>
+
+        
 
         
         

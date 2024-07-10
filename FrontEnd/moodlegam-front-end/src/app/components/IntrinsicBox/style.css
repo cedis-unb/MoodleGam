@@ -1,0 +1,15 @@
+.intrinsic-box{
+    padding: 0.4rem;
+    color: white;
+    height: 4vh;
+    background-color: var(--moodle-blue);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.intrinsic-box span{
+    text-align: center;
+}

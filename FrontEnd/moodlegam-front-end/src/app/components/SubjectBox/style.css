@@ -1,6 +1,8 @@
 .subject-container{
-    width: 29vw;
-    height: 41vh;
+    display: flex;
+    flex-direction: column;
+    width: 39vw;
+    height: 60vh;
     background-color: var(--option-subject);
     box-shadow: 0px 7px 3px rgba(0, 0, 0, 0.726);
     transition: transform 0.3s ease;
@@ -14,7 +16,7 @@
 
 .subject-header{
     height: 4vh;
-    width: 29vw;
+    width: 39vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +27,8 @@
 
 .subject-data{
     color: white;
-    height: 28vh;
-    width: 29vw;
+    height: 45vh;
+    width: 39vw;
     padding-left: 1rem;
     padding-top: 1.5rem;
     display: flex;
@@ -40,12 +42,12 @@
 }
 
 .subject-footer{
-    width: 29vw;
+    width: 39vw;
     height: 9vh;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 .subject-footer p{
@@ -62,4 +64,7 @@
 #subject-details-link:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+.graph-subject-box{
+    height: 40vh;
 }

@@ -8,14 +8,20 @@ import Button from "@/app/components/Button";
 import "../subjectDetailsPage/style.css"
 import { useEffect, useState } from "react";
 import Modal from "@/app/components/Modal"
-
+import Link from "next/link"
+import BlackHatBox from "@/app/components/BlackHatBox"
+import WhiteHatBox from "@/app/components/WhiteHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import RadarGraph from "@/app/components/RadarGraph"
 import {axiosInstance} from '../../config/config'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function ChooseTechniquePage(searchParams){
 
     const router = useRouter();
 
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const recommendedQuantity = 10
     const [techniqueQuantity, setTechniqueQuantity] = useState(0)
     const [chosenTechniques, setChosenTechniques] = useState([])
@@ -32,6 +38,7 @@ export default function ChooseTechniquePage(searchParams){
     const [coreDrive7, setCoreDrive7] = useState(null)
     const [coreDrive8, setCoreDrive8] = useState(null)
     
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
 
     useEffect(() => {
         console.log(searchParams.searchParams.subjectId)
@@ -66,7 +73,7 @@ export default function ChooseTechniquePage(searchParams){
                         `/technique/getByCoreDrive/${coreDrive._id}`, 
                         {
                             headers: {
-                                'x-api-key': `${apiKey}`
+                                'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                             }
                         }
                     );
@@ -78,7 +85,7 @@ export default function ChooseTechniquePage(searchParams){
                         if(coreDrive.coreDriveName.includes("Core Drive 1")){
                             setCoreDrive1({
                                 coreDriveName: coreDrive.coreDriveName,
-                                motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                                
@@ -88,6 +95,7 @@ export default function ChooseTechniquePage(searchParams){
                             setCoreDrive2({
                                 coreDriveName: coreDrive.coreDriveName,
                                 motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                         }
@@ -95,6 +103,7 @@ export default function ChooseTechniquePage(searchParams){
                             setCoreDrive3({
                                 coreDriveName: coreDrive.coreDriveName,
                                 motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                         }
@@ -116,6 +125,7 @@ export default function ChooseTechniquePage(searchParams){
                             setCoreDrive6({
                                 coreDriveName: coreDrive.coreDriveName,
                                 motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                         }
@@ -123,13 +133,14 @@ export default function ChooseTechniquePage(searchParams){
                             setCoreDrive7({
                                 coreDriveName: coreDrive.coreDriveName,
                                 motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                         }
                         else if(coreDrive.coreDriveName.includes("Core Drive 8")){
                             setCoreDrive8({
                                 coreDriveName: coreDrive.coreDriveName,
-                                motivation: coreDrive.motivation,
+                                hat: coreDrive.hat,
                                 techniques: response.data
                             });
                         }
@@ -166,7 +177,7 @@ export default function ChooseTechniquePage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -201,7 +212,7 @@ export default function ChooseTechniquePage(searchParams){
                 },
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${localStorage.getItem("token")}`
                     }
                 }
@@ -235,16 +246,112 @@ export default function ChooseTechniquePage(searchParams){
         setTechniqueQuantity(techniqueQuantity - 1)
     }
 
-   
+    function updateRadarGraph(techniqueId, operation){
+        
+        var quantity = [...techniqueQuantitys]
+
+        if(coreDrive1.techniques.some(technique => technique._id === techniqueId)){
+            if(operation === "add"){
+                quantity[0] =  quantity[0] + 1
+            }
+            else{
+                quantity[0] =  quantity[0] - 1
+            }
+            
+
+        }
+        else if(coreDrive2.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[7] = quantity[7] + 1
+            }
+            else{
+                quantity[7] = quantity[7] - 1
+            }
+            
+
+        }
+        else if(coreDrive3.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[1] = quantity[1] + 1
+            }
+            else{
+                quantity[1] = quantity[1] - 1
+            }
+            
+
+        }
+        else if(coreDrive4.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[6] = quantity[6] + 1
+            }
+            else{
+                quantity[6] = quantity[6] - 1
+            }
+            
+
+        }
+        else if(coreDrive5.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[2] = quantity[2] + 1
+            }
+            else{
+                quantity[2] = quantity[2] - 1
+            }
+            
+
+        }
+        else if(coreDrive6.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[5] = quantity[5] + 1
+            }
+            else{
+                quantity[5] = quantity[5] - 1
+            }
+            
+
+        }
+        else if(coreDrive7.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[3] = quantity[3] + 1
+            }
+            else{
+                quantity[3] = quantity[3] - 1
+            }
+            
+
+        }
+        else if(coreDrive8.techniques.some(technique => technique._id === techniqueId)){
+
+            if(operation === "add"){
+                quantity[4] = quantity[4] + 1
+            }
+            else{
+                quantity[4] = quantity[4] - 1
+            }
+
+            
+
+        }
+        //console.log("quantity ", quantity)
+        setTechniqueQuantitys(quantity)
+    }
     const handleCheckboxChange = (e) =>{
         const { value, checked } = e.target;
         var updatedTechniques = null
         if (checked) {
             updatedTechniques = [...chosenTechniques, value]
             addTechnique();
+            updateRadarGraph(value, "add")
         } else {
             updatedTechniques = chosenTechniques.filter((technique) => technique !== value);
             subtractTechnique();
+            updateRadarGraph(value, "subtract")
         }
 
         setChosenTechniques(updatedTechniques)
@@ -292,6 +399,44 @@ export default function ChooseTechniquePage(searchParams){
     const redirectToHomepage = () =>{
         router.push("/pages/homepage")
     }
+
+
+    const getFileName = (techniqueName) =>{
+        var fileName = techniqueName.toLowerCase()
+        fileName = fileName.split(' ').join('')
+
+        fileName = fileName.replace(/ç/g, 'c')
+
+        fileName = fileName.replace(/ã/g, 'a')
+        fileName = fileName.replace(/á/g, 'a')
+        fileName = fileName.replace(/â/g, 'a')
+        fileName = fileName.replace(/à/g, 'a')
+
+        fileName = fileName.replace(/ẽ/g, 'e')
+        fileName = fileName.replace(/é/g, 'e')
+        fileName = fileName.replace(/ê/g, 'e')
+        fileName = fileName.replace(/è/g, 'e')
+
+        fileName = fileName.replace(/ĩ/g, 'i')
+        fileName = fileName.replace(/í/g, 'i')
+        fileName = fileName.replace(/î/g, 'i')
+        fileName = fileName.replace(/ì/g, 'i')
+
+
+        fileName = fileName.replace(/õ/g, 'o')
+        fileName = fileName.replace(/ó/g, 'o')
+        fileName = fileName.replace(/ô/g, 'o')
+        fileName = fileName.replace(/ò/g, 'o')
+
+
+        fileName = fileName.replace(/ũ/g, 'u')
+        fileName = fileName.replace(/ú/g, 'u')
+        fileName = fileName.replace(/û/g, 'u')
+        fileName = fileName.replace(/ù/g, 'u')
+
+        return fileName
+    }
+
     return (
 
         <>
@@ -340,7 +485,9 @@ export default function ChooseTechniquePage(searchParams){
                                 height={30}
                                 unoptimized={true}
                             />
-                            <span>Para se informar sobre cada Core Drive e técnica de gamificação, basta clicar em seus respectivos nomes </span>
+                            <span>Para se informar sobre cada técnica de gamificação, basta clicar em no ícone "?". 
+                                E para saber mais sobre os Core Drives basta clicar em seus respectivos nomes.
+                            </span>
                         </div>
                         <div className="core-drive-warning">
                             <Image 
@@ -364,15 +511,36 @@ export default function ChooseTechniquePage(searchParams){
                     </div>
                 </div>
 
+
+                <div className="radar-chart">
+                    <RadarGraph
+                        techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                    />
+                </div>
+
                 {coreDrive1 && (
 
                     <div className="core-drive-box">
                         <div className="core-drive-header">
                             <h2>{coreDrive1 !== null ? coreDrive1.coreDriveName : ''}</h2>
 
-                            <div className="white-hat-box">
-                                <span>White Hat</span>
-                            </div>
+                            {coreDrive1.hat != null ? 
+                                coreDrive1.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive1.motivation != null ? 
+                                coreDrive1.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -380,19 +548,40 @@ export default function ChooseTechniquePage(searchParams){
                             {coreDrive1 && 
                                 coreDrive1.techniques.map((technique, index) => (
 
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
+                                
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+                                        
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
 
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
 
-                                </div>
+                                            passHref
+                                            legacyBehavior
+                                        >
+                                            <a target="_blank">
+                                                <Image 
+                                                    src="/img/help.svg"
+                                                    width={25}
+                                                    height={25}
+                                                    unoptimized={true}
+                                                />
+                                            </a>
+                                        </Link>
+                                    </div>
+                                    
+                                
+                                
                                     
                                 
                                 ))
@@ -411,13 +600,23 @@ export default function ChooseTechniquePage(searchParams){
                         <div className="core-drive-header">
                             <h2>{coreDrive2 !== null ? coreDrive2.coreDriveName : ''}</h2>
 
-                            <div className="white-hat-box">
-                                <span>White Hat</span>
-                            </div>
+                            {coreDrive2.hat != null ? 
+                                coreDrive2.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
 
-                            <div className="extrinsic-box">
-                                <span>Motivação extrínseca</span>
-                            </div>
+                            {coreDrive2.motivation != null ? 
+                                coreDrive2.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -425,6 +624,8 @@ export default function ChooseTechniquePage(searchParams){
                             {coreDrive2 && 
                                 coreDrive2.techniques.map((technique, index) => (
 
+
+                                
                                 <div key={technique._id} className="choose-technique-box">
                                     <input 
                                         type="checkbox" 
@@ -436,6 +637,23 @@ export default function ChooseTechniquePage(searchParams){
                                     <label htmlFor={`technique-${technique._id}`}>
                                         {technique.techniqueName}
                                     </label>
+
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
 
                                 </div>
                                     
@@ -455,13 +673,23 @@ export default function ChooseTechniquePage(searchParams){
                         <div className="core-drive-header">
                             <h2>{coreDrive3 !== null ? coreDrive3.coreDriveName : ''}</h2>
 
-                            <div className="white-hat-box">
-                                <span>White Hat</span>
-                            </div>
+                            {coreDrive3.hat != null ? 
+                                coreDrive3.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
 
-                            <div className="intrinsic-box">
-                                <span>Motivação intrínseca</span>
-                            </div>
+                            {coreDrive3.motivation != null ? 
+                                coreDrive3.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -480,6 +708,23 @@ export default function ChooseTechniquePage(searchParams){
                                     <label htmlFor={`technique-${technique._id}`}>
                                         {technique.techniqueName}
                                     </label>
+
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
 
                                 </div>
                                     
@@ -500,9 +745,24 @@ export default function ChooseTechniquePage(searchParams){
                     <div className="core-drive-box">
                         <div className="core-drive-header">
                             <h2>{coreDrive4 !== null ? coreDrive4.coreDriveName : ''}</h2>
-                            <div className="extrinsic-box">
-                                <span>Motivação extrínseca</span>
-                            </div>
+
+                            {coreDrive4.hat != null ? 
+                                coreDrive4.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive4.motivation != null ? 
+                                coreDrive4.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                             
                         </div>
 
@@ -523,6 +783,23 @@ export default function ChooseTechniquePage(searchParams){
                                         {technique.techniqueName}
                                     </label>
 
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
+
                                 </div>
                                     
                                 
@@ -541,9 +818,24 @@ export default function ChooseTechniquePage(searchParams){
                     <div className="core-drive-box">
                         <div className="core-drive-header">
                             <h2>{coreDrive5 !== null ? coreDrive5.coreDriveName : ''}</h2>
-                            <div className="intrinsic-box">
-                                <span>Motivação intrínseca</span>
-                            </div>
+                            
+                            {coreDrive5.hat != null ? 
+                                coreDrive5.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive5.motivation != null ? 
+                                coreDrive5.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                             
                         </div>
 
@@ -563,6 +855,23 @@ export default function ChooseTechniquePage(searchParams){
                                     <label htmlFor={`technique-${technique._id}`}>
                                         {technique.techniqueName}
                                     </label>
+
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
 
                                 </div>
                                     
@@ -584,13 +893,24 @@ export default function ChooseTechniquePage(searchParams){
                         <div className="core-drive-header">
                             <h2>{coreDrive6 !== null ? coreDrive6.coreDriveName : ''}</h2>
 
-                            <div className="black-hat-box">
-                                <span>Black Hat</span>
-                            </div>
+                            {coreDrive6.hat != null ? 
+                                coreDrive6.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
 
-                            <div className="extrinsic-box">
-                                <span>Motivação extrínseca</span>
-                            </div>
+                            {coreDrive6.motivation != null ? 
+                                coreDrive6.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
+
                         </div>
 
                         <div className="core-drive-techniques">
@@ -610,6 +930,23 @@ export default function ChooseTechniquePage(searchParams){
                                         {technique.techniqueName}
                                     </label>
 
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
+
                                 </div>
                                     
                                 
@@ -628,12 +965,23 @@ export default function ChooseTechniquePage(searchParams){
                         <div className="core-drive-header">
                             <h2>{coreDrive7 !== null ? coreDrive7.coreDriveName : ''}</h2>
 
-                            <div className="black-hat-box">
-                                <span>Black Hat</span>
-                            </div>
-                            <div className="intrinsic-box">
-                                <span>Motivação intrínseca</span>
-                            </div>
+                            {coreDrive7.hat != null ? 
+                                coreDrive7.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive7.motivation != null ? 
+                                coreDrive7.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -652,6 +1000,24 @@ export default function ChooseTechniquePage(searchParams){
                                     <label htmlFor={`technique-${technique._id}`}>
                                         {technique.techniqueName}
                                     </label>
+
+
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
 
                                 </div>
                                     
@@ -672,9 +1038,23 @@ export default function ChooseTechniquePage(searchParams){
                         <div className="core-drive-header">
                             <h2>{coreDrive8 !== null ? coreDrive8.coreDriveName : ''}</h2>
 
-                            <div className="black-hat-box">
-                                <span>Black Hat</span>
-                            </div>
+                            {coreDrive8.hat != null ? 
+                                coreDrive8.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive8.motivation != null ? 
+                                coreDrive8.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -694,6 +1074,22 @@ export default function ChooseTechniquePage(searchParams){
                                         {technique.techniqueName}
                                     </label>
 
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                        passHref
+                                        legacyBehavior
+                                    >
+                                        <a target="_blank">
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+                                        </a>
+                                    </Link>
                                 </div>
                                     
                                 

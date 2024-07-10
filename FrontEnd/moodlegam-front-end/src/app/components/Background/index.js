@@ -6,11 +6,14 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Dropdown from "@/app/components/Dropdown/index"
 import { useRouter } from 'next/navigation';
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default function Background(props){
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+   
     useEffect(() => {
         // Perform localStorage action
         const token = localStorage.getItem("token");
@@ -46,7 +49,7 @@ export default function Background(props){
                 `/users/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -77,6 +80,14 @@ export default function Background(props){
         
     }
 
+    const redirectToContent = () => {
+        router.push('/pages/content')
+    }
+
+    const redirectToAboutUs = () => {
+        router.push('/pages/aboutUs')
+    }
+
     const redirectToSubjects = () => {
         router.push('/pages/subject')
     }
@@ -87,6 +98,10 @@ export default function Background(props){
 
     const redirectToHome = () =>{
         router.push('/pages/homepage');
+    }
+
+    const redirectToHelp = () =>{
+        router.push('/pages/help')
     }
 
     useEffect(() => {
@@ -139,38 +154,54 @@ export default function Background(props){
                     </a>
 
                     <div className="button-navbar">
+                        <a 
+                            className="button-navbar"
+                            onClick={redirectToContent}
+                        >
+                            <Image 
+                                src="/img/content.svg"
+                                width={25}
+                                height={30}
+                                unoptimized={true}
+                            />
                         
-                        <Image 
-                            src="/img/content.svg"
-                            width={25}
-                            height={30}
-                            unoptimized={true}
-                        />
-                        <h2>Conteúdos</h2>
-
+                        
+                            <h2>Conteúdos</h2>
+                        </a>
                     </div>
 
                     <div className="button-navbar">
-                        
-                        <Image 
-                            src="/img/info.svg"
-                            width={30}
-                            height={30}
-                            unoptimized={true}
-                        />
+                        <a 
+                            className="button-navbar"
+                            onClick={redirectToAboutUs}
+                        >
+                            <Image 
+                                src="/img/info.svg"
+                                width={30}
+                                height={30}
+                                unoptimized={true}
+                            />
 
-                        <h2>Sobre nós</h2>
+                            <h2>Sobre nós</h2>
+                        </a>
+                        
                     </div>
 
                     <div  className="button-navbar">
+                        <a
+                           className="button-navbar"
+                           onClick={redirectToHelp} 
+                        >
+                            <Image 
+                                src="/img/help.svg"
+                                width={30}
+                                height={30}
+                                unoptimized={true}
+                            />
+                            <h2>Ajuda</h2>
+
+                        </a>
                         
-                        <Image 
-                            src="/img/help.svg"
-                            width={30}
-                            height={30}
-                            unoptimized={true}
-                        />
-                        <h2>Ajuda</h2>
 
                     </div>
                 </div>

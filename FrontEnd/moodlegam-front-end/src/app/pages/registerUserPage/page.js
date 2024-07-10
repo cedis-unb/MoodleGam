@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
 import dotenv from 'dotenv'
+
 dotenv.config()
 
 export default function RegisterUserPage(){
@@ -112,8 +113,10 @@ export default function RegisterUserPage(){
 
             )}
             
+            
         
             <div className="background-register-user-page">
+                
                 <h1>Cadastro de novo usuário</h1>
                 <form className="fields-register-user" onSubmit={handleSubmit}>
                     <div className="input-row-register-user">

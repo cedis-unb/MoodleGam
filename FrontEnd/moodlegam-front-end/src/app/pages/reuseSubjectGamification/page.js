@@ -2,18 +2,17 @@
 import "./style.css"
 import { useEffect, useState, useRef, Fragment } from "react";
 import Background from "../../components/Background";
-import Image from "next/image";
 import {jwtDecode} from "jwt-decode"; 
 import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 export default function ReuseSubjectGamification(searchParams){
     const subjectId = "66301fd926f093a263e049fc"
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [accordionOpen, setAccordionOpen] = useState(false);
     const [expandedSubjectId, setExpandedSubjectId] = useState(null);
     const [subjects, setSubjects] = useState([])
@@ -86,7 +85,7 @@ export default function ReuseSubjectGamification(searchParams){
                 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -126,7 +125,7 @@ export default function ReuseSubjectGamification(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -181,7 +180,7 @@ export default function ReuseSubjectGamification(searchParams){
                 `/subject/${subjectId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -212,7 +211,7 @@ export default function ReuseSubjectGamification(searchParams){
                 `/subject/user/${userId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -245,7 +244,7 @@ export default function ReuseSubjectGamification(searchParams){
                     `/technique/${techniqueId}`,
                     {
                         headers: {
-                            'x-api-key': apiKey,
+                            'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                         }
                     }
                 );

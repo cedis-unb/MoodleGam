@@ -21,7 +21,6 @@ export default function RegisterSubjectPage(){
         
     })
 
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [modalOpen, setModalOpen] = useState(false)
     const [token, setToken] = useState('')
     const [userId, setUserId] = useState(null);
@@ -105,7 +104,7 @@ export default function RegisterSubjectPage(){
                     
                     {
                         headers: {
-                            'x-api-key': `${apiKey}`,
+                            'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                             'Authorization': `Bearer ${token}`
                         }
                     }

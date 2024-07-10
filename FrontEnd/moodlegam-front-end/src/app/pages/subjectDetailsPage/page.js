@@ -5,16 +5,23 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Link from "next/link"
-
+import {useRouter} from "next/navigation";
+import BlackHatBox from "@/app/components/BlackHatBox"
+import WhiteHatBox from "@/app/components/WhiteHatBox"
+import IntrinsicBox from "@/app/components/IntrinsicBox"
+import ExtrinsicBox from "@/app/components/ExtrinsicBox"
+import RadarGraph from "@/app/components/RadarGraph"
+import dotenv from 'dotenv'
+dotenv.config()
 
 export default function SubjectDetailsPage(searchParams){
-
+    const router = useRouter()
    
     
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
     const [subject, setSubject] = useState(null)
-    const [techniques, setTechniques] = useState([])
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
     const [coreDrives, setCoreDrives] = useState([])
+
     
     
     
@@ -44,8 +51,40 @@ export default function SubjectDetailsPage(searchParams){
                 
 
                 const updatedCoreDrives = await sortCoreDrives(techniquesData, coreDrivesData)
+                console.log(updatedCoreDrives)
                 setCoreDrives(updatedCoreDrives)
+                var techniqueQuantity = [0,0,0,0,0,0,0,0]
 
+                updatedCoreDrives.forEach((coreDrive) =>{
+                    if(coreDrive.coreDriveName.includes("1")){
+                        techniqueQuantity[0] = coreDrive.techniques.length 
+                    }
+                    else if(coreDrive.coreDriveName.includes("2")){
+                        techniqueQuantity[7] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("3")){
+                        techniqueQuantity[1] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("4")){
+                        techniqueQuantity[6] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("5")){
+                        techniqueQuantity[2] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("6")){
+                        techniqueQuantity[5] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("7")){
+                        techniqueQuantity[3] = coreDrive.techniques.length
+                    }
+                    else if(coreDrive.coreDriveName.includes("8")){
+                        techniqueQuantity[4] = coreDrive.techniques.length
+                    }
+                })
+                
+            
+                setTechniqueQuantitys(techniqueQuantity)
+                
                 
             } catch (error) {
                 console.error('Erro ao buscar disciplina', error.response);
@@ -105,7 +144,7 @@ export default function SubjectDetailsPage(searchParams){
                     `/technique/${techniqueId}`,
                     {
                         headers: {
-                            'x-api-key': apiKey,
+                            'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
                         }
                     }
                 );
@@ -133,7 +172,7 @@ export default function SubjectDetailsPage(searchParams){
                 `/coreDrive`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                     }
                 }
             );
@@ -154,6 +193,7 @@ export default function SubjectDetailsPage(searchParams){
     }
 
 
+
     const fetchSubject = async(subjectId, token) =>{
         
         try {
@@ -162,7 +202,7 @@ export default function SubjectDetailsPage(searchParams){
                 `/subject/${subjectId}`, 
                 {
                     headers: {
-                        'x-api-key': `${apiKey}`,
+                        'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`,
                         'Authorization': `Bearer ${token}`
                     }
                 }
@@ -185,13 +225,56 @@ export default function SubjectDetailsPage(searchParams){
         }
 
     }
+
+
+    const redirect= (techniqueName) => {
+        
+        router.push(`/pages/tutorials/${techniqueName.toLowerCase()}`); 
+    };
+
+    const getFileName = (techniqueName) =>{
+        var fileName = techniqueName.toLowerCase()
+        fileName = fileName.split(' ').join('')
+
+        fileName = fileName.replace(/ç/g, 'c')
+
+        fileName = fileName.replace(/ã/g, 'a')
+        fileName = fileName.replace(/á/g, 'a')
+        fileName = fileName.replace(/â/g, 'a')
+        fileName = fileName.replace(/à/g, 'a')
+
+        fileName = fileName.replace(/ẽ/g, 'e')
+        fileName = fileName.replace(/é/g, 'e')
+        fileName = fileName.replace(/ê/g, 'e')
+        fileName = fileName.replace(/è/g, 'e')
+
+        fileName = fileName.replace(/ĩ/g, 'i')
+        fileName = fileName.replace(/í/g, 'i')
+        fileName = fileName.replace(/î/g, 'i')
+        fileName = fileName.replace(/ì/g, 'i')
+
+
+        fileName = fileName.replace(/õ/g, 'o')
+        fileName = fileName.replace(/ó/g, 'o')
+        fileName = fileName.replace(/ô/g, 'o')
+        fileName = fileName.replace(/ò/g, 'o')
+
+
+        fileName = fileName.replace(/ũ/g, 'u')
+        fileName = fileName.replace(/ú/g, 'u')
+        fileName = fileName.replace(/û/g, 'u')
+        fileName = fileName.replace(/ù/g, 'u')
+
+        return fileName
+    }
+
     return (
         <Background>
             <div className="background-subject-details">
                 <div className="header-subject-details">
                    
                     <h1>{subject !== null ? subject.subjectName : ''}</h1>
-                    <a className="edit-subject-wrapper">
+                    <div className="edit-subject-wrapper">
                         
                         <Image
                             src="/img/edit.svg"
@@ -211,7 +294,7 @@ export default function SubjectDetailsPage(searchParams){
                             <p id="edit-button">Editar dados</p>
                         </Link>
 
-                    </a>
+                    </div>
                 </div>
 
                 <div className="subject-details">
@@ -223,15 +306,35 @@ export default function SubjectDetailsPage(searchParams){
                         </span>
                     </p>
                 </div>
-
-
+                <div className="radar-chart">
+                    <RadarGraph
+                        techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                    />
+                </div>
+                
                 {coreDrives && coreDrives.map((coreDrive) => (
 
-                    <div className="core-drive-box">
+                    <div key={coreDrive._id} className="core-drive-box">
 
                         <div className="core-drive-header">
                             <h2>{coreDrive !== null ? coreDrive.coreDriveName : ''}</h2>
-                            
+                            {coreDrive.hat != null ? 
+                                coreDrive.hat === 'white' ?
+                                (<WhiteHatBox/>)
+                                :
+                                (<BlackHatBox/>)
+                                :
+                                ''
+                            }
+
+                            {coreDrive.motivation != null ? 
+                                coreDrive.motivation === 'intrinsic' ?
+                                (<IntrinsicBox/>)
+                                :
+                                (<ExtrinsicBox/>)
+                                :
+                                ''
+                            }
                         </div>
 
                         <div className="core-drive-techniques">
@@ -239,9 +342,27 @@ export default function SubjectDetailsPage(searchParams){
                             {coreDrive && 
                                     coreDrive.techniques.map((technique, index) => (
 
-                                    <div key={technique._id} className="technique-box">
-                                        <span>{technique.techniqueName}</span>
-                                    </div>
+                                    <Link
+                                        href={{
+                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                        }}
+                                    >
+                                        <div 
+                                            key={technique._id} 
+                                            className="technique-box" 
+                                            title="Clique para ver o tutorial dessa técnica"
+                                            
+                                        >
+
+                                            
+                                
+                                            
+                                            <span>{technique.techniqueName}</span>
+                                            
+                                            
+                                        </div>
+                                    </Link>
+                                
                                     
                             ))}
                             

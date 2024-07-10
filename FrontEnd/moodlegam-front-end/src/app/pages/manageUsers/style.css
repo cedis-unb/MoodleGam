@@ -1,0 +1,91 @@
+.manage-users-conteiner{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    gap: 3rem;
+}
+
+.manage-users-header{
+    display: flex;
+    color: white;
+    width: 85%;
+    justify-content: space-between;
+    
+    align-items: baseline;
+}
+
+.manage-users-header h1{
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+
+.search-users{
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.manage-users-header input{
+   
+    
+    background-color: var(--primary-dark-grey);
+    border-bottom-width: 1px;
+    font-size: 15px;
+}
+
+.manage-users-header input::placeholder{
+    font-size: 15px;
+    font-weight: light;
+}
+.manage-users-header input:focus{
+    outline: none;
+}
+
+.manage-users-content{
+    width: 90vw;
+    background-color: var(--option-subject);
+    border-radius: 5px;
+    
+}
+
+.users-table{
+    width: 90vw;
+    color: white;
+}
+
+.users-table td{
+    text-align: center;
+    height: 10vh;
+    border-top-width: 0.5px;
+    border-color: var(--light-gray-2);
+    
+}
+
+.users-table tr:hover{
+    background-color: var(--light-gray-2) ;
+}
+
+
+.users-table th{
+    height: 10vh;
+    text-align: center;
+    
+}
+
+#edit-user-button{
+    background-color: var(--moodle-blue);
+}
+
+#edit-user-button:hover{
+    background-color: #0055af;
+}
+
+#block-user-button{
+    background-color: var(--moodle-red);
+}
+
+#block-user-button:hover{
+    background-color: #a52935;
+}
