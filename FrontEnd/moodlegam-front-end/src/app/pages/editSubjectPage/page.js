@@ -676,7 +676,7 @@ export default function EditSubjectPage(searchParams){
                         ></input>
 
                         <textarea 
-                            value={subject !== null ? ` ${subject.note}` : ''}
+                            value={subject !== null ? `${subject.note}` : ''}
                             rows="4" 
                             cols="45"
                             placeholder="Observação"
