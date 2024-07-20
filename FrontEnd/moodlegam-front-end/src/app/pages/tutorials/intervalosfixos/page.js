@@ -28,7 +28,7 @@ export default function IntervalosFixos(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Intervalos Fixos" é uma estratégia de gamificação que 
+                            &quot;Intervalos Fixos&quot; é uma estratégia de gamificação que 
                             envolve a entrega de recompensas ou o acionamento de eventos 
                             em períodos regulares. Esta técnica pode ajudar a manter a 
                             participação e o engajamento do usuário, incentivando-o a 

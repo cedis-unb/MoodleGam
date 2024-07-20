@@ -26,7 +26,7 @@ export default function CurvaDeAprendizado(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    "Curva de Aprendizado" refere-se à progressão gradual do desafio e complexidade à medida que o 
+                                    &quot;Curva de Aprendizado&quot; refere-se à progressão gradual do desafio e complexidade à medida que o 
                                     usuário ganha habilidade e compreensão ao longo do tempo. Isso é comumente usado em jogos 
                                     para manter o engajamento do jogador, ao mesmo tempo em que incentiva o desenvolvimento de habilidades.
 
@@ -58,7 +58,7 @@ export default function CurvaDeAprendizado(){
                                     <p>
                                         Em plataformas de educação online, os materiais do curso podem ser estruturados 
                                         de maneira a apresentar conceitos cada vez mais complexos à medida que o aluno 
-                                        avança, refletindo uma "Curva de Aprendizado". Isso pode manter os alunos 
+                                        avança, refletindo uma &quot;Curva de Aprendizado&quot;. Isso pode manter os alunos 
                                         envolvidos e motivados à medida que conquistam novos níveis de compreensão.
                                     </p>
                                 </div> 

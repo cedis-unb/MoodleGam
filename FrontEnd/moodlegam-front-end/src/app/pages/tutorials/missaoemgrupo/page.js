@@ -30,7 +30,7 @@ export default function MissaoEmGrupo(){
                             colaborativo, bem como marketing viral, 
                             principalmente quando requerem a participação 
                             coletiva, em detrimento da individual, para 
-                            alcançar um objetivo (win-state). "Missão em Grupo" é uma estratégia de 
+                            alcançar um objetivo (win-state). &quot;Missão em Grupo&quot; é uma estratégia de 
                             gamificação que envolve a cooperação entre os usuários para alcançar um 
                             objetivo comum. Isso fomenta o trabalho em equipe, a interação entre os 
                             usuários e pode aumentar a sensação de pertencimento e realização coletiva.
@@ -65,7 +65,7 @@ export default function MissaoEmGrupo(){
                             <p>
                                 Em uma sala de aula ou plataforma de aprendizado online, os alunos podem ser 
                                 agrupados para completar um projeto ou resolver um problema complexo juntos. 
-                                Essa "Missão em Grupo" incentiva o aprendizado colaborativo e a troca de ideias.
+                                Essa &quot;Missão em Grupo&quot; incentiva o aprendizado colaborativo e a troca de ideias.
                                 
 
                             </p>

@@ -722,7 +722,7 @@ export default function EditSubjectPage(searchParams){
 
                     {coreDrives && coreDrives.map((coreDrive) => (
 
-                        <div className="core-drive-box">
+                        <div key={coreDrive._id} className="core-drive-box">
 
                             <div className="core-drive-header">
                                 <h2>{coreDrive !== null ? coreDrive.coreDriveName : ''}</h2>

@@ -28,7 +28,7 @@ export default function RitmoDeOpcoes(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Opções" é uma estratégia de gamificação que envolve o desbloqueio progressivo 
+                            &quot;Ritmo de Opções&quot; é uma estratégia de gamificação que envolve o desbloqueio progressivo 
                             de opções e escolhas para os usuários conforme avançam ou alcançam certos marcos. 
                             Isso pode ajudar a manter os usuários engajados, incentivando-os a continuar a 
                             participar para desbloquear mais opções.

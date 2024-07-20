@@ -257,7 +257,7 @@ export default function OctalysisContent(){
                             <h4>Significado Épico & Chamado</h4>
                             <p>
                                 Sentir-se parte de algo grandioso, ter a sensação de ser escolhido para uma missão especial, 
-                                essa é a essência do 'Significado Épico e Chamado'. Imagine-se, por exemplo, dedicando grande 
+                                essa é a essência do &quot;Significado Épico e Chamado&quot;. Imagine-se, por exemplo, dedicando grande 
                                 parte do seu tempo para manter um fórum online ou contribuir com a Wikipedia.
                                 <br></br><br></br>
                                 Essa motivação básica está relacionada com a sensação de fazer algo significativo, 
@@ -271,10 +271,10 @@ export default function OctalysisContent(){
                             <h4>Desenvolvimento & Realização</h4>
                             <p>
                                 Quando o jogador sofre um impulso interno para progredir, desenvolver habilidades e, eventualmente, 
-                                superar desafios, as habilidades trabalhadas são as relacionadas à técnica “Desenvolvimento e Realização".
+                                superar desafios, as habilidades trabalhadas são as relacionadas à técnica &quot;Desenvolvimento e Realização&quot;.
                                 <br></br><br></br>
                                 Esse método diz respeito à motivação de um jogador para evoluir, melhorar suas habilidades e vencer 
-                                desafios. Aqui, o termo 'desafio' é crucial, pois sem ele, ganhar uma medalha ou troféu perde o sentido. 
+                                desafios. Aqui, o termo &quot;desafio&quot; é crucial, pois sem ele, ganhar uma medalha ou troféu perde o sentido. 
                                 Esta motivação é geralmente expressa através de pontos, medalhas e rankings (PBL, do inglês: Pontos, 
                                 Emblemas ou Insígnias and Tabelas de Classificação), tornando-se a mais fácil de ser implementada em uma gamificação.
                             </p>
@@ -286,7 +286,7 @@ export default function OctalysisContent(){
                                 Quando os jogadores estão engajados em um processo criativo onde eles devem repetidamente descobrir as 
                                 coisas e experimentar diferentes combinações.
                                 <br></br><br></br>
-                                'Empoderamento e Feedback' acontece quando os jogadores estão envolvidos em um 
+                                &quot;Empoderamento e Feedback&quot; acontece quando os jogadores estão envolvidos em um 
                                 processo criativo que exige experimentação e combinações diversas. 
                                 Não basta só ter espaço para a criatividade, é preciso também ver o 
                                 impacto do seu trabalho, receber e dar feedback. É por isso que brincar 
@@ -298,7 +298,7 @@ export default function OctalysisContent(){
                         <li>
                             <h4>Propriedade & Posse</h4>
                             <p>
-                                'Propriedade e Posse' é a motivação que surge quando os jogadores sentem que possuem algo. 
+                                &quot;Propriedade e Posse&quot; é a motivação que surge quando os jogadores sentem que possuem algo. 
                                 Quando se sentem donos de algo, os jogadores tendem a querer melhorar e acumular mais itens. 
                                 Isso pode ser visto quando alguém passa muito tempo personalizando seu perfil ou avatar, ou 
                                 ainda quando se sente motivado a colecionar selos, peças de quebra-cabeças e outras coisas. 
@@ -313,7 +313,7 @@ export default function OctalysisContent(){
                                 Esta é a motivação básica na qual os jogadores estão motivados por interagirem com outros 
                                 jogadores e sentirem o pertencimento a um determinado grupo.
                                 <br></br><br></br>
-                                'Influência Social e Pertencimento' diz respeito aos aspectos sociais que motivam as 
+                                &quot;Influência Social e Pertencimento&quot; diz respeito aos aspectos sociais que motivam as 
                                 pessoas no convívio comunitário, como orientação, aceitação, interações sociais, 
                                 companheirismo, competição e até inveja. Ver um amigo que é bom em algo ou que possui 
                                 algo extraordinário pode motivá-lo a alcançar o mesmo nível. Além disso, a ligação com 
@@ -329,7 +329,7 @@ export default function OctalysisContent(){
                                 Esta é a motivação básica na qual os jogadores estão motivados por buscar completar 
                                 a informação que foi lhes passada incompleta ou com promessas.
                                 <br></br><br></br>
-                                'Escassez e Impaciência' é a motivação que surge da espera por algo que ainda não se tem. 
+                                &quot;Escassez e Impaciência&quot; é a motivação que surge da espera por algo que ainda não se tem. 
                                 É comum em jogos que tem recompensas agendadas (como voltar em duas horas para receber um 
                                 prêmio). A impossibilidade de obter algo desejado de imediato faz com que a pessoa 
                                 pense constantemente nisso. Esta motivação foi usada pelo Facebook em seus primórdios, 
@@ -343,7 +343,7 @@ export default function OctalysisContent(){
                                 Esta é a motivação básica na qual os jogadores estão motivados pela incerteza do que irá acontecer 
                                 ou curiosidade sobre o que há no desconhecido.
                                 <br></br><br></br>
-                                A motivação "Imprevisibilidade & Curiosidade" desempenha um papel crucial na 
+                                A motivação &quot;Imprevisibilidade & Curiosidade&quot; desempenha um papel crucial na 
                                 gamificação ao estimular a curiosidade e a exploração. Esta motivação é atraente 
                                 porque se baseia na tendência humana natural de se sentir atraído por elementos de 
                                 mistério e surpresa. Quando os jogadores não podem prever o que acontecerá em seguida, 
@@ -365,7 +365,7 @@ export default function OctalysisContent(){
                         <li>
                             <h4>Perda & Rejeição</h4>
                             <p>
-                                O driver central "Perda & Rejeição" é fundamentalmente sobre a prevenção e o medo das 
+                                O driver central &quot;Perda & Rejeição&quot; é fundamentalmente sobre a prevenção e o medo das 
                                 consequências negativas. No contexto de jogos e gamificação, este driver pode ser usado 
                                 para estimular os jogadores a permanecerem ativos, continuarem engajados e evitarem 
                                 comportamentos indesejáveis. Isso acontece, pois é despertado o medo de 
@@ -427,6 +427,7 @@ export default function OctalysisContent(){
                                             href={{
                                                 pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
                                             }}
+                                            key={technique._id}
                                         >
                                             <div 
                                                 key={technique._id} 

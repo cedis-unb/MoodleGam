@@ -28,7 +28,7 @@ export default function CombinacoesEmCadeia(){
                     <div className="tech-description-text">
                         <p>
                             Quando um conjunto encadeado de ações produz um efeito maior do que a soma individual 
-                            das partes. As "Combinações em Cadeia" são uma estratégia de gamificação que envolve 
+                            das partes. As &quot;Combinações em Cadeia&quot; são uma estratégia de gamificação que envolve 
                             recompensar os usuários quando eles realizam uma série de ações ou tarefas em 
                             uma sequência específica. Isso pode ajudar a motivar os usuários a se 
                             envolverem mais profundamente e a explorar diferentes aspectos de uma experiência.
@@ -63,7 +63,7 @@ export default function CombinacoesEmCadeia(){
                                 Em uma plataforma de aprendizado online, os alunos podem 
                                 receber uma recompensa extra por completar uma série de cursos 
                                 relacionados em uma ordem específica. Este é um exemplo de 
-                                "Combinações em Cadeia", pois incentiva os alunos a aprofundar 
+                                &quot;Combinações em Cadeia&quot;, pois incentiva os alunos a aprofundar 
                                 seu conhecimento em uma área específica.
                             </p>
                         </div> 

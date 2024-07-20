@@ -27,7 +27,7 @@ export default function SinfoniaDaEvolucao(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A "Sinfonia de Evolução" é uma estratégia na gamificação que combina a 
+                        A &quot;Sinfonia de Evolução&quot; é uma estratégia na gamificação que combina a 
                         satisfação de alcançar um novo nível com uma série de recompensas que chegam ao mesmo tempo. 
                         Isto cria uma experiência altamente gratificante e motivadora para o usuário, encorajando-o a 
                         continuar a interagir com o sistema, produto ou serviço.

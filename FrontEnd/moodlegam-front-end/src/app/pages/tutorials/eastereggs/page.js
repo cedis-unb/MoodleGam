@@ -29,7 +29,7 @@ export default function EasterEggs(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Easter Eggs" são surpresas ou recursos ocultos inseridos 
+                            &quot;Easter Eggs&quot; são surpresas ou recursos ocultos inseridos 
                             intencionalmente em um programa, jogo, site ou qualquer 
                             outro ambiente digital. Eles são feitos para surpreender, 
                             divertir ou recompensar os usuários que os descobrem. 

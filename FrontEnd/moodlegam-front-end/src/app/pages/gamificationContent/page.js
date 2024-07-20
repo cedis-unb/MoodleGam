@@ -45,9 +45,9 @@ export default function GamificationContent(){
                                 do uso de Gamificação no mundo real.
                                 <br></br>
                                 <br></br>
-                                <b>TOM's Shoes:</b> A empresa Tom's Shoes fez uma campanha onde a cada pedido de par de tênis realizado por clientes,
+                                <b>TOM&apos;s Shoes:</b> A empresa Tom&apos;s Shoes fez uma campanha onde a cada pedido de par de tênis realizado por clientes,
                                 um par de tênis é encaminhado para uma pessoa carente em um país de terceiro mundo.
-                                Os clientes se sentem empolgados para comprar os calçados da TOM's Shoes pois elas
+                                Os clientes se sentem empolgados para comprar os calçados da TOM&apos;s Shoes pois elas
                                 acreditam que estão ajudando um bem maior e se tornando uma espécie de herói.
                                 <br></br>
                                 <br></br>
@@ -58,7 +58,7 @@ export default function GamificationContent(){
                                 fazerem compras futuras.
                                 <br></br>
                                 <br></br>
-                                <b>Plataformas de Ensino à Distância:</b> Em uma plataforma de ensino à distância, a "Âncora de Conformidade" 
+                                <b>Plataformas de Ensino à Distância:</b> Em uma plataforma de ensino à distância, a &quot;Âncora de Conformidade&quot; 
                                 pode ser usada ao destacar a quantidade média de tempo que os estudantes bem-sucedidos gastam estudando ou o 
                                 número médio de exercícios que eles completam. Isso pode motivar os alunos a se conformarem a esses comportamentos 
                                 para melhorar suas próprias realizações acadêmicas.

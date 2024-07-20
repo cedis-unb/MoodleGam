@@ -27,7 +27,7 @@ export default function AutonomiaVoluntaria(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    "Autonomia Voluntária" é uma estratégia de gamificação que envolve permitir que os usuários tenham 
+                                    &quot;Autonomia Voluntária&quot; é uma estratégia de gamificação que envolve permitir que os usuários tenham 
                                     liberdade e escolha em como eles interagem com um sistema ou completam tarefas. Isso pode 
                                     ajudar a aumentar o engajamento dos usuários, dando-lhes um sentido de controle e poder 
                                     sobre a sua experiência.

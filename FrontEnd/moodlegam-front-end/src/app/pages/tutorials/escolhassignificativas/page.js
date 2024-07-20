@@ -34,7 +34,7 @@ export default function EscolhasSignificativas(){
                             Esta técnica assemelha-se a decidir o que plantar em um jardim, é muitas
                             vezes uma preferência de estilo e estratégia, algo que é o cerne desta Motivação Básica.
                             <br></br><br></br>
-                            "Escolha de Plantas / Escolhas Significativas" é uma estratégia de 
+                            &quot;Escolha de Plantas / Escolhas Significativas&quot; é uma estratégia de 
                             gamificação que envolve permitir que os usuários façam escolhas 
                             que têm um impacto real e significativo na sua experiência. 
                             Isso pode ajudar a aumentar o engajamento dos usuários, 
@@ -70,8 +70,8 @@ export default function EscolhasSignificativas(){
                                 Em uma plataforma de aprendizado online, os alunos podem 
                                 ter a opção de escolher entre diferentes trajetórias de aprendizado 
                                 ou tópicos de estudo, cada um dos quais pode levar a diferentes 
-                                resultados de aprendizado. Este é um exemplo de "Escolha de Plantas / Escolhas 
-                                Significativas", pois permite que os alunos moldem sua própria experiência de aprendizado.
+                                resultados de aprendizado. Este é um exemplo de &quot;Escolha de Plantas / Escolhas 
+                                Significativas&quot;, pois permite que os alunos moldem sua própria experiência de aprendizado.
                                 
                             </p>
                         </div> 

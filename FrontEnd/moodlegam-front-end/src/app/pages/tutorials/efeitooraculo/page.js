@@ -28,7 +28,7 @@ export default function EfeitoOraculo(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Efeito Oráculo" é uma estratégia de gamificação que envolve fornecer aos usuários 
+                            &quot;Efeito Oráculo&quot; é uma estratégia de gamificação que envolve fornecer aos usuários 
                             previsões ou insights sobre possíveis futuros resultados ou eventos. 
                             Isso pode ajudar a orientar suas ações e decisões, aumentando o engajamento e a satisfação.
 
@@ -60,7 +60,7 @@ export default function EfeitoOraculo(){
 
 
                             <p>
-                                Em um sistema de aprendizado online, o "Efeito Oráculo" pode ser usado para 
+                                Em um sistema de aprendizado online, o &quot;Efeito Oráculo&quot; pode ser usado para 
                                 mostrar aos alunos como suas ações atuais afetarão seu progresso futuro. 
                                 Por exemplo, eles podem visualizar como a conclusão de certos cursos ou a 
                                 aquisição de habilidades específicas podem afetar suas perspectivas de carreira.

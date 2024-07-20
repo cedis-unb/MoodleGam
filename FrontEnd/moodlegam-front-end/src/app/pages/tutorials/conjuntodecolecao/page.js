@@ -27,7 +27,7 @@
                         <div className="tech-description-text">
                             <p>
                             Um conjunto de itens que só estará completo se todos estiverem reunidos. Dê ao jogador alguns itens 
-                            e diga que eles fazem parte de um conjunto maior (uma coleção). "Conjunto de Coleção" é uma 
+                            e diga que eles fazem parte de um conjunto maior (uma coleção). &quot;Conjunto de Coleção&quot; é uma 
                             estratégia de gamificação que envolve incentivar os usuários a coletar um grupo de itens ou 
                             conquistas específicas. A necessidade de completar um conjunto pode motivar os usuários a 
                             continuar a interagir com o sistema para adquirir todos os itens do conjunto. 

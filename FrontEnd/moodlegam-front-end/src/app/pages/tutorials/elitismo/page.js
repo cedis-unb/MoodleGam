@@ -34,7 +34,7 @@ export default function Elitismo(){
                             status ou privilégios dentro de um grupo ou 
                             comunidade de jogadores.
 
-                            A técnica "Elitismo" busca criar uma 
+                            A técnica &quot;Elitismo&quot; busca criar uma 
                             dinâmica em que os jogadores se esforcem 
                             para se destacar dos demais, alcançando uma 
                             posição de prestígio ou superioridade em 
@@ -70,7 +70,7 @@ export default function Elitismo(){
 
 
                                 <p>
-                                    Em programas de treinamento ou aprendizagem, a técnica "Elitismo" 
+                                    Em programas de treinamento ou aprendizagem, a técnica &quot;Elitismo&quot; 
                                     pode ser utilizada para motivar os participantes a se esforçarem e 
                                     alcançarem um alto nível de desempenho. Por exemplo, um programa de 
                                     treinamento corporativo pode premiar os melhores desempenhos com 

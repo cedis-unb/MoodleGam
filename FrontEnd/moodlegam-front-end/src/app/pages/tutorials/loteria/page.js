@@ -28,7 +28,7 @@ export default function Loteria(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Loteria" é uma estratégia de gamificação que envolve a introdução de elementos de 
+                            &quot;Loteria&quot; é uma estratégia de gamificação que envolve a introdução de elementos de 
                             sorte e aleatoriedade, na qual os usuários têm a oportunidade de ganhar 
                             recompensas através de um sorteio aleatório. Essa técnica pode aumentar a 
                             excitação e a antecipação, incentivando a participação e o engajamento dos usuários.
@@ -61,7 +61,7 @@ export default function Loteria(){
 
 
                             <p>
-                                Em um ambiente de aprendizado, a "Loteria" pode ser usada para incentivar 
+                                Em um ambiente de aprendizado, a &quot;Loteria&quot; pode ser usada para incentivar 
                                 a participação dos alunos. Por exemplo, os professores podem criar um 
                                 sorteio onde os alunos ganham entradas de cinema por completar tarefas, 
                                 participar ativamente das aulas ou alcançar bons resultados, com prêmios 

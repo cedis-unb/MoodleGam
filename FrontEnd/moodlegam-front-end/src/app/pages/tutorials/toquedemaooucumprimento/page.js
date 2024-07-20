@@ -28,10 +28,10 @@ export default function ToqueDeMaoOuCumprimento(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            O "Toque de Mão" ou "Toca aqui" é uma técnica de gamificação que envolve o 
+                            O &quot;Toque de Mão&quot; ou &quot;Toca aqui&quot; é uma técnica de gamificação que envolve o 
                             reconhecimento de pequenas vitórias ou realizações do usuário. Esta estrátegia 
                             está relacionada com a ideia de dar feedback positivo para encorajar a continuação 
-                            do bom comportamento ou desempenho. Um "toque de mão" é geralmente uma forma rápida e 
+                            do bom comportamento ou desempenho. Um &quot;toque de mão&quot; é geralmente uma forma rápida e 
                             fácil de mostrar aprovação ou apoio.
 
                         </p>
@@ -60,15 +60,15 @@ export default function ToqueDeMaoOuCumprimento(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, os alunos podem receber um "toque de mão" 
+                                Em uma plataforma de aprendizado online, os alunos podem receber um &quot;toque de mão&quot; 
                                 na forma de feedback positivo imediato após a conclusão de um módulo de aprendizado 
                                 ou após dar uma resposta correta em um questionário.
                                 <br></br><br></br>
-                                A técnica do "Toque de Mão" mostra a importância de dar feedback positivo e 
+                                A técnica do &quot;Toque de Mão&quot; mostra a importância de dar feedback positivo e 
                                 reconhecimento, mesmo para pequenas conquistas. Ela pode ser uma forma eficaz de 
                                 motivar os usuários a continuar seu progresso, pois reforça o comportamento positivo.
                                 <br></br><br></br>
-                                No entanto, é importante garantir que o "Toque de Mão" seja dado de maneira adequada e autêntica, para que não pareça forçado ou insincero. Um "Toque de Mão" bem implementado pode ajudar a criar uma experiência mais positiva e gratificante para o usuário.
+                                No entanto, é importante garantir que o &quot;Toque de Mão&quot; seja dado de maneira adequada e autêntica, para que não pareça forçado ou insincero. Um &quot;Toque de Mão&quot; bem implementado pode ajudar a criar uma experiência mais positiva e gratificante para o usuário.
                                 
                             </p>
                         </div> 

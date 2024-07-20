@@ -27,7 +27,7 @@ export default function PreenchimentoDeLacunas(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Preenchimento de Lacunas" é uma estratégia de gamificação que envolve permitir que 
+                            &quot;Preenchimento de Lacunas&quot; é uma estratégia de gamificação que envolve permitir que 
                             os usuários completem ou personalizem algo com suas próprias entradas ou escolhas. 
                             Isso pode ajudar a aumentar o engajamento dos usuários, proporcionando uma sensação 
                             de poder e liberdade, permitindo que os usuários expressem sua criatividade.
@@ -59,7 +59,7 @@ export default function PreenchimentoDeLacunas(){
                             <p>
                                 Em uma plataforma de aprendizado online, os alunos podem ser solicitados a 
                                 preencher lacunas em uma história ou resolver problemas preenchendo as 
-                                informações em falta. Este é um exemplo de "Preenchimento de Lacunas", 
+                                informações em falta. Este é um exemplo de &quot;Preenchimento de Lacunas&quot;, 
                                 pois envolve os alunos de maneira ativa e criativa no processo de aprendizado.
                             </p>
                         </div> 

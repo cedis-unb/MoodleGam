@@ -26,7 +26,7 @@ export default function Protecao(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    "Proteção" é uma estratégia que permite aos jogadores proteger seus recursos, 
+                                    &quot;Proteção&quot; é uma estratégia que permite aos jogadores proteger seus recursos, 
                                     progresso ou posições contra perdas ou ataques. Em um contexto de 
                                     gamificação, esta técnica pode aumentar o engajamento ao adicionar 
                                     um elemento de estratégia e a necessidade de planejamento.
@@ -57,9 +57,9 @@ export default function Protecao(){
 
 
                                     <p>
-                                        Em uma plataforma de educação online, a "Proteção" pode se manifestar na forma 
+                                        Em uma plataforma de educação online, a &quot;Proteção&quot; pode se manifestar na forma 
                                         de salvamento automático do progresso do aluno ou de opções para revisar ou 
-                                        refazer exames. Este é um exemplo de "Proteção", pois os alunos podem se 
+                                        refazer exames. Este é um exemplo de &quot;Proteção&quot;, pois os alunos podem se 
                                         sentir mais à vontade para explorar e aprender sabendo que seu progresso está 
                                         seguro.
                                     </p>

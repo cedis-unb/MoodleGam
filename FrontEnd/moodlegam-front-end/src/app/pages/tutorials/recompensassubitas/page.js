@@ -29,7 +29,7 @@ export default function RecompensasSubitas(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Recompensas Súbitas" é uma estratégia de gamificação que envolve surpreender os 
+                            &quot;Recompensas Súbitas&quot; é uma estratégia de gamificação que envolve surpreender os 
                             usuários com recompensas não previstas. Essa abordagem pode aumentar o engajamento 
                             dos usuários, ao criar uma sensação de prazer e satisfação inesperada, 
                             incentivando os usuários a continuarem interagindo na esperança de receber mais 
@@ -62,7 +62,7 @@ export default function RecompensasSubitas(){
 
 
                             <p>
-                                Em uma sala de aula, um professor pode utilizar "Recompensas Súbitas" 
+                                Em uma sala de aula, um professor pode utilizar &quot;Recompensas Súbitas&quot; 
                                 para incentivar a participação e o envolvimento dos alunos, oferecendo 
                                 pontos extras ou prêmios para respostas corretas não esperadas ou 
                                 contribuições úteis para a aula.

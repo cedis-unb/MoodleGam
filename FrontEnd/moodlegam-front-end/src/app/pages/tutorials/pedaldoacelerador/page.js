@@ -28,7 +28,7 @@ export default function PedalDoAcelerador(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pedal do acelerador" ou também conhecido como "Reguladores" é uma 
+                            &quot;Pedal do acelerador&quot; ou também conhecido como &quot;Reguladores&quot; é uma 
                             estratégia de gamificação que se refere ao controle de acesso ou 
                             limitação da velocidade com a qual os jogadores podem progredir em um jogo. 
                             Isso é feito estabelecendo limites no jogo, tais como limites de tempo, 
@@ -66,7 +66,7 @@ export default function PedalDoAcelerador(){
                             <p>
                                 Em uma plataforma de aprendizado online, os alunos podem ter um número 
                                 limitado de tentativas para completar um teste ou tarefa. Este é um exemplo 
-                                de "Reguladores", pois limita o progresso rápido e força os alunos a estudar 
+                                de &quot;Reguladores&quot;, pois limita o progresso rápido e força os alunos a estudar 
                                 e se preparar adequadamente.
 
                             </p>

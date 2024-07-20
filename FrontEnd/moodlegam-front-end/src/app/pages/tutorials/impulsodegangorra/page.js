@@ -26,7 +26,7 @@ export default function ImpulsoDeGangorra(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Impulso de Gangorra" é uma estratégia de gamificação que envolve balancear as 
+                            &quot;Impulso de Gangorra&quot; é uma estratégia de gamificação que envolve balancear as 
                             ações dos usuários de forma que as suas decisões e atividades possam ter um impacto 
                             alternado, semelhante ao movimento de uma gangorra. Isso pode criar um senso de dinamismo 
                             e envolvimento, pois os usuários se sentem incentivados a responder ativamente às mudanças 
@@ -60,7 +60,7 @@ export default function ImpulsoDeGangorra(){
 
 
                             <p>
-                                Em um ambiente de aprendizagem, o "Impulso de Gangorra" pode ser utilizado para 
+                                Em um ambiente de aprendizagem, o &quot;Impulso de Gangorra&quot; pode ser utilizado para 
                                 equilibrar entre diferentes métodos de ensino ou temas de estudo. Por exemplo, 
                                 a atenção pode alternar entre aulas teóricas e atividades práticas, incentivando 
                                 os alunos a adaptarem-se a diferentes estilos de aprendizagem.

@@ -28,7 +28,7 @@ export default function ProgressoPerdido(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Progresso Perdido" é uma estratégia de gamificação que envolve a 
+                            &quot;Progresso Perdido&quot; é uma estratégia de gamificação que envolve a 
                             possibilidade de perder algum avanço conquistado como resultado 
                             de erros ou inatividade do usuário. A intenção é incentivar a 
                             ação consistente e cuidadosa para manter o progresso alcançado.
@@ -60,7 +60,7 @@ export default function ProgressoPerdido(){
 
 
                             <p>
-                                Em um aplicativo de aprendizado de idiomas, a "Progresso Perdido" pode ser 
+                                Em um aplicativo de aprendizado de idiomas, a &quot;Progresso Perdido&quot; pode ser 
                                 implementada com um sistema de pontos que diminui se o usuário não praticar 
                                 regularmente. Isso incentiva o uso consistente do aplicativo.
                             </p>

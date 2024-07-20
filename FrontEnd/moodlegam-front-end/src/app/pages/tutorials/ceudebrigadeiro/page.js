@@ -29,7 +29,7 @@ export default function CeuDeBrigadeiro(){
                         <p>
                             Onde o designer já não precisa adicionar continuamente 
                             mais conteúdo para manter as atividades envolventes. 
-                            "Céu de Brigadeiro" é uma estratégia de gamificação 
+                            &quot;Céu de Brigadeiro&quot; é uma estratégia de gamificação 
                             que envolve criar elementos do jogo que têm valor contínuo 
                             e podem ser usados repetidamente sem perder seu apelo. 
                             Isso ajuda a manter o engajamento e interesse do usuário 
@@ -63,7 +63,7 @@ export default function CeuDeBrigadeiro(){
                             <p>
                                 Em uma plataforma de aprendizado online, um sistema de emblemas que reconhece a 
                                 conclusão de cursos ou aquisição de novas habilidades pode ser considerado um 
-                                "céu de brigadeiro". Os alunos são incentivados a continuar aprendendo e 
+                                &quot;Céu de brigadeiro&quot;. Os alunos são incentivados a continuar aprendendo e 
                                 adquirindo novas insígnias.
                                 
                             </p>

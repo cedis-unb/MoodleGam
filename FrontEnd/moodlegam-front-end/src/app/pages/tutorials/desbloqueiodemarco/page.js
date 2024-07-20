@@ -26,9 +26,9 @@ export default function DesbloqueioDeMarco(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        O jogador tem acesso a novas possibilidades quando uma etapa é atingida. "Desbloqueio de Marco" é 
+                        O jogador tem acesso a novas possibilidades quando uma etapa é atingida. &quot;Desbloqueio de Marco&quot; é 
                         uma estratégia de gamificação que envolve a liberação de conteúdo novo, características, ou 
-                        recompensas quando os usuários atingem determinados pontos ou "marcos" na sua progressão. 
+                        recompensas quando os usuários atingem determinados pontos ou &quot;marcos&quot; na sua progressão. 
                         Isso pode aumentar o engajamento dos usuários, ao oferecer 
                         incentivos e recompensas tangíveis que encorajam o progresso contínuo e a realização de objetivos.
 

@@ -28,7 +28,7 @@ export default function FeedbackImediato(){
                             <div className="tech-description-text">
                                 <p>
                                 Permite ao jogador reconhecer imediatamente os resultados do seu trabalho. 
-                                "Feedback Imediato" é uma estratégia de gamificação que envolve fornecer aos usuários uma resposta 
+                                &quot;Feedback Imediato&quot; é uma estratégia de gamificação que envolve fornecer aos usuários uma resposta 
                                 rápida e clara sobre suas ações ou desempenho. Isso pode ajudar a motivar os usuários, fornecer 
                                 reforço positivo para comportamentos desejados e ajudar os usuários a aprender e melhorar.
 

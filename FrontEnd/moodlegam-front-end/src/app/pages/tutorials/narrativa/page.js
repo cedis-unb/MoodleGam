@@ -25,7 +25,7 @@ export default function Narrativa(){
                         <p>
                         A maioria dos jogos começam com uma narrativa que dá ao jogador algum contexto sobre por que eles deveriam jogar o jogo.
                         <br></br> <br></br>
-                        A técnica da "Narrativa" é um recurso amplamente utilizado em gamificação para envolver e motivar os usuários através da contação de histórias. 
+                        A técnica da &quot;Narrativa&quot; é um recurso amplamente utilizado em gamificação para envolver e motivar os usuários através da contação de histórias. 
                         Esse método pode criar um contexto atraente e imersivo para uma experiência de gamificação, tornando-a mais envolvente e interessante. 
                         A narrativa também pode fornecer estrutura e significado para as atividades e metas de gamificação, ajudando os usuários a entenderem e 
                         se conectarem com a gamificação em um nível mais profundo
@@ -58,7 +58,7 @@ export default function Narrativa(){
                                 narrativa para tornar o conteúdo do curso mais envolvente. 
                                 Por exemplo, um curso de história pode apresentar o conteúdo 
                                 como uma série de histórias interligadas, com cada lição 
-                                apresentando um novo "capítulo" na história.
+                                apresentando um novo &apos;capítulo&apos; na história.
                             </p>
                         </div>
 

@@ -26,7 +26,7 @@ export default function BensVirtuais(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                "Bens Virtuais" são itens digitais que os usuários podem adquirir, coletar ou trocar dentro de um 
+                                &quot;Bens Virtuais&quot; são itens digitais que os usuários podem adquirir, coletar ou trocar dentro de um 
                                 sistema de gamificação. Esses bens podem ser puramente cosméticos, como avatares ou decorações, 
                                 ou podem ter um impacto funcional, como melhorias de desempenho ou acesso a novas áreas. 
                                 Eles servem para aumentar o engajamento dos usuários, oferecendo objetivos tangíveis para alcançar e 

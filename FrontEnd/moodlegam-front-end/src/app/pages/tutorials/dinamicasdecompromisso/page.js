@@ -28,7 +28,7 @@ export default function DinamicasDeCompromisso(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Dinâmicas de Compromisso" é uma estratégia de gamificação que envolve criar um evento ou 
+                            &quot;Dinâmicas de Compromisso&quot; é uma estratégia de gamificação que envolve criar um evento ou 
                             atividade que ocorre em um horário específico, incentivando os usuários a retornar ou 
                             participar naquele momento. Isso pode ajudar a criar um hábito ou rotina, além de aumentar 
                             o engajamento dos usuários.
@@ -62,7 +62,7 @@ export default function DinamicasDeCompromisso(){
 
 
                             <p>
-                                Em aplicativos de aprendizado de idiomas, as "Dinâmicas de Compromisso" podem ser usadas para 
+                                Em aplicativos de aprendizado de idiomas, as &quot;Dinâmicas de Compromisso&quot; podem ser usadas para 
                                 organizar aulas ao vivo ou eventos de prática de idiomas em horários específicos. Isso incentiva 
                                 os alunos a retornarem ao aplicativo naquele horário específico e ajuda a criar uma rotina de aprendizado.
 

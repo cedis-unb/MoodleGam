@@ -28,7 +28,7 @@ export default function TragediaDaBancarrota(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Tragédia da Bancarrota" é uma estratégia de gamificação que se baseia no 
+                            &quot;Tragédia da Bancarrota&quot; é uma estratégia de gamificação que se baseia no 
                             princípio econômico do custo afundado, que refere-se ao investimento de tempo, 
                             esforço ou recursos que já foram feitos e que não podem ser recuperados. 
                             A ideia é que os usuários sejam motivados a continuar um comportamento ou 

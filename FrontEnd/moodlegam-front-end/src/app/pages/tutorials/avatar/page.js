@@ -27,7 +27,7 @@ export default function Avatar(){
                     <div className="tech-description-text">
                         <p>
                         Quando o jogador cria uma representação virtual de si mesmo, ele se sente naturalmente envolvido 
-                        com esta imagem. Um "Avatar" é uma representação gráfica de um usuário dentro de um jogo ou 
+                        com esta imagem. Um &quot;Avatar&quot; é uma representação gráfica de um usuário dentro de um jogo ou 
                         ambiente digital. Através desta representação, os usuários podem expressar sua 
                         individualidade, alcançar objetivos e interagir com o ambiente e outros usuários. 
                         O uso de avatares em gamificação pode aumentar o engajamento e a sensação de pertencimento 

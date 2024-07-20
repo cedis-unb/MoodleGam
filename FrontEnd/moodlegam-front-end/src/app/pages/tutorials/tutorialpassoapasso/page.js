@@ -27,7 +27,7 @@ export default function TutorialPassoAPasso(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            O "Tutorial Passo a Passo" é uma estratégia comum na gamificação que visa ensinar aos 
+                            O &quot;Tutorial Passo a Passo&quot; é uma estratégia comum na gamificação que visa ensinar aos 
                             usuários como navegar e usar efetivamente um sistema, produto ou serviço. Ele decompõe a 
                             informação em etapas gerenciáveis, proporcionando aos usuários a oportunidade de aprender e 
                             praticar novas habilidades em um ambiente controlado e sem riscos. Isso pode ajudar a reduzir a 

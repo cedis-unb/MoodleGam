@@ -44,7 +44,7 @@ export default function Help(){
                         </li>
                         <li>
                             <Link legacyBehavior href="#section5">
-                                <a>Para que serve o campo "Anotações" ao cadastrar uma disciplina?</a>
+                                <a>Para que serve o campo &quot;Anotações&quot; ao cadastrar uma disciplina?</a>
                             </Link>
                             
                         </li>
@@ -123,7 +123,7 @@ export default function Help(){
                             <p>
                                 Após ter cadastrado insformações básicas sobre a disciplina, um pop-up irá aparecer com a opção
                                 de escolher técnicas, ao clicar nessa opção, todas as técnicas irão aparecer em uma página. Basta
-                                clicar no símbolo "?" dentro de uma técnica que você será encaminhado para a página da mesma.
+                                clicar no símbolo &quot;?&quot; dentro de uma técnica que você será encaminhado para a página da mesma.
                                 <br></br><br></br>
                                 Caso você ainda não tenha cadastrado a disciplina, clique neste <Link href="/pages/octalysisContent">link</Link>, ou siga o caminho Conteúdos (Na barra superior ou menu inicial)
                                 -&gt; Octalysis. Lá estarão listadas as técnicas do Framework, basta clicar sobre elas e uma 
@@ -133,7 +133,7 @@ export default function Help(){
                     </div>
 
                     <div id="section5" className="help-question">
-                        <h2>Para que serve o campo "Anotações" ao cadastrar uma disciplina?</h2>
+                        <h2>Para que serve o campo &quot;Anotações&quot; ao cadastrar uma disciplina?</h2>
                         <div className="help-explanation">
                             <p>
                                 Este campo serve para que o professor(a) coloque suas observações sobre
@@ -150,7 +150,7 @@ export default function Help(){
                         <div className="help-explanation">
                             <p>
                                 Clique na opção Disciplinas (Na barra superior ou menu inicial) -&gt; Ver disciplinas
-                                -&gt; Escolha a disciplina e clique em "Ver detalhes" -&gt; Editar dados 
+                                -&gt; Escolha a disciplina e clique em &quot;Ver detalhes&quot; -&gt; Editar dados 
                             </p>
                         </div>
                     </div>
@@ -164,9 +164,9 @@ export default function Help(){
                             <p>
                                 Após cadastrar os dados básicos da disciplina, um pop-up irá aparecer com as opções de 
                                 escolher as técnicas ou reaproveitar a gamificação, escolha a opção de reaproveitar a
-                                gamificação. Uma lista de disciplinas será mostrada, ao clicar opção "Ver mais", serão 
+                                gamificação. Uma lista de disciplinas será mostrada, ao clicar opção &quot;Ver mais&quot;, serão 
                                 mostradas as técnicas presentes naquela disciplina, para selecionar aquela gamificação basta
-                                clicar em "Selecionar" e confirmar.
+                                clicar em &quot;Selecionar&quot; e confirmar.
                             </p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@ export default function Help(){
                         <div className="help-explanation">
                             <p>
                                 No canto superior direito, clique no ícone de usuário e após o pop-up aparecer clique na
-                                opção "Meu perfil". Ao lado dos seus dados existe a opção "Editar dados".
+                                opção &quot;Meu perfil&quot;. Ao lado dos seus dados existe a opção &quot;Editar dados&quot;.
                             </p>
                         </div>
                     </div>

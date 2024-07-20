@@ -28,7 +28,7 @@ export default function ContagemRegressiva(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        "Contagem Regressiva" é uma estratégia de gamificação que cria um senso de urgência e incentiva 
+                        &quot;Contagem Regressiva&quot; é uma estratégia de gamificação que cria um senso de urgência e incentiva 
                         a ação imediata ao estabelecer um limite de tempo para concluir uma tarefa ou alcançar um objetivo. 
                         Isso pode aumentar o engajamento dos usuários e incentivá-los a agir mais rapidamente.
 
@@ -60,7 +60,7 @@ export default function ContagemRegressiva(){
 
 
                             <p>
-                                Em plataformas de aprendizado online, a "Contagem Regressiva" pode ser 
+                                Em plataformas de aprendizado online, a &quot;Contagem Regressiva&quot; pode ser 
                                 utilizada para testes ou tarefas, incentivando os alunos a gerenciar seu tempo 
                                 efetivamente.
                             </p>

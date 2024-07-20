@@ -346,6 +346,8 @@ export default function SubjectDetailsPage(searchParams){
                                         href={{
                                             pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
                                         }}
+
+                                        key={technique._id}
                                     >
                                         <div 
                                             key={technique._id} 

@@ -372,7 +372,7 @@ export default function ReuseSubjectGamification(searchParams){
                                         </tr>,
 
 
-                                        <tr className={`transition-opacity duration-700 ease-in-out ${subject._id === expandedSubjectId ? 'visible opacity-100' : 'opacity-0 invisible  absolute'}`}>
+                                        <tr key={subject._id} className={`transition-opacity duration-700 ease-in-out ${subject._id === expandedSubjectId ? 'visible opacity-100' : 'opacity-0 invisible  absolute'}`}>
                                             <td colSpan="6">
                                                 <div className="selected-core-drives">
                                                     {subject.coredrives.map((coredrive) =>(

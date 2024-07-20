@@ -29,7 +29,7 @@ export default function RecompensasAleatorias(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Caixas Misteriosas" ou "Recompensas Aleatórias" é uma estratégia de gamificação que 
+                            &quot;Caixas Misteriosas&quot; ou &quot;Recompensas Aleatórias&quot; é uma estratégia de gamificação que 
                             envolve oferecer recompensas ou prêmios que são desconhecidos pelo usuário até que 
                             ele os receba ou os desbloqueie. Isso pode criar um senso de expectativa e emoção, 
                             pois os usuários não sabem o que vão receber.
@@ -62,8 +62,8 @@ export default function RecompensasAleatorias(){
 
 
                             <p>
-                                Em um ambiente de aprendizado, os professores podem usar "recompensas aleatórias" para 
-                                incentivar o engajamento dos alunos. Por exemplo, os alunos podem receber uma "caixa misteriosa" 
+                                Em um ambiente de aprendizado, os professores podem usar &quot;recompensas aleatórias&quot; para 
+                                incentivar o engajamento dos alunos. Por exemplo, os alunos podem receber uma &quot;caixa misteriosa&quot; 
                                 de materiais de aprendizagem ou recursos após a conclusão de uma tarefa ou projeto. 
                                 Isso pode tornar o aprendizado mais emocionante e motivador.
 

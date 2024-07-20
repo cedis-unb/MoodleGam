@@ -28,7 +28,7 @@ export default function SepulturaVisual(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Túmulo Visual" é uma estratégia de gamificação que envolve a representação 
+                            &quot;Túmulo Visual&quot; é uma estratégia de gamificação que envolve a representação 
                             visual de perdas ou erros. Isso pode incluir o uso de cores, ícones, animações 
                             ou outros elementos visuais para representar falhas ou perdas. 
                             A ideia é destacar áreas onde os usuários precisam melhorar e motivá-los a superar desafios.

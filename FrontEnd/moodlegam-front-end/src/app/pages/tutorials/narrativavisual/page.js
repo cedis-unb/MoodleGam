@@ -28,7 +28,7 @@ export default function NarrativaVisual(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A "Narrativa Visual" é uma estratégia de gamificação que utiliza imagens, gráficos, infográficos, vídeos 
+                        A &quot;Narrativa Visual&quot; é uma estratégia de gamificação que utiliza imagens, gráficos, infográficos, vídeos 
                         ou outros elementos visuais para contar uma história ou transmitir informações. 
                         A narrativa visual pode ser uma ferramenta poderosa para aumentar o engajamento dos usuários, pois 
                         muitas pessoas respondem melhor a informações visuais do que a textos escritos.

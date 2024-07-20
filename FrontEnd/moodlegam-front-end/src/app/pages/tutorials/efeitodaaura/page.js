@@ -28,9 +28,9 @@ export default function EfeitoDaAura(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            O "Efeito de Aura" é uma estratégia na gamificação que envolve a ideia de que 
+                            O &quot;Efeito de Aura&quot; é uma estratégia na gamificação que envolve a ideia de que 
                             um determinado elemento ou característica pode influenciar as coisas ao seu redor. 
-                            Em um contexto de jogo, por exemplo, um item mágico poderia ter um "Efeito de Aura" 
+                            Em um contexto de jogo, por exemplo, um item mágico poderia ter um &quot;Efeito de Aura&quot; 
                             que aumenta as habilidades dos personagens próximos. Na gamificação, este conceito é 
                             frequentemente usado para incentivar a colaboração, a competição saudável ou o 
                             comportamento de grupo.
@@ -62,15 +62,15 @@ export default function EfeitoDaAura(){
 
                             <p>
                                 Em um contexto educacional, um aluno que demonstra entusiasmo pelo aprendizado pode 
-                                influenciar positivamente seus colegas de classe através do "Efeito de Aura". 
+                                influenciar positivamente seus colegas de classe através do &quot;Efeito de Aura&quot;. 
                                 Da mesma forma, o uso de certas estratégias de aprendizado ou ferramentas de 
                                 estudo por alguns alunos pode incentivar outros a seguir o exemplo.
                                 <br></br><br></br>
-                                Analisando a técnica do "Efeito de Aura", é possível perceber seu potencial para 
+                                Analisando a técnica do &quot;Efeito de Aura&quot;, é possível perceber seu potencial para 
                                 impulsionar a motivação e a performance de um grupo. Ela é baseada na ideia de que 
                                 as ações e comportamentos de uma pessoa podem influenciar os de outras.
                                 <br></br><br></br>
-                                No entanto, é importante ter em mente que o "Efeito de Aura" pode ser tanto positivo quanto negativo. Portanto, ao aplicar esta técnica, deve-se prestar atenção na dinâmica do grupo e na influência que cada indivíduo pode ter sobre os outros. O sucesso desta técnica depende de um gerenciamento cuidadoso e atento para garantir que a influência seja positiva e conduza ao alcance dos objetivos pretendidos.                                
+                                No entanto, é importante ter em mente que o &quot;Efeito de Aura&quot; pode ser tanto positivo quanto negativo. Portanto, ao aplicar esta técnica, deve-se prestar atenção na dinâmica do grupo e na influência que cada indivíduo pode ter sobre os outros. O sucesso desta técnica depende de um gerenciamento cuidadoso e atento para garantir que a influência seja positiva e conduza ao alcance dos objetivos pretendidos.                                
                             </p>
                         </div> 
                         

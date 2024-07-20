@@ -30,7 +30,7 @@ export default function TesourosSociais(){
                             colaborativo, bem como marketing viral, 
                             princpalmente quando requerem a participação 
                             coleitiva, em detrimento da individual, para 
-                            alcançar um objetivo (win-state). "Missão em Grupo" é uma estratégia de 
+                            alcançar um objetivo (win-state). &quot;Missão em Grupo&quot; é uma estratégia de 
                             gamificação que envolve a cooperação entre os usuários para alcançar um 
                             objetivo comum. Isso fomenta o trabalho em equipe, a interação entre os 
                             usuários e pode aumentar a sensação de pertencimento e realização coletiva.
@@ -65,7 +65,7 @@ export default function TesourosSociais(){
                             <p>
                                 Em um aplicativo de leitura, os usuários podem ser incentivados a formar 
                                 clubes de leitura, discutir livros e recomendar títulos para outros usuários para 
-                                ganhar "Tesouros Sociais" na forma de descontos em livros, acesso a títulos 
+                                ganhar &quot;Tesouros Sociais&quot; na forma de descontos em livros, acesso a títulos 
                                 exclusivos ou recursos adicionais.
                                 
 

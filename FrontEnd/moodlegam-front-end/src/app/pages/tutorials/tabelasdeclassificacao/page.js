@@ -28,12 +28,12 @@ export default function TabelasDeClassificacao(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A técnica "Tabelas de Classificação", também conhecidas como Ranking, é um elemento do jogo onde 
+                        A técnica &quot;Tabelas de Classificação&quot;, também conhecidas como Ranking, é um elemento do jogo onde 
                         os jogadores são classificados com base num conjunto de critérios. 
                         Os critérios são influenciados pelo comportamento dos jogadores nas suas diversas ações. 
                         Ela permite tanto uma rápida comparação entre jogadores quanto o delineamento de novos objetivos.
                         <br></br> <br></br>
-                        As "Tabelas de Classificação" são uma estratégia comum na gamificação que envolve classificar 
+                        As &quot;Tabelas de Classificação&quot; são uma estratégia comum na gamificação que envolve classificar 
                         os usuários com base em suas realizações ou desempenho. Este método é eficaz para estimular 
                         a competição e incentivar os usuários a melhorarem seu desempenho.
 

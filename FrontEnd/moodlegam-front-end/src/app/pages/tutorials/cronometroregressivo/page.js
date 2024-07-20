@@ -28,7 +28,7 @@ export default function CronometroRegressivo(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Cronômetro Regressivo" é uma estratégia de gamificação que introduz um elemento 
+                            &quot;Cronômetro Regressivo&quot; é uma estratégia de gamificação que introduz um elemento 
                             de tempo em uma atividade ou tarefa. Isso cria uma sensação de urgência, que 
                             pode incentivar os usuários a se envolverem mais rapidamente e manterem o foco 
                             na tarefa em mãos.
@@ -66,7 +66,7 @@ export default function CronometroRegressivo(){
 
 
                             <p>
-                                Alguns cursos online ou testes usam "Cronômetros Regressivos" para limitar 
+                                Alguns cursos online ou testes usam &quot;Cronômetros Regressivos&quot; para limitar 
                                 o tempo que os alunos têm para completar um módulo ou responder a uma pergunta. 
                                 Isso pode ajudar a garantir que os alunos se mantenham focados e engajados.
                             </p>

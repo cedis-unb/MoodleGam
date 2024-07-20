@@ -18,7 +18,7 @@ export default function CenouraDoGeneral(){
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>General's Carrot</i></h2>
+                    <h2>Nome da técnica em inglês: <i>General&apos;s Carrot</i></h2>
                     <WhiteHatBox/>
                     <ExtrinsicBox/>
                 </div>
@@ -28,7 +28,7 @@ export default function CenouraDoGeneral(){
                     <div className="tech-description-text">
                         <p>
                             Remetendo à ideia de uma cenoura pendurada na frente de um coelho para engajá-lo, 
-                            "Cenoura do General" é uma estratégia de gamificação que envolve fornecer 
+                            &quot;Cenoura do General&quot; é uma estratégia de gamificação que envolve fornecer 
                             uma recompensa significativa que só pode ser alcançada após a conclusão 
                             de uma série de tarefas ou objetivos. Isso pode ajudar a motivar os 
                             usuários a continuarem se esforçando e a persistir através de desafios.
@@ -61,7 +61,7 @@ export default function CenouraDoGeneral(){
                             <p>
                                 Em uma plataforma de aprendizado online, um aluno pode receber um certificado ou 
                                 emblema especial após completar um conjunto de cursos ou atingir um 
-                                certo nível de proficiência. Isso é um exemplo de "Cenoura do General", 
+                                certo nível de proficiência. Isso é um exemplo de &quot;Cenoura do General&quot;, 
                                 pois incentiva os alunos a continuar aprendendo para alcançar a recompensa.
                                 
                             </p>

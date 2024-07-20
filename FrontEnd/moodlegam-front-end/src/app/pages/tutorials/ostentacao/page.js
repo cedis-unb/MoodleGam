@@ -26,7 +26,7 @@ export default function Ostentacao(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Vangloriar-se", ou popularmente conhecido como "Ostentação", é uma estratégia 
+                            &quot;Vangloriar-se&quot;, ou popularmente conhecido como &quot;Ostentação&quot;, é uma estratégia 
                             de gamificação que permite que os usuários compartilhem e celebrem suas conquistas. 
                             Esse recurso de exibir as realizações pessoais estimula a competição saudável entre os 
                             usuários e incentiva-os a alcançar mais objetivos.

@@ -28,7 +28,7 @@ export default function EmblemasOuInsignias(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Emblemas" ou "Insígnias" são uma estratégia 
+                            &quot;Emblemas&quot; ou &quot;Insígnias&quot; são uma estratégia 
                             popular de gamificação que envolve premiar os 
                             usuários com distintivos virtuais para 
                             reconhecer suas conquistas ou habilidades. 

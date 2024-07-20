@@ -26,7 +26,7 @@ export default function Monitoramento(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    "Monitoramento" é uma estratégia de gamificação que envolve o rastreamento e a 
+                                    &quot;Monitoramento&quot; é uma estratégia de gamificação que envolve o rastreamento e a 
                                     análise do comportamento e das atividades do usuário. Isso pode permitir um 
                                     melhor entendimento do usuário, feedback personalizado e ajustes no sistema 
                                     para aumentar o engajamento e a satisfação do usuário.
@@ -57,7 +57,7 @@ export default function Monitoramento(){
 
 
                                     <p>
-                                        Em um LMS(Sistemas de Gestão de Aprendizagem), o "Monitoramento" é usado para acompanhar o progresso do aluno, o 
+                                        Em um LMS(Sistemas de Gestão de Aprendizagem), o &quot;Monitoramento&quot; é usado para acompanhar o progresso do aluno, o 
                                         tempo gasto em cada módulo e as notas obtidas. Isso permite feedback 
                                         personalizado e intervenções educacionais direcionadas para melhorar o 
                                         aprendizado do aluno.

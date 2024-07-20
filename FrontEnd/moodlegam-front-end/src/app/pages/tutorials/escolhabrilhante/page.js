@@ -27,7 +27,7 @@ export default function EscolhaBrilhante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Escolha Brilhante" é uma estratégia de gamificação que envolve 
+                            &quot;Escolha Brilhante&quot; é uma estratégia de gamificação que envolve 
                             destacar ou ressaltar uma opção específica para orientar os 
                             usuários em uma determinada direção. Isso pode facilitar a 
                             tomada de decisão e ajudar os usuários a entenderem melhor qual 
@@ -57,7 +57,7 @@ export default function EscolhaBrilhante(){
                                 
 
                                 <p>
-                                    Em uma plataforma de aprendizado online, a "Escolha Brilhante" pode ser usada 
+                                    Em uma plataforma de aprendizado online, a &quot;Escolha Brilhante&quot; pode ser usada 
                                     para destacar um curso específico ou um recurso de aprendizado que os alunos 
                                     devem utilizar. Isso pode orientar os alunos na direção certa e facilitar a 
                                     navegação pela plataforma.

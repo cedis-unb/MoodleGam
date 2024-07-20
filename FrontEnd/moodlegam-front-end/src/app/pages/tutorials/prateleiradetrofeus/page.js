@@ -27,8 +27,8 @@ export default function PrateleiraDeTrofeus(){
                     <div className="tech-description-text">
                         <p>
                             São mecanismos que permitem ao usuário mostrar 
-                            implicitamente do que se orgulha. "Prateleira de 
-                            Troféus" é uma estratégia de gamificação que 
+                            implicitamente do que se orgulha. &quot;Prateleira de 
+                            Troféus&quot; é uma estratégia de gamificação que 
                             permite aos usuários exibir suas conquistas e 
                             recompensas. Isso cria um senso de realização e 
                             progresso, incentivando a continuidade e a 
@@ -61,7 +61,7 @@ export default function PrateleiraDeTrofeus(){
 
                             <p>
                                 Plataformas como Khan Academy e Coursera permitem que os usuários mostrem os cursos 
-                                que concluíram ou as habilidades que adquiriram em sua "Prateleira de Troféus". 
+                                que concluíram ou as habilidades que adquiriram em sua &quot;Prateleira de Troféus&quot;. 
                                 Isso ajuda a motivar os usuários a continuar aprendendo e se esforçando para 
                                 adquirir novas habilidades.
                                 

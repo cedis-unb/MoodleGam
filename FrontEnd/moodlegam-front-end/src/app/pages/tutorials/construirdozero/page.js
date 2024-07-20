@@ -26,8 +26,8 @@ export default function ConstruirDoZero(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    Transmite a ideia que é bom começar “do início”, ao invés de receber 
-                                    algo já pronto. "Construir do Zero" é uma estratégia de gamificação que 
+                                    Transmite a ideia que é bom começar &quot;do início&quot;, ao invés de receber 
+                                    algo já pronto. &quot;Construir do Zero&quot; é uma estratégia de gamificação que 
                                     envolve dar aos usuários a oportunidade de criar ou personalizar algo 
                                     desde o início. Isso pode aumentar o envolvimento do usuário, já que 
                                     as pessoas tendem a valorizar mais as coisas que ajudaram a criar. 
@@ -61,7 +61,7 @@ export default function ConstruirDoZero(){
 
                                     <p>
                                         Em um ambiente educacional, os alunos podem ter a tarefa de 
-                                        "construir do zero" um projeto de pesquisa ou uma apresentação. 
+                                        &quot;construir do zero&quot; um projeto de pesquisa ou uma apresentação. 
                                         Este processo pode melhorar a compreensão do material e proporcionar 
                                         um sentido de realização.
                                     </p>

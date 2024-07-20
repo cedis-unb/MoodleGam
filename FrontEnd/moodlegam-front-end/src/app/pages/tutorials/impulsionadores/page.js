@@ -28,7 +28,7 @@ export default function Impulsionadores(){
                     <div className="tech-description-text">
                         <p>
                             Itens que deixam o jogador mais poderoso e eficaz por um certo tempo. 
-                            "Impulsionadores" é uma estratégia de gamificação que envolve fornecer aos 
+                            &quot;Impulsionadores&quot; é uma estratégia de gamificação que envolve fornecer aos 
                             usuários melhorias temporárias ou permanentes que podem ajudá-los a progredir 
                             mais rapidamente ou superar desafios mais facilmente. Isso pode aumentar o engajamento 
                             dos usuários, ao proporcionar alívio de dificuldades, acelerar o progresso ou adicionar 
@@ -61,9 +61,9 @@ export default function Impulsionadores(){
 
                             <p>
                                 Em uma plataforma de aprendizado online, os alunos 
-                                podem ter acesso a "impulsionadores" como tutoriais adicionais, dicas ou 
+                                podem ter acesso a &quot;impulsionadores&quot; como tutoriais adicionais, dicas ou 
                                 ferramentas de estudo que podem ajudá-los a entender melhor os materiais 
-                                do curso ou passar nos testes. Este é um exemplo de "Impulsionadores", 
+                                do curso ou passar nos testes. Este é um exemplo de &quot;Impulsionadores&quot;, 
                                 pois pode auxiliar os alunos em seu processo de aprendizado.
                                 
                             </p>

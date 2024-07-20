@@ -31,7 +31,7 @@ export default function VinculoComOMonitor(){
                             de (ou em direção) a algo. Isto é feito através da 
                             indução de um monitoramento constante ou atenção foca 
                             sobre um determinado item de propriedade do jogador. 
-                            "Vínculo com o Monitor" é uma estratégia de 
+                            &quot;Vínculo com o Monitor&quot; é uma estratégia de 
                             gamificação que envolve criar uma conexão 
                             emocional entre o usuário e um elemento ou 
                             personagem do jogo, neste caso, o monitor, 
@@ -65,10 +65,10 @@ export default function VinculoComOMonitor(){
 
                         <p>
                             Em plataformas de aprendizado online, tutores ou mentores virtuais podem estabelecer um 
-                            "vínculo com o monitor" com os alunos. Isso pode aumentar o engajamento dos alunos e 
+                            &quot;vínculo com o monitor&quot; com os alunos. Isso pode aumentar o engajamento dos alunos e 
                             melhorar seu desempenho acadêmico.
                             <br></br><br></br>
-                            Ao aplicar a técnica de "Vínculo com o Monitor", é importante garantir que a interação 
+                            Ao aplicar a técnica de &quot;Vínculo com o Monitor&quot;, é importante garantir que a interação 
                             seja autêntica, útil e agradável. A personalização também pode aumentar a eficácia 
                             dessa técnica, pois ajuda a criar uma conexão mais forte.
                         </p>

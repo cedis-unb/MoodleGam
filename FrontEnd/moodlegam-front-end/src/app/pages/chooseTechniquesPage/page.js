@@ -485,7 +485,7 @@ export default function ChooseTechniquePage(searchParams){
                                 height={30}
                                 unoptimized={true}
                             />
-                            <span>Para se informar sobre cada técnica de gamificação, basta clicar em no ícone "?". 
+                            <span>Para se informar sobre cada técnica de gamificação, basta clicar em no ícone &quot;?&quot;. 
                                 E para saber mais sobre os Core Drives basta clicar em seus respectivos nomes.
                             </span>
                         </div>

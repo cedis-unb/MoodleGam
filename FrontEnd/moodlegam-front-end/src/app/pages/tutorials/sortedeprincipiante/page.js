@@ -17,7 +17,7 @@ export default function SorteDePrincipiante(){
                 </div>
 
                 <div className="tech-template-subheader">
-                    <h2>Nome da técnica em inglês: <i>Beginner's Luck</i></h2>
+                    <h2>Nome da técnica em inglês: <i>Beginner&apos;s Luck</i></h2>
                     
                     <WhiteHatBox/>
                 </div>
@@ -26,14 +26,14 @@ export default function SorteDePrincipiante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            A técnica "Sorte de Principiante" é uma estratégia 
+                            A técnica &quot;Sorte de Principiante&quot; é uma estratégia 
                             comumente utilizada na gamificação para encorajar 
                             novos usuários a começarem a usar um sistema, 
                             produto ou serviço. Ela se baseia no princípio 
                             de que a experiência inicial de sucesso pode 
                             ajudar a motivar os usuários a continuar 
                             envolvidos e a progredir. 
-                            A "Sorte de Principiante" pode assumir a 
+                            A &quot;Sorte de Principiante&quot; pode assumir a 
                             forma de bônus de boas-vindas, vitórias 
                             fáceis no início, ou a chance de experimentar 
                             recursos premium gratuitamente por um tempo limitado.
@@ -41,7 +41,7 @@ export default function SorteDePrincipiante(){
                             O efeito esperado nas pessoas é que elas 
                             acreditem que receberam algum tipo de 
                             presente que os outros não têm ou 
-                            acreditam que tiveram "sorte" de 
+                            acreditam que tiveram &quot;sorte&quot; de 
                             conseguir  a espada incrível no início do jogo.
                         </p>
                         
@@ -70,7 +70,7 @@ export default function SorteDePrincipiante(){
 
                             <p>
                                 Em aplicativos de aprendizado de idiomas, quando um usuário começa a usar o app, 
-                                ele pode ganhar pontos, emblemas extras ou qualquer recompensa pelos primeiros exercícios que concluí, 
+                                ele pode ganhar pontos, emblemas extras ou qualquer recompensa pelos primeiros exercícios que conclui, 
                                 incentivando-o a continuar a usar o aplicativo. Ao proporcionar um ambiente de sucesso imediato e gratificações, 
                                 os usuários se sentem motivados a continuar a explorar e interagir com a plataforma. 
                                 A sensação de progresso inicial é um forte motivador, e esta técnica habilmente explora esse 

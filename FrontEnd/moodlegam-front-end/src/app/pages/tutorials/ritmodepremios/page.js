@@ -28,7 +28,7 @@ export default function RitmoDePremios(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Ritmo de Prêmios" é uma estratégia de gamificação que envolve a distribuição estratégica de 
+                            &quot;Ritmo de Prêmios&quot; é uma estratégia de gamificação que envolve a distribuição estratégica de 
                             recompensas ou prêmios ao longo do tempo ou com base no progresso do usuário. 
                             Isso pode ajudar a manter o engajamento do usuário e a incentivar a participação contínua.
 

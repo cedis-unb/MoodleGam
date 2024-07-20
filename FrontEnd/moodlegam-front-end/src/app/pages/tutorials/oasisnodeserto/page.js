@@ -28,7 +28,7 @@ export default function OasisNoDeserto(){
                     <div className="tech-description-text">
                         <p>
                             Essa técnica vem do conceito de Oasis (verde e suculento) o que sugere, 
-                            inconscientemente, que há um objetivo por detrás desta opção. "Oásis no Deserto" 
+                            inconscientemente, que há um objetivo por detrás desta opção. &quot;Oásis no Deserto&quot; 
                             é uma estratégia de gamificação que envolve proporcionar um alívio ou recompensa 
                             aos usuários após uma tarefa difícil ou um período de esforço intenso. 
                             Este método pode ajudar a manter a motivação do usuário, dando-lhe algo para 
@@ -59,16 +59,16 @@ export default function OasisNoDeserto(){
 
                                 <p>
                                     Em um contexto educacional, um professor pode planejar uma atividade divertida ou 
-                                    um dia de jogo após uma série de testes ou exames. Este "oásis" proporciona aos 
+                                    um dia de jogo após uma série de testes ou exames. Este &quot;oásis&quot; proporciona aos 
                                     alunos uma pausa bem-vinda do estudo intensivo e uma oportunidade para relaxar 
                                     e recarregar as energias.
                                     <br></br><br></br>
-                                    Ao discutir a técnica "Oásis no Deserto", é importante entender seu papel na 
+                                    Ao discutir a técnica &quot;Oásis no Deserto&quot;, é importante entender seu papel na 
                                     manutenção da motivação do usuário. Ao proporcionar um alívio ou recompensa após um 
                                     período de esforço intenso, você pode ajudar a manter a motivação do usuário e a 
                                     evitar a fadiga ou o desgaste.
 
-                                    No entanto, é crucial que o "oásis" seja relevante e valioso para o usuário, 
+                                    No entanto, é crucial que o &quot;oásis&quot; seja relevante e valioso para o usuário, 
                                     e que seja visto como uma recompensa justa pelo seu trabalho árduo.
                                 </p>
                             </div>

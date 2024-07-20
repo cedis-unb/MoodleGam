@@ -28,7 +28,7 @@ export default function MiniMissoes(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Mini Missões" é uma estratégia de gamificação que envolve a criação de pequenos 
+                            &quot;Mini Missões&quot; é uma estratégia de gamificação que envolve a criação de pequenos 
                             desafios ou tarefas que os usuários podem completar para progredir ou ganhar recompensas. 
                             Essa técnica pode aumentar o engajamento e a satisfação dos usuários, 
                             proporcionando-lhes objetivos claros e realizáveis e um senso de progresso e realização.
@@ -61,9 +61,9 @@ export default function MiniMissoes(){
 
 
                             <p>
-                                Em um aplicativo de aprendizado de idiomas, as "Mini Missões" podem ser usadas 
+                                Em um aplicativo de aprendizado de idiomas, as &quot;Mini Missões&quot; podem ser usadas 
                                 para incentivar os usuários a praticar regularmente. Por exemplo, os usuários 
-                                podem receber uma "Mini Missão" para aprender 10 novas palavras por dia ou para 
+                                podem receber uma &quot;Mini Missão&quot; para aprender 10 novas palavras por dia ou para 
                                 praticar a pronúncia de um som particular.
                             </p>
                         </div>

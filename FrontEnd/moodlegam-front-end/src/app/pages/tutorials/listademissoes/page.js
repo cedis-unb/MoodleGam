@@ -27,7 +27,7 @@ export default function AlmocoConquistado(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            A "Lista de Missões" é uma estratégia na gamificação que envolve apresentar 
+                            A &quot;Lista de Missões&quot; é uma estratégia na gamificação que envolve apresentar 
                             aos usuários uma série de tarefas ou objetivos a serem alcançados. As missões 
                             fornecem uma estrutura clara para o engajamento do usuário e criam um senso de 
                             progresso e realização à medida que cada tarefa é concluída. A conclusão de missões 
@@ -58,10 +58,10 @@ export default function AlmocoConquistado(){
                                 
 
                                 <p>
-                                    Em um curso online, a "lista de missões" pode ser uma série de aulas, 
+                                    Em um curso online, a &quot;lista de missões&quot; pode ser uma série de aulas, 
                                     tarefas ou projetos que os estudantes precisam concluir para passar no curso.
                                     <br></br><br></br>
-                                    Ao discutir a técnica da "Lista de Missões", é importante notar seu potencial para aumentar o engajamento e a motivação do usuário. Ao fornecer uma estrutura clara e um caminho para o progresso, a "Lista de Missões" pode ajudar os usuários a se sentirem mais envolvidos e a alcançar seus objetivos.
+                                    Ao discutir a técnica da &quot;Lista de Missões&quot;, é importante notar seu potencial para aumentar o engajamento e a motivação do usuário. Ao fornecer uma estrutura clara e um caminho para o progresso, a &apos;Lista de Missões&apos; pode ajudar os usuários a se sentirem mais envolvidos e a alcançar seus objetivos.
 
                                     No entanto, é crucial garantir que as missões sejam relevantes, interessantes e 
                                     desafiadoras para os usuários. Além disso, as recompensas por completar as missões 

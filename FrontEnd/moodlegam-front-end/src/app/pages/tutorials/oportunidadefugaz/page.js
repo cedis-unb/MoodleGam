@@ -28,10 +28,10 @@ export default function OportunidadeFugaz(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Essa técnica se baseia no fato de que É uma oportunidade vai desaparecer se 
+                            Essa técnica se baseia no fato de que uma oportunidade vai desaparecer se 
                             o usuário não tomar a ação necessária imediatamente.
 
-                            "Oportunidade Fugaz" é uma estratégia de 
+                            &quot;Oportunidade Fugaz&quot; é uma estratégia de 
                             gamificação que cria uma sensação de urgência ao 
                             apresentar uma oportunidade ou recompensa que 
                             está disponível por tempo limitado. 

@@ -28,7 +28,7 @@ export default function Coautor(){
                             participantes como coautores ou colaboradores ativos na criação ou 
                             construção de algo dentro do contexto em que a gamificação é aplicada.
 
-                            A técnica "Coautor" ou "Co-Criador" busca promover a participação ativa e a 
+                            A técnica &quot;Coautor&quot; ou &quot;Co-Criador&quot; busca promover a participação ativa e a 
                             criatividade dos participantes, permitindo que eles contribuam com ideias, 
                             soluções ou conteúdos para moldar a experiência de jogo ou o resultado 
                             final de um projeto. Essa abordagem incentiva a colaboração, o senso de 
@@ -57,7 +57,7 @@ export default function Coautor(){
 
 
                             <p>
-                                Na área da educação e treinamento, a técnica "Coautor" pode ser aplicada para 
+                                Na área da educação e treinamento, a técnica &quot;Coautor&quot; pode ser aplicada para 
                                 envolver os alunos como coautores no processo de aprendizagem. Por exemplo, 
                                 em um curso online, os participantes podem ser convidados a criar conteúdos, 
                                 como apresentações ou projetos colaborativos, que serão compartilhados com a turma. 

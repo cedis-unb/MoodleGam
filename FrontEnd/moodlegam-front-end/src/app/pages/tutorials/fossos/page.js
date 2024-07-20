@@ -28,7 +28,7 @@ export default function Fossos(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Fossos" é uma estratégia de gamificação que envolve a criação de barreiras ou desafios 
+                            &quot;Fossos&quot; é uma estratégia de gamificação que envolve a criação de barreiras ou desafios 
                             que os usuários devem superar para alcançar um objetivo. Isso pode aumentar o 
                             engajamento dos usuários, ao adicionar um elemento de desafio e satisfação ao superar 
                             obstáculos.
@@ -61,7 +61,7 @@ export default function Fossos(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, um "fosso" pode ser um exame ou projeto 
+                                Em uma plataforma de aprendizado online, um &quot;fosso&quot; pode ser um exame ou projeto 
                                 final que os alunos devem concluir com sucesso para passar no curso. Isso cria um 
                                 desafio que os alunos devem superar, aumentando a satisfação quando conseguem.
 

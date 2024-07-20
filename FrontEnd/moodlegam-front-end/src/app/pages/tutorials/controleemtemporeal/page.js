@@ -28,7 +28,7 @@ export default function ControleEmTempoReal(){
                     <div className="tech-description-text">
                         <p>
                             Permite aos jogadores controlarem suas opções em tempo real em direção a uma meta. 
-                            "Controle em Tempo Real" é uma estratégia de gamificação que envolve permitir que 
+                            &quot;Controle em Tempo Real&quot; é uma estratégia de gamificação que envolve permitir que 
                             os usuários influenciem ou controlem eventos em tempo real. Isso pode ajudar a aumentar o 
                             engajamento dos usuários, proporcionando uma sensação de agência e influência direta 
                             sobre o resultado.
@@ -60,9 +60,9 @@ export default function ControleEmTempoReal(){
                             <p>
                                 Em uma aula online ao vivo, os alunos podem ser convidados a responder 
                                 a perguntas ou participar de atividades em tempo real. Este é um exemplo 
-                                de "Controle em Tempo Real", pois permite que os alunos influenciem diretamente a aula.
+                                de &quot;Controle em Tempo Real&quot;, pois permite que os alunos influenciem diretamente a aula.
                                 <br></br><br></br>
-                                Ao discutir a técnica de "Controle em Tempo Real", é 
+                                Ao discutir a técnica de &quot;Controle em Tempo Real&quot;, é 
                                 importante entender seu papel em aumentar o engajamento dos 
                                 usuários e proporcionar uma sensação de agência.
 

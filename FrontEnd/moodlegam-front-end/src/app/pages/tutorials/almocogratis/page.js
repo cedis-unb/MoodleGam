@@ -24,7 +24,7 @@ export default function AlmocoGratis(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            A técnica  "Almoço Grátis" é uma estratégia na gamificação que envolve o 
+                            A técnica  &quot;Almoço Grátis&quot; é uma estratégia na gamificação que envolve o 
                             oferecimento de recompensas gratuitas aos usuários em troca de alguma ação 
                             específica. O objetivo é incentivar o comportamento desejado, 
                             oferecendo algo de valor que o usuário pode obter com pouco ou nenhum esforço, 
@@ -58,14 +58,14 @@ export default function AlmocoGratis(){
 
 
                             <p>
-                                Ao discutir a técnica do "Almoço Grátis", é importante entender seu valor e 
+                                Ao discutir a técnica do &quot;Almoço Grátis&quot;, é importante entender seu valor e 
                                 aplicação cuidadosa. Enquanto o termo pode sugerir que algo é dado 
                                 sem nenhum custo ou esforço, a realidade é que esta técnica é usada 
                                 para incentivar os usuários a tomar ações que beneficiam a organização ou plataforma.
                                 <br></br> <br></br>
                                 No entanto, essas ações também devem beneficiar o usuário para evitar a 
                                 percepção de manipulação. É essencial equilibrar os benefícios para o usuário 
-                                e a organização ao implementar a técnica do "Almoço Grátis". Além disso, é 
+                                e a organização ao implementar a técnica do &quot;Almoço Grátis&quot;. Além disso, é 
                                 vital garantir que a recompensa seja algo que o usuário valorize e que esteja 
                                 alinhada com os objetivos da plataforma ou serviço.
                             </p>

@@ -26,7 +26,7 @@ export default function Promocao(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Divulgação" ou "Promoção" é uma estratégia de gamificação que envolve destacar 
+                            &quot;Divulgação&quot; ou &quot;Promoção&quot; é uma estratégia de gamificação que envolve destacar 
                             e celebrar as realizações dos usuários para motivá-los a continuar participando e 
                             progredindo. Isso pode ser feito por meio de anúncios públicos, reconhecimento 
                             nas redes sociais, placares, entre outros.
@@ -61,7 +61,7 @@ export default function Promocao(){
 
 
                             <p>
-                                Em uma plataforma de aprendizado online, a "Divulgação" pode ser usada para 
+                                Em uma plataforma de aprendizado online, a &quot;Divulgação&quot; pode ser usada para 
                                 destacar as conquistas dos alunos. Por exemplo, ao concluir um curso, um aluno 
                                 pode receber um certificado digital que pode ser compartilhado nas redes sociais. 
                                 Isso não apenas incentiva os alunos a concluir os cursos, mas também ajuda a 

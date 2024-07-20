@@ -28,9 +28,9 @@ export default function AncoraDeConformidade(){
                         <p>
                             Cedo nós aprendemos sobre o poder das normas sociais. Esta técnica implementa este efeito em 
                             produtos ou experiências mostrando, através de feedbacks, o quanto os jogadores estão próximos de 
-                            uma convenção social. "Âncora de Conformidade" é uma estratégia de gamificação que utiliza o desejo 
+                            uma convenção social. &quot;Âncora de Conformidade&quot; é uma estratégia de gamificação que utiliza o desejo 
                             humano natural de conformidade para motivar comportamentos desejáveis. Isso é feito destacando como 
-                            a maioria das pessoas está se comportando ou o que elas estão fazendo, criando assim um 'padrão' que 
+                            a maioria das pessoas está se comportando ou o que elas estão fazendo, criando assim um &quot;padrão&quot; que 
                             os outros são incentivados a seguir.
                         </p>
                     </div>
@@ -63,7 +63,7 @@ export default function AncoraDeConformidade(){
                             <p>
                                 Em um aplicativo de leitura, os usuários podem ser incentivados a formar 
                                 clubes de leitura, discutir livros e recomendar títulos para outros usuários para 
-                                ganhar "Tesouros Sociais" na forma de descontos em livros, acesso a títulos 
+                                ganhar &quot;Tesouros Sociais&quot; na forma de descontos em livros, acesso a títulos 
                                 exclusivos ou recursos adicionais.
                                 
 

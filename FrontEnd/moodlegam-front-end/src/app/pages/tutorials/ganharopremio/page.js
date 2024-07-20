@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import "../../../components/TechniqueTemplate/style.css"
 import Background from "../../../components/Background";
 import WhiteHatBox from "@/app/components/WhiteHatBox"
@@ -27,7 +27,7 @@ export default function GanharOPremio(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                    "Ganhar Prêmio" é uma estratégia de gamificação que envolve a concessão de recompensas 
+                                    &quot;Ganhar Prêmio&quot; é uma estratégia de gamificação que envolve a concessão de recompensas 
                                     tangíveis ou intangíveis aos usuários com base em seu desempenho, conquistas ou comportamento. 
                                     Essa técnica tem como objetivo motivar e engajar os usuários, encorajando-os a continuar 
                                     interagindo com o sistema e a se esforçarem para alcançar seus objetivos.
@@ -36,7 +36,7 @@ export default function GanharOPremio(){
                                     conteúdo premium ou emblemas virtuais, para os usuários que concluem um certo 
                                     número de lições ou alcançam uma pontuação alta em um teste.
                                     <br></br><br></br>
-                                    Ao refletir sobre a técnica de "Ganhar Prêmio", é importante entender seu poder 
+                                    Ao refletir sobre a técnica de &quot;Ganhar Prêmio&quot;, é importante entender seu poder 
                                     motivacional. A perspectiva de ganhar um prêmio pode incentivar os usuários a 
                                     se esforçarem mais e a permanecerem engajados com o sistema.
                                     <br></br><br></br>

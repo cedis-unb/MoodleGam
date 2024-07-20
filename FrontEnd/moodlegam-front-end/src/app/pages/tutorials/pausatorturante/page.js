@@ -28,7 +28,7 @@ export default function PausaTorturante(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pausa Torturante" é uma estratégia de gamificação que envolve criar uma expectativa ou 
+                            &quot;Pausa Torturante&quot; é uma estratégia de gamificação que envolve criar uma expectativa ou 
                             suspense que faz o usuário querer voltar para ver o resultado ou a continuação de algo. 
                             Isso pode aumentar o engajamento dos usuários, mantendo-os em suspense e incentivando-os a 
                             retornar regularmente à plataforma ou jogo.
@@ -64,7 +64,7 @@ export default function PausaTorturante(){
 
 
                             <p>
-                                Em um curso online, uma "Pausa Torturante" pode ser a promessa de revelar uma informação 
+                                Em um curso online, uma &quot;Pausa Torturante&quot; pode ser a promessa de revelar uma informação 
                                 importante ou interessante na próxima aula, incentivando os alunos a continuarem com o 
                                 curso.
                                 <br></br><br></br>

@@ -26,7 +26,7 @@ export default function BarraDeProgresso(){
                             <h2>Descrição da técnica</h2>
                             <div className="tech-description-text">
                                 <p>
-                                A "Barra de Progresso" é uma estratégia na gamificação que proporciona aos usuários uma representação 
+                                A &quot;Barra de Progresso&quot; é uma estratégia na gamificação que proporciona aos usuários uma representação 
                                 visual do seu progresso em direção a um objetivo ou uma tarefa. Ela oferece um feedback instantâneo e 
                                 contínuo sobre o progresso do usuário, o que pode aumentar a motivação e a sensação de realização. 
                                 <br></br> <br></br>

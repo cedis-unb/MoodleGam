@@ -27,7 +27,7 @@ export default function PontosTrocaveis(){
                             <div className="tech-description-text">
                                 <p>
                                     Os usuários podem utilizar seus pontos acumulados de forma estratégica e 
-                                    rara para obter outros objetos de valor. "Pontos Trocáveis" é uma 
+                                    rara para obter outros objetos de valor. &quot;Pontos Trocáveis&quot; é uma 
                                     estratégia de gamificação que envolve o acúmulo de pontos pelos usuários, 
                                     que podem ser posteriormente trocados por recompensas ou privilégios. Esta 
                                     técnica de gamificação incentiva o engajamento continuado e repetido, pois os 

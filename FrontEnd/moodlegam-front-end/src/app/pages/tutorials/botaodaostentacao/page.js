@@ -29,7 +29,7 @@ export default function BotaoDaOstentacao(){
                             Botões de Ostentação (Brag buttons) é quando uma pessoa de forma explícita e 
                             vocalmente expressa suas realizações e conquistas, enquanto que um Trophy 
                             Shelf permite ao jogador mostrar implicitamente o que têm feito, mesmo sem 
-                            falar a respeito. "Botões de Ostentação" é uma estratégia de gamificação que 
+                            falar a respeito. &quot;Botões de Ostentação&quot; é uma estratégia de gamificação que 
                             permite aos usuários compartilhar suas conquistas ou progresso com outros. 
                             Isso pode aumentar o engajamento ao estimular a motivação intrínseca dos usuários 
                             e encorajá-los a buscar maiores realizações.
@@ -62,7 +62,7 @@ export default function BotaoDaOstentacao(){
 
 
                             <p>
-                                Em plataformas de aprendizagem online, a "Mentoria" pode ser incentivada ao 
+                                Em plataformas de aprendizagem online, a &quot;Mentoria&quot; pode ser incentivada ao 
                                 permitir que usuários mais experientes forneçam feedback e orientação para 
                                 aqueles que estão aprendendo. Isso pode criar uma comunidade de aprendizagem 
                                 colaborativa e aumentar o engajamento dos usuários.
@@ -74,8 +74,8 @@ export default function BotaoDaOstentacao(){
                                 Esses grupos tem o objetivo dos líderes serem mentores do integrantes, onde listas de exercícios são resolvidas pelos grupos
                                 e os líderes tiram dúvidas e acompanham o rendimento dos outros membros. Após o prazo da lista de exercícios
                                 terminar, uma outra avaliação valendo somente uma porcentagem da primeira avaliação é realizada para os estudantes que não 
-                                alcançaram a média, como uma "segunda chance". Se os estudantes aumentarem a nota após essa "segunda chance", suas notas
-                                são alteradas e os líderes do grupo ganham nota também caso os membros do seu grupo tenham um bom desempenho na "segunda chance".
+                                alcançaram a média, como uma &quot;segunda chance&quot;. Se os estudantes aumentarem a nota após essa &quot;segunda chance&quot;, suas notas
+                                são alteradas e os líderes do grupo ganham nota também caso os membros do seu grupo tenham um bom desempenho na &quot;segunda chance&quot;.
                                 O nome desse método é 300, inspirado nos 300 de esparta. Leia mais sobre esse método no link: <a href="https://www.metodo300.com/">https://www.metodo300.com/</a> 
                                 
 

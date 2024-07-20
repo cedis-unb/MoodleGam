@@ -29,7 +29,7 @@ export default function RecompensasProgressivas(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Recompensas Progressivas" é uma estratégia de gamificação que envolve o 
+                            &quot;Recompensas Progressivas&quot; é uma estratégia de gamificação que envolve o 
                             fornecimento de prêmios ou benefícios aos usuários de maneira gradual ou sequencial. 
                             Isso pode aumentar o engajamento dos usuários, incentivando a continuidade e o 
                             progresso constante.
@@ -62,11 +62,11 @@ export default function RecompensasProgressivas(){
 
 
                             <p>
-                                Em um aplicativo de aprendizado, as "Recompensas Progressivas" podem ser usadas para 
+                                Em um aplicativo de aprendizado, as &quot;Recompensas Progressivas&quot; podem ser usadas para 
                                 incentivar a continuidade do aprendizado. Por exemplo, um usuário pode ganhar medalhas ou 
                                 insígnias à medida que completa módulos ou alcança certos marcos no processo de aprendizado.
                                 <br></br><br></br>
-                                Ao utilizar a técnica de "Recompensas Progressivas", é importante garantir que as 
+                                Ao utilizar a técnica de &quot;Recompensas Progressivas&quot;, é importante garantir que as 
                                 recompensas são atraentes e valiosas para os usuários. Além disso, é importante 
                                 garantir que as metas ou marcos são alcançáveis, para evitar a frustração dos usuários.
                             </p>

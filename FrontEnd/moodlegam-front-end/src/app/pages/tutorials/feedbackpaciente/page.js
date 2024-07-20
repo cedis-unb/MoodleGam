@@ -28,7 +28,7 @@ export default function FeedbackPaciente(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Feedback Paciente" é uma estratégia de gamificação que envolve recompensar os 
+                            &quot;Feedback Paciente&quot; é uma estratégia de gamificação que envolve recompensar os 
                             usuários pela paciência, geralmente por meio de feedback positivo ou recompensas 
                             após um período de espera ou esforço. Isso pode ajudar a cultivar a paciência, a 
                             persistência e o compromisso dos usuários.
@@ -61,7 +61,7 @@ export default function FeedbackPaciente(){
 
 
                             <p>
-                                No contexto educacional, "Feedback Paciente" pode ser utilizado para 
+                                No contexto educacional, &quot;Feedback Paciente&quot; pode ser utilizado para 
                                 recompensar os alunos que demonstram paciência e persistência em resolver 
                                 problemas complexos ou tarefas desafiadoras, dando-lhes feedback positivo e reconhecimento.
 

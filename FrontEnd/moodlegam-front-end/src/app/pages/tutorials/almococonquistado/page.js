@@ -27,8 +27,8 @@ export default function AlmocoConquistado(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            A técnica "Almoço Conquistado" que também é conhecida como "Recompensas por 
-                            Ações Fixas" é uma estratégia de gamificação que envolve dar aos usuários recompensas 
+                            A técnica &quot;Almoço Conquistado&quot; que também é conhecida como &quot;Recompensas por 
+                            Ações Fixas&quot; é uma estratégia de gamificação que envolve dar aos usuários recompensas 
                             previsíveis e consistentes em resposta a ações específicas. Esta estrátegia é eficaz 
                             porque cria uma conexão direta e clara entre o comportamento do usuário e a 
                             recompensa recebida, incentivando os usuários a repetirem essas ações.
@@ -62,7 +62,7 @@ export default function AlmocoConquistado(){
                                     Esses pontos podem, então, ser usados para desbloquear conteúdos adicionais ou 
                                     benefícios especiais.
                                     <br></br> <br></br>
-                                    Ao refletir sobre a técnica "Recompensas por Ações Fixas" ou "Almoço Conquistado", 
+                                    Ao refletir sobre a técnica &quot;Recompensas por Ações Fixas&quot; ou &quot;Almoço Conquistado&quot;, 
                                     é importante considerar sua eficácia em estabelecer uma conexão clara entre ações e 
                                     recompensas, incentivando comportamentos desejados.
 

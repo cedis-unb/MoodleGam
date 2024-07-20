@@ -33,7 +33,7 @@ export default function PercepcaoDeEscolha(){
                             em comparação com a única escolha. Pais com crianças pequenas 
                             reconhecem a influência da percepção escolha.
 
-                            "Escolha do Veneno / Percepção de Escolha" é uma estratégia de 
+                            &quot;Escolha do Veneno / Percepção de Escolha&quot; é uma estratégia de 
                             gamificação que envolve permitir que os usuários escolham entre 
                             opções que podem ter consequências positivas e negativas. Isso 
                             pode ajudar a aumentar o engajamento dos usuários, ao proporcionar 
@@ -69,7 +69,7 @@ export default function PercepcaoDeEscolha(){
                                 opção de escolher entre diferentes tópicos de estudo, cada 
                                 um dos quais pode ter diferentes níveis de dificuldade e 
                                 relevância para seus objetivos de aprendizado. 
-                                Este é um exemplo de "Escolha do Veneno / Percepção de Escolha", 
+                                Este é um exemplo de &quot;Escolha do Veneno / Percepção de Escolha&quot;, 
                                 pois permite que os alunos tomem decisões estratégicas sobre seu aprendizado.
                                 
                             </p>

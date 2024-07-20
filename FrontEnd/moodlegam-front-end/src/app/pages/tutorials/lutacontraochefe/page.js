@@ -28,7 +28,7 @@ export default function LutaContraOChefe(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Luta Contra o Chefe" é uma estratégia de gamificação onde os usuários 
+                            &quot;Luta Contra o Chefe&quot; é uma estratégia de gamificação onde os usuários 
                             enfrentam um desafio significativo que serve como uma barreira para o próximo nível 
                             ou etapa. Isso pode criar um senso de conquista e recompensa quando o desafio é superado, 
                             aumentando o engajamento dos usuários.
@@ -60,15 +60,15 @@ export default function LutaContraOChefe(){
 
                             <p>
                                 Em um curso online, cada módulo poderia terminar com uma avaliação abrangente ou 
-                                projeto que testa tudo o que o aluno aprendeu até então. Essa avaliação é o "chefe" 
+                                projeto que testa tudo o que o aluno aprendeu até então. Essa avaliação é o &apos;chefe&apos; 
                                 que precisa ser vencido para avançar para o próximo módulo.
                                 <br></br><br></br>
-                                Ao analisar a técnica "Luta Contra o Chefe", percebemos que ela serve como uma excelente ferramenta 
+                                Ao analisar a técnica &quot;Luta Contra o Chefe&quot;, percebemos que ela serve como uma excelente ferramenta 
                                 para consolidar aprendizados e motivar usuários através do estabelecimento de desafios significativos. 
                                 Estes desafios, quando superados, trazem uma sensação de realização e progresso que motiva o usuário a 
                                 continuar.
                                 <br></br><br></br>
-                                No entanto, é importante que os "chefes" estejam adequadamente alinhados com as habilidades e conhecimentos que os usuários possuem, para que estes desafios sejam difíceis, mas viáveis. Uma "Luta Contra o Chefe" mal planejada pode levar à frustração e desengajamento. Portanto, o planejamento cuidadoso e o alinhamento com os objetivos dos usuários são essenciais ao implementar essa técnica.
+                                No entanto, é importante que os &quot;chefes&quot; estejam adequadamente alinhados com as habilidades e conhecimentos que os usuários possuem, para que estes desafios sejam difíceis, mas viáveis. Uma &apos;Luta Contra o Chefe&apos; mal planejada pode levar à frustração e desengajamento. Portanto, o planejamento cuidadoso e o alinhamento com os objetivos dos usuários são essenciais ao implementar essa técnica.
                             </p>
                         </div> 
                         

@@ -28,10 +28,10 @@ export default function CartaEscarlate(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Carta Escarlate" é uma estratégia de gamificação que envolve a exposição 
+                            &quot;Carta Escarlate&quot; é uma estratégia de gamificação que envolve a exposição 
                             de um erro ou fracasso de um jogador para motivar uma mudança de comportamento 
                             ou incentivar a melhoria. O nome faz referência ao romance de Nathaniel Hawthorne, 
-                            onde a personagem principal é obrigada a usar uma letra "A" escarlate como uma 
+                            onde a personagem principal é obrigada a usar uma letra &quot;A&quot; escarlate como uma 
                             marca de sua transgressão.
 
                         </p>
@@ -61,7 +61,7 @@ export default function CartaEscarlate(){
 
 
                             <p>
-                                Em um aplicativo de aprendizado de idiomas, a "Carta Escarlate" pode 
+                                Em um aplicativo de aprendizado de idiomas, a &quot;Carta Escarlate&quot; pode 
                                 ser utilizada para marcar palavras ou frases que o usuário frequentemente erra. 
                                 Isso pode motivar o usuário a concentrar seus esforços de estudo nessas áreas problemáticas.
                             </p>

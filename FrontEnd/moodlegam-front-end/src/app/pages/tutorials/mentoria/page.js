@@ -27,7 +27,7 @@ export default function Mentoria(){
                     <div className="tech-description-text">
                         <p>
                             Quando alguém mais experiente (mentor) orienta um novato com suas tarefas.
-                            Muito útil em gamificações que requerem motivação sustentada. "Mentoria" é uma 
+                            Muito útil em gamificações que requerem motivação sustentada. &quot;Mentoria&quot; é uma 
                             estratégia de gamificação que envolve a orientação de um usuário mais experiente 
                             para ajudar um usuário menos experiente. Isso pode aumentar a confiança do usuário 
                             novato, acelerar a curva de aprendizado e fortalecer a comunidade de usuários ao 
@@ -61,7 +61,7 @@ export default function Mentoria(){
 
 
                             <p>
-                                Em plataformas de aprendizagem online, a "Mentoria" pode ser incentivada ao 
+                                Em plataformas de aprendizagem online, a &quot;Mentoria&quot; pode ser incentivada ao 
                                 permitir que usuários mais experientes forneçam feedback e orientação para 
                                 aqueles que estão aprendendo. Isso pode criar uma comunidade de aprendizagem 
                                 colaborativa e aumentar o engajamento dos usuários.
@@ -73,8 +73,8 @@ export default function Mentoria(){
                                 Esses grupos tem o objetivo dos líderes serem mentores do integrantes, onde listas de exercícios são resolvidas pelos grupos
                                 e os líderes tiram dúvidas e acompanham o rendimento dos outros membros. Após o prazo da lista de exercícios
                                 terminar, uma outra avaliação valendo somente uma porcentagem da primeira avaliação é realizada para os estudantes que não 
-                                alcançaram a média, como uma "segunda chance". Se os estudantes aumentarem a nota após essa "segunda chance", suas notas
-                                são alteradas e os líderes do grupo ganham nota também caso os membros do seu grupo tenham um bom desempenho na "segunda chance".
+                                alcançaram a média, como uma &quot;segunda chance&quot;. Se os estudantes aumentarem a nota após essa &quot;segunda chance&quot;, suas notas
+                                são alteradas e os líderes do grupo ganham nota também caso os membros do seu grupo tenham um bom desempenho na &quot;segunda chance&quot;.
                                 O nome desse método é 300, inspirado nos 300 de esparta. Leia mais sobre esse método no link: <a href="https://www.metodo300.com/">https://www.metodo300.com/</a> 
                                 
 

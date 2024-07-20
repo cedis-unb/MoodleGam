@@ -28,7 +28,7 @@ export default function Pendente(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            "Pendente" ou "Suspense" é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
+                            &quot;Pendente&quot; ou &quot;Suspense&quot; é uma estratégia de gamificação que envolve apresentar uma recompensa desejável ou 
                             objetivo que está apenas
                             fora do alcance do usuário, mas pode ser obtida através de mais esforço ou engajamento. 
                             Isso pode estimular a motivação e incentivarem os usuários a continuar interagindo com o sistema.
@@ -65,7 +65,7 @@ export default function Pendente(){
 
 
                             <p>
-                                Em aplicativos de aprendizado, "Pendente" pode ser usado ao desbloquear o 
+                                Em aplicativos de aprendizado, &quot;Pendente&quot; pode ser usado ao desbloquear o 
                                 próximo nível ou curso apenas depois que o usuário completar uma série de tarefas ou 
                                 desafios. Isso incentiva o aprendizado contínuo e o compromisso com o aplicativo.
 

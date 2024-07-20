@@ -29,7 +29,7 @@ export default function QuebraCabecasTravesso(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                            Quebra-cabeças Travesso" é uma estratégia de gamificação que envolve a 
+                            &quot;Quebra-cabeças Travesso&quot; é uma estratégia de gamificação que envolve a 
                             apresentação de desafios ou enigmas que os usuários devem resolver, 
                             muitas vezes com uma reviravolta inesperada ou elementos surpresa. 
                             Isso pode ajudar a engajar os usuários, estimulando a criatividade, 
@@ -63,7 +63,7 @@ export default function QuebraCabecasTravesso(){
 
 
                             <p>
-                                Em uma sala de aula, o "Quebra-cabeças Travesso" pode ser usado para estimular o 
+                                Em uma sala de aula, o &quot;Quebra-cabeças Travesso&quot; pode ser usado para estimular o 
                                 pensamento crítico e a resolução de problemas dos alunos. Por exemplo, um professor 
                                 pode criar um enigma que exige que os alunos apliquem os conceitos que aprenderam de 
                                 maneiras novas e inesperadas

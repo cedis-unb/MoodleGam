@@ -28,7 +28,7 @@ export default function Pontos(){
                     <h2>Descrição da técnica</h2>
                     <div className="tech-description-text">
                         <p>
-                        A pontuação é utilizada para manter a contagem do progresso do jogador. "Pontos" é uma estratégia de gamificação 
+                        A pontuação é utilizada para manter a contagem do progresso do jogador. &quot;Pontos&quot; é uma estratégia de gamificação 
                         muito comum que envolve conceder aos usuários pontos por completar certas ações ou atingir certos objetivos. 
                         Os pontos funcionam como um sistema de recompensa quantificável que pode aumentar a motivação do usuário, 
                         proporcionar feedback imediato e criar uma sensação de progresso e realização.
