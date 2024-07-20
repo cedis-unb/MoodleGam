@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
 import dotenv from 'dotenv'
+import LoadingPage from "@/app/components/LoadingPage";
 
 dotenv.config()
 
@@ -20,7 +21,7 @@ export default function RegisterUserPage(){
         
     })
 
-    const apiKey = '276a6f1b4611ef755a3f4fb5ca974367'
+    const [loading, setLoading] = useState(false)
     const [confirmPassword, setConfirmPassword] = useState('')
     const [modalOpen, setModalOpen] = useState(false)
     const [isValid, setIsValid] = useState(true)
@@ -54,19 +55,20 @@ export default function RegisterUserPage(){
         }
     }
     const handleSubmit = async e => {
+        
         e.preventDefault()
         
         if(validateUserData(e)){
-            
+            setLoading(true)
             try {
-                console.log(`user ${apiKey}`)
+                
     
                 const response = await axiosInstance.post(
                     '/users', 
                     user,
                     {
                         headers: {
-                            'x-api-key': `${apiKey}`
+                            'x-api-key': `${process.env.NEXT_PUBLIC_API_KEY}`
                         }
                     }
                     
@@ -77,7 +79,7 @@ export default function RegisterUserPage(){
                   // Cadastro bem-sucedido
                   console.log('Usuário cadastrado:', response.data);
                   setErrorText('')
-                  setModalOpen(true)
+                  
                   
                 } else {
                   // Tratar erros de requisição
@@ -87,7 +89,11 @@ export default function RegisterUserPage(){
                 // Tratar erros de rede
                 console.error('Erro de rede:', error.response);
                 setErrorText(error.response.data.message)
+            } finally {
+                setLoading(false)
+                setModalOpen(true)
             }
+
         }
 
         
@@ -112,8 +118,12 @@ export default function RegisterUserPage(){
 
 
             )}
+
+
             
-            
+            {loading && (
+                <LoadingPage/>
+            )}
         
             <div className="background-register-user-page">
                 

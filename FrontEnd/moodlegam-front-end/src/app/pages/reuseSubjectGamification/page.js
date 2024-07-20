@@ -8,11 +8,12 @@ import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
 import dotenv from 'dotenv'
+import LoadingPage from "@/app/components/LoadingPage";
 dotenv.config()
 
 
 export default function ReuseSubjectGamification(searchParams){
-    const subjectId = "66301fd926f093a263e049fc"
+    const [loading, setLoading] = useState(false)
     const [accordionOpen, setAccordionOpen] = useState(false);
     const [expandedSubjectId, setExpandedSubjectId] = useState(null);
     const [subjects, setSubjects] = useState([])
@@ -67,7 +68,8 @@ export default function ReuseSubjectGamification(searchParams){
     }, [])
 
     const handleSubmit = async() =>{
-        //closeModal()
+        closeModal()
+        setLoading(true)
         const token = localStorage.getItem("token")
         const chosenSubject = await fetchSubject(chosenSubjectId, token)
 
@@ -96,7 +98,7 @@ export default function ReuseSubjectGamification(searchParams){
             if (response.status === 200) {
               
               console.log('Disciplina atualizada:', response.data);
-              setinfoModalOpen(true)
+              
               
               
               
@@ -109,6 +111,9 @@ export default function ReuseSubjectGamification(searchParams){
             
             console.error('Erro de rede:', error);
             setErrorText("Erro no envio dos dados")
+        } finally {
+            setLoading(false)
+            setinfoModalOpen(true)
         }
     }
 
@@ -290,6 +295,10 @@ export default function ReuseSubjectGamification(searchParams){
     return(
     
         <>
+            {loading && (
+                <LoadingPage/>
+            )}
+
             {confirmModalOpen && (
 
                 <Modal
@@ -318,6 +327,8 @@ export default function ReuseSubjectGamification(searchParams){
 
 
             )}
+
+            
             <Background>
                 <div className="reuse-subject-background">
                     <h1>Passo 2 - Escolher disciplina para reaproveitar Gamificação</h1>

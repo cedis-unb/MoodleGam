@@ -9,6 +9,7 @@ import {jwtDecode} from "jwt-decode";
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
 import dotenv from 'dotenv'
+import LoadingPage from "@/app/components/LoadingPage/index"
 dotenv.config()
 
 export default function RegisterSubjectPage(){
@@ -20,7 +21,7 @@ export default function RegisterSubjectPage(){
         semester:""
         
     })
-
+    const [loading, setLoading] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
     const [token, setToken] = useState('')
     const [userId, setUserId] = useState(null);
@@ -72,10 +73,11 @@ export default function RegisterSubjectPage(){
         }
     }
     const handleSubmit = async e => {
+        
         e.preventDefault()
         
         if(validateUserData(e)){
-            
+            setLoading(true)
             
             try {
                 console.log(`subject ${subject}`)
@@ -135,6 +137,8 @@ export default function RegisterSubjectPage(){
                 // Tratar erros de rede
                 console.error('Erro de rede:', error.response);
                 setErrorText("Erro no envio dos dados")
+            } finally {
+                setLoading(false)
             }
         }
 
@@ -165,6 +169,11 @@ export default function RegisterSubjectPage(){
                 />
 
 
+            )}
+
+            {loading && (
+
+                <LoadingPage/>
             )}
         
         

@@ -16,6 +16,7 @@ import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
 import {axiosInstance} from '../../config/config'
 import dotenv from 'dotenv'
+import LoadingPage from "@/app/components/LoadingPage/index"
 dotenv.config()
 
 export default function ChooseTechniquePage(searchParams){
@@ -23,6 +24,7 @@ export default function ChooseTechniquePage(searchParams){
     const router = useRouter();
 
     const recommendedQuantity = 10
+    const [loading, setLoading] = useState(false)
     const [techniqueQuantity, setTechniqueQuantity] = useState(0)
     const [chosenTechniques, setChosenTechniques] = useState([])
     const [coreDriveList, setCoreDriveList] = useState(null)
@@ -201,8 +203,10 @@ export default function ChooseTechniquePage(searchParams){
     
 
     const handleSubmit = async e => {
+        
         e.preventDefault();
         setConfirmModalOpen(false)
+        setLoading(true)
         try {
 
             const response = await axiosInstance.put(
@@ -223,7 +227,7 @@ export default function ChooseTechniquePage(searchParams){
             if (response.status === 200) {
                
                 console.log('Disiplina atualizada:', response.data);
-                setinfoModalOpen(true)
+                
                
                 
             } else {
@@ -233,6 +237,9 @@ export default function ChooseTechniquePage(searchParams){
         } catch (error) {
             
             console.error('Erro de rede:', error.response);
+        } finally {
+            setLoading(false)
+            setinfoModalOpen(true)
         }
     }
 
@@ -440,6 +447,11 @@ export default function ChooseTechniquePage(searchParams){
     return (
 
         <>
+            {loading && (
+
+                <LoadingPage/>
+            )}
+            
             {confirmModalOpen && (
 
                 <Modal
@@ -467,6 +479,8 @@ export default function ChooseTechniquePage(searchParams){
 
 
             )}
+
+            
         
         
         <Background>

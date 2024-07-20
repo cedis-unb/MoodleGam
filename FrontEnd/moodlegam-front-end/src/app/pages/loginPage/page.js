@@ -2,6 +2,7 @@
 import "../loginPage/style.css";
 import Image from "next/image";
 import Button from "../../components/Button/index";
+import LoadingPage from "../../components/LoadingPage/index";
 import React, { useEffect, useState } from "react";
 import dotenv from 'dotenv'
 import { useRouter } from 'next/navigation';
@@ -12,7 +13,7 @@ export default function LoginPage(){
     
     
     const router = useRouter();
-
+    const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorText, setErrorText] = useState('');
@@ -65,6 +66,7 @@ export default function LoginPage(){
     };
 
     const handleSubmit = async (event) => {
+        setLoading(true)
         event.preventDefault();
         
         try {
@@ -95,7 +97,10 @@ export default function LoginPage(){
             console.error('Erro ao fazer login:', error.response.data.message);
             setErrorText(error.response.data.message);
             
+        } finally{
+            setLoading(false)
         }
+
     };
 
     const redirectRegisterUser = () =>{
@@ -103,46 +108,54 @@ export default function LoginPage(){
     }
 
     return (
-        <div className="background-login-page">
+        <>
+            {loading && (
+                <LoadingPage/>
+            )}
+
+            <div className="background-login-page">
             
-            <div className="login-container">
-                <p>Faça Login no <span id='orange-moodle'>Moodle</span>Gam</p>
+                <div className="login-container">
+                    <p>Faça Login no <span id='orange-moodle'>Moodle</span>Gam</p>
 
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        type="email" 
-                        placeholder="E-mail"
-                        onChange={(e) => setEmail(e.target.value)}
-                    
-                    ></input>
+                    <form onSubmit={handleSubmit}>
+                        <input 
+                            type="email" 
+                            placeholder="E-mail"
+                            onChange={(e) => setEmail(e.target.value)}
+                        
+                        ></input>
 
-                    <input 
-                        type="password" 
-                        placeholder="Senha"
-                        onChange={(e) => setPassword(e.target.value)}
-                    ></input>
-                    <span id="error-text-login">{errorText}</span>
-                    <span id="success-text-forgot-password">{successText}</span>
-                    <a onClick={forgotPassword}>Esqueci minha senha</a>
-                    <a onClick={redirectRegisterUser}>Fazer cadastro</a>
-                    <div className="button-login-wrapper">
-                        <Button
-                            text="Entrar"
-                            type="submit"
-                        />
-                    </div>
-                    
-                </form>
+                        <input 
+                            type="password" 
+                            placeholder="Senha"
+                            onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                        <span id="error-text-login">{errorText}</span>
+                        <span id="success-text-forgot-password">{successText}</span>
+                        <a onClick={forgotPassword}>Esqueci minha senha</a>
+                        <a onClick={redirectRegisterUser}>Fazer cadastro</a>
+                        <div className="button-login-wrapper">
+                            <Button
+                                text="Entrar"
+                                type="submit"
+                            />
+                        </div>
+                        
+                    </form>
+                </div>
+                <div className="moodlegam-logo-login">
+                    <Image 
+                        src="/img/logo_image.png"
+                        width={500}
+                        height={500}
+                        unoptimized={true}
+                    />
+                </div>
             </div>
-            <div className="moodlegam-logo-login">
-                <Image 
-                    src="/img/logo_image.png"
-                    width={500}
-                    height={500}
-                    unoptimized={true}
-                />
-            </div>
-        </div>
+        
+        </>
+        
 
 
     );
