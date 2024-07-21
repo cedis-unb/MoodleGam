@@ -3,6 +3,7 @@ import "./style.css"
 import Background from "../../components/Background";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
@@ -14,12 +15,15 @@ import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
 import dotenv from 'dotenv'
+
 dotenv.config()
 
 
 
-export default function EditSubjectPage(searchParams){
-
+export default function EditSubjectPage(){
+    const searchParams = useSearchParams()
+    const subjectId = searchParams.get("subjectId")
+    
    
     const recommendedQuantity = 10
     const [subject, setSubject] = useState(null)
@@ -45,7 +49,7 @@ export default function EditSubjectPage(searchParams){
             try {
 
                 
-                const subjectData = await fetchSubject(searchParams.searchParams.subjectId, token);
+                const subjectData = await fetchSubject(subjectId, token);
                 setYearAndSemester(subjectData.yearSemester)
                 setChosenTechniques(subjectData.techniques)
                 setTechniqueQuantity(subjectData.techniques.length)
@@ -82,7 +86,7 @@ export default function EditSubjectPage(searchParams){
         const token = localStorage.getItem("token");
 
         const fetchData = async() =>{
-            const subjectData = await fetchSubject(searchParams.searchParams.subjectId, token);
+            const subjectData = await fetchSubject(subjectId, token);
             const allTechniques = await fetchAllTechniques() //pegar todas as técnicas
                 
                 
@@ -213,7 +217,7 @@ export default function EditSubjectPage(searchParams){
                 const yearSemester = `${year}/${semester}`
                 const techniques = chosenTechniques 
                 const response = await axiosInstance.put(
-                    `/subject/${searchParams.searchParams.subjectId}`, 
+                    `/subject/${subjectId}`, 
                     {
                         subjectName,
                         subjectCode,

@@ -7,6 +7,7 @@ import "./style.css"
 import Button from "@/app/components/Button";
 import "../subjectDetailsPage/style.css"
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Modal from "@/app/components/Modal"
 import Link from "next/link"
 import BlackHatBox from "@/app/components/BlackHatBox"
@@ -19,8 +20,9 @@ import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage/index"
 dotenv.config()
 
-export default function ChooseTechniquePage(searchParams){
-
+export default function ChooseTechniquePage(){
+    const searchParams = useSearchParams()
+    const subjectId = searchParams.get("subjectId")
     const router = useRouter();
 
     const recommendedQuantity = 10
@@ -40,10 +42,10 @@ export default function ChooseTechniquePage(searchParams){
     const [coreDrive7, setCoreDrive7] = useState(null)
     const [coreDrive8, setCoreDrive8] = useState(null)
     
-    const [techniqueQuantitys, setTechniqueQuantitys] = useState([])
+    const [techniqueQuantitys, setTechniqueQuantitys] = useState([0,0,0,0,0,0,0,0])
 
     useEffect(() => {
-        console.log(searchParams.searchParams.subjectId)
+        
         const fetchData = async () => {
             try {
                 const coreDrives = await fetchCoreDrives()
@@ -210,7 +212,7 @@ export default function ChooseTechniquePage(searchParams){
         try {
 
             const response = await axiosInstance.put(
-                `/subject/${searchParams.searchParams.subjectId}`, 
+                `/subject/${subjectId}`, 
                 {
                     techniques: chosenTechniques 
                 },
@@ -256,7 +258,7 @@ export default function ChooseTechniquePage(searchParams){
     function updateRadarGraph(techniqueId, operation){
         
         var quantity = [...techniqueQuantitys]
-
+        console.log("quantity ", quantity)
         if(coreDrive1.techniques.some(technique => technique._id === techniqueId)){
             if(operation === "add"){
                 quantity[0] =  quantity[0] + 1
@@ -345,10 +347,11 @@ export default function ChooseTechniquePage(searchParams){
             
 
         }
-        //console.log("quantity ", quantity)
+        
         setTechniqueQuantitys(quantity)
     }
     const handleCheckboxChange = (e) =>{
+        
         const { value, checked } = e.target;
         var updatedTechniques = null
         if (checked) {

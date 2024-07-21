@@ -24,10 +24,10 @@ const DropdownMenu = ({isOpen}) => {
 
     return (
         <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
-        <ul className='dropdown-options'>
-            <li id="my-profile"><a onClick={redirectToMyProfile}>Meu perfil</a></li>
-            <li id="logout"><a onClick={userLogOut}>Sair</a></li>
-        </ul>
+        <div className='dropdown-options'>
+            <a id="my-profile" onClick={redirectToMyProfile}>Meu perfil</a>
+            <a id="logout" onClick={userLogOut}>Sair</a>
+        </div>
         </div>
     );
 };

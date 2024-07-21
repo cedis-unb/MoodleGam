@@ -12,6 +12,7 @@ import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
 import dotenv from 'dotenv'
+
 dotenv.config()
 
 export default function SubjectDetailsPage(searchParams){

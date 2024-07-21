@@ -7,12 +7,16 @@ import { axiosInstance } from "@/app/config/config";
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage";
 dotenv.config()
 
 
-export default function ReuseSubjectGamification(searchParams){
+export default function ReuseSubjectGamification(){
+    const searchParams = useSearchParams()
+    const subjectId = searchParams.get("subjectId")
+
     const [loading, setLoading] = useState(false)
     const [accordionOpen, setAccordionOpen] = useState(false);
     const [expandedSubjectId, setExpandedSubjectId] = useState(null);
@@ -30,7 +34,7 @@ export default function ReuseSubjectGamification(searchParams){
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log("subjectid ", searchParams.searchParams.subjectId)
+        console.log("subjectid ", subjectId)
         const fetchData = async () => {
             try {
                 if(token){
@@ -80,7 +84,7 @@ export default function ReuseSubjectGamification(searchParams){
             const techniques = chosenSubject.techniques 
 
             const response = await axiosInstance.put(
-                `/subject/${searchParams.searchParams.subjectId}`, 
+                `/subject/${subjectId}`, 
                 {
                     techniques
                 },
