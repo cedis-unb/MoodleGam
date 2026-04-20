@@ -8,8 +8,6 @@ import { axiosInstance } from "@/app/config/config";
 import { useEffect, useState } from "react";
 import {useRouter} from "next/navigation";
 import Link from 'next/link';
-import dotenv from 'dotenv'
-dotenv.config()
 export default function ManageUSers(){
 
     const router = useRouter();

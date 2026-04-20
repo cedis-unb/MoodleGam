@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
 import {jwtDecode} from "jwt-decode"; 
-import dotenv from 'dotenv'
-dotenv.config()
 
 
 export default function UserProfilePage(){

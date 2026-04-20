@@ -8,9 +8,7 @@ import React, { useEffect, useState } from "react";
 import {jwtDecode} from "jwt-decode"; 
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
-import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage/index"
-dotenv.config()
 
 export default function RegisterSubjectPage(){
     const [subject, setSubject] = useState({

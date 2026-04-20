@@ -7,8 +7,6 @@ import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
 import Modal from "@/app/components/Modal"
 import {jwtDecode} from "jwt-decode"; 
-import dotenv from 'dotenv'
-dotenv.config()
 
 
 export default function EditUserData(searchParams){

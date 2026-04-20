@@ -6,10 +6,7 @@ import {useRouter} from "next/navigation";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import {axiosInstance} from '../../config/config'
-import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage";
-
-dotenv.config()
 
 export default function RegisterUserPage(){
     const [user, setUser] = useState({

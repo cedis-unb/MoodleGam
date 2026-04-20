@@ -16,9 +16,7 @@ import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
 import {axiosInstance} from '../../config/config'
-import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage/index"
-dotenv.config()
 
 export default function ChooseTechniquePage(){
     const searchParams = useSearchParams()
@@ -448,13 +446,11 @@ export default function ChooseTechniquePage(){
     }
 
     return (
-
         <>
             {loading && (
 
                 <LoadingPage/>
             )}
-            
             {confirmModalOpen && (
 
                 <Modal
@@ -469,7 +465,6 @@ export default function ChooseTechniquePage(){
 
 
             )}
-
             {infoModalOpen && (
 
                 <Modal
@@ -482,90 +477,160 @@ export default function ChooseTechniquePage(){
 
 
             )}
+            <Background>
+                
+                <div className="choose-technique-background">
 
-            
-        
-        
-        <Background>
-            
-            <div className="choose-technique-background">
+                    <div className="choose-technique-header">
 
-                <div className="choose-technique-header">
-
-                    <div className="text-warnings">
-                        <h1>Passo 2 - Escolha das técnicas de Gamificação</h1>
-                        <p>Clique nas técnicas que deseja aplicar em sua disciplina e clique em “Confirmar”</p>
-                        <div className="core-drive-help">
-                            <Image 
-                                src="/img/question.svg"
-                                width={30}
-                                height={30}
-                                unoptimized={true}
-                            />
-                            <span>Para se informar sobre cada técnica de gamificação, basta clicar em no ícone &quot;?&quot;. 
-                                E para saber mais sobre os Core Drives basta clicar em seus respectivos nomes.
-                            </span>
+                        <div className="text-warnings">
+                            <h1>Passo 2 - Escolha das técnicas de Gamificação</h1>
+                            <p>Clique nas técnicas que deseja aplicar em sua disciplina e clique em “Confirmar”</p>
+                            <div className="core-drive-help">
+                                <Image 
+                                    src="/img/question.svg"
+                                    width={30}
+                                    height={30}
+                                    unoptimized={true}
+                                />
+                                <span>Para se informar sobre cada técnica de gamificação, basta clicar em no ícone &quot;?&quot;. 
+                                    E para saber mais sobre os Core Drives basta clicar em seus respectivos nomes.
+                                </span>
+                            </div>
+                            <div className="core-drive-warning">
+                                <Image 
+                                    src="/img/exclamation.svg"
+                                    width={30}
+                                    height={30}
+                                    unoptimized={true}
+                                />
+                                <span><span id="attention">Atenção</span> : Escolher mais de 10 técnicas de Gamificação gera uma grande diculdade de implementação dessas técnicas</span>
+                            </div>
                         </div>
-                        <div className="core-drive-warning">
-                            <Image 
-                                src="/img/exclamation.svg"
-                                width={30}
-                                height={30}
-                                unoptimized={true}
-                            />
-                            <span><span id="attention">Atenção</span> : Escolher mais de 10 técnicas de Gamificação gera uma grande diculdade de implementação dessas técnicas</span>
+                        <div className="technique-quantity">
+                            <div className="technique-quantity-text">
+                                <span>Quantidade de técnicas escolhidas: <span className="font-bold">{techniqueQuantity}</span></span>
+                            </div>
+                            
+                            <div className="technique-quantity-text">
+                                <span>Dificuldade de implementação: <span style={{color: riskColor, fontWeight: 'bold'}}>{riskLevel}</span></span>
+                            </div>
+                            
                         </div>
                     </div>
-                    <div className="technique-quantity">
-                        <div className="technique-quantity-text">
-                            <span>Quantidade de técnicas escolhidas: <span className="font-bold">{techniqueQuantity}</span></span>
-                        </div>
-                        
-                        <div className="technique-quantity-text">
-                            <span>Dificuldade de implementação: <span style={{color: riskColor, fontWeight: 'bold'}}>{riskLevel}</span></span>
-                        </div>
-                        
+
+
+                    <div className="radar-chart">
+                        <RadarGraph
+                            techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
+                        />
                     </div>
-                </div>
 
+                    {coreDrive1 && (
 
-                <div className="radar-chart">
-                    <RadarGraph
-                        techniqueQuantitys={techniqueQuantitys !== null ? techniqueQuantitys : []}
-                    />
-                </div>
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive1 !== null ? coreDrive1.coreDriveName : ''}</h2>
 
-                {coreDrive1 && (
+                                {coreDrive1.hat != null ? 
+                                    coreDrive1.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
 
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive1 !== null ? coreDrive1.coreDriveName : ''}</h2>
+                                {coreDrive1.motivation != null ? 
+                                    coreDrive1.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                            </div>
 
-                            {coreDrive1.hat != null ? 
-                                coreDrive1.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
+                            <div className="core-drive-techniques">
 
-                            {coreDrive1.motivation != null ? 
-                                coreDrive1.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                        </div>
+                                {coreDrive1 && 
+                                    coreDrive1.techniques.map((technique, index) => (
 
-                        <div className="core-drive-techniques">
+                                    
+                                        <div key={technique._id} className="choose-technique-box">
+                                            <input 
+                                                type="checkbox" 
+                                                id={`technique-${technique._id}`} 
+                                                onChange={handleCheckboxChange}
+                                                value={technique._id}
+                                            />
+                                            
+                                            <label htmlFor={`technique-${technique._id}`}>
+                                                {technique.techniqueName}
+                                            </label>
 
-                            {coreDrive1 && 
-                                coreDrive1.techniques.map((technique, index) => (
+                                            <Link
+                                                href={{
+                                                    pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                                }}
+                                                target="_blank">
 
+                                                <Image 
+                                                    src="/img/help.svg"
+                                                    width={25}
+                                                    height={25}
+                                                    unoptimized={true}
+                                                />
+
+                                            </Link>
+                                        </div>
+                                        
+                                    
+                                    
+                                        
+                                    
+                                    ))
+                                }
                                 
+
+                            
+                            </div>
+                        </div>
+                    )}   
+
+
+                    {coreDrive2 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive2 !== null ? coreDrive2.coreDriveName : ''}</h2>
+
+                                {coreDrive2.hat != null ? 
+                                    coreDrive2.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive2.motivation != null ? 
+                                    coreDrive2.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive2 && 
+                                    coreDrive2.techniques.map((technique, index) => (
+
+
+                                    
                                     <div key={technique._id} className="choose-technique-box">
                                         <input 
                                             type="checkbox" 
@@ -573,7 +638,7 @@ export default function ChooseTechniquePage(){
                                             onChange={handleCheckboxChange}
                                             value={technique._id}
                                         />
-                                        
+
                                         <label htmlFor={`technique-${technique._id}`}>
                                             {technique.techniqueName}
                                         </label>
@@ -582,559 +647,467 @@ export default function ChooseTechniquePage(){
                                             href={{
                                                 pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
                                             }}
+                                            target="_blank">
 
-                                            passHref
-                                            legacyBehavior
-                                        >
-                                            <a target="_blank">
-                                                <Image 
-                                                    src="/img/help.svg"
-                                                    width={25}
-                                                    height={25}
-                                                    unoptimized={true}
-                                                />
-                                            </a>
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}
+
+                    {coreDrive3 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive3 !== null ? coreDrive3.coreDriveName : ''}</h2>
+
+                                {coreDrive3.hat != null ? 
+                                    coreDrive3.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive3.motivation != null ? 
+                                    coreDrive3.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive3 && 
+                                    coreDrive3.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}              
+                    
+
+
+                    {coreDrive4 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive4 !== null ? coreDrive4.coreDriveName : ''}</h2>
+
+                                {coreDrive4.hat != null ? 
+                                    coreDrive4.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive4.motivation != null ? 
+                                    coreDrive4.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                                
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive4 && 
+                                    coreDrive4.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}
+                    
+
+                    {coreDrive5 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive5 !== null ? coreDrive5.coreDriveName : ''}</h2>
+                                
+                                {coreDrive5.hat != null ? 
+                                    coreDrive5.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive5.motivation != null ? 
+                                    coreDrive5.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                                
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive5 && 
+                                    coreDrive5.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}
+
+
+
+                    {coreDrive6 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive6 !== null ? coreDrive6.coreDriveName : ''}</h2>
+
+                                {coreDrive6.hat != null ? 
+                                    coreDrive6.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive6.motivation != null ? 
+                                    coreDrive6.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive6 && 
+                                    coreDrive6.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}
+                   
+                   {coreDrive7 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive7 !== null ? coreDrive7.coreDriveName : ''}</h2>
+
+                                {coreDrive7.hat != null ? 
+                                    coreDrive7.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive7.motivation != null ? 
+                                    coreDrive7.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive7 && 
+                                    coreDrive7.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
+                                        </Link>
+
+                                    </div>
+                                        
+                                    
+                                    ))
+                                }
+                                
+
+                            
+                            </div>
+                        </div>
+                    )}
+
+
+                    {coreDrive8 && (
+
+                        <div className="core-drive-box">
+                            <div className="core-drive-header">
+                                <h2>{coreDrive8 !== null ? coreDrive8.coreDriveName : ''}</h2>
+
+                                {coreDrive8.hat != null ? 
+                                    coreDrive8.hat === 'white' ?
+                                    (<WhiteHatBox/>)
+                                    :
+                                    (<BlackHatBox/>)
+                                    :
+                                    ''
+                                }
+
+                                {coreDrive8.motivation != null ? 
+                                    coreDrive8.motivation === 'intrinsic' ?
+                                    (<IntrinsicBox/>)
+                                    :
+                                    (<ExtrinsicBox/>)
+                                    :
+                                    ''
+                                }
+                            </div>
+
+                            <div className="core-drive-techniques">
+
+                                {coreDrive8 && 
+                                    coreDrive8.techniques.map((technique, index) => (
+
+                                    <div key={technique._id} className="choose-technique-box">
+                                        <input 
+                                            type="checkbox" 
+                                            id={`technique-${technique._id}`} 
+                                            onChange={handleCheckboxChange}
+                                            value={technique._id}
+                                        />
+
+                                        <label htmlFor={`technique-${technique._id}`}>
+                                            {technique.techniqueName}
+                                        </label>
+
+                                        <Link
+                                            href={{
+                                                pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
+                                            }}
+                                            target="_blank">
+
+                                            <Image 
+                                                src="/img/help.svg"
+                                                width={25}
+                                                height={25}
+                                                unoptimized={true}
+                                            />
+
                                         </Link>
                                     </div>
+                                        
                                     
+                                    ))
+                                }
                                 
-                                
-                                    
-                                
-                                ))
-                            }
-                            
 
-                        
+                            
+                            </div>
                         </div>
+                    )}
+                    
+
+                    <div className="techniques-button-wrapper">
+                        <Button
+                            text="Finalizar"
+                            type="submit"
+                            onClick={handleConfirm}
+                        />
                     </div>
-                )}   
 
-
-                {coreDrive2 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive2 !== null ? coreDrive2.coreDriveName : ''}</h2>
-
-                            {coreDrive2.hat != null ? 
-                                coreDrive2.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive2.motivation != null ? 
-                                coreDrive2.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive2 && 
-                                coreDrive2.techniques.map((technique, index) => (
-
-
-                                
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-
-                {coreDrive3 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive3 !== null ? coreDrive3.coreDriveName : ''}</h2>
-
-                            {coreDrive3.hat != null ? 
-                                coreDrive3.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive3.motivation != null ? 
-                                coreDrive3.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive3 && 
-                                coreDrive3.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}              
-                
-
-
-                {coreDrive4 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive4 !== null ? coreDrive4.coreDriveName : ''}</h2>
-
-                            {coreDrive4.hat != null ? 
-                                coreDrive4.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive4.motivation != null ? 
-                                coreDrive4.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                            
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive4 && 
-                                coreDrive4.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-                
-
-                {coreDrive5 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive5 !== null ? coreDrive5.coreDriveName : ''}</h2>
-                            
-                            {coreDrive5.hat != null ? 
-                                coreDrive5.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive5.motivation != null ? 
-                                coreDrive5.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                            
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive5 && 
-                                coreDrive5.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-
-
-
-                {coreDrive6 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive6 !== null ? coreDrive6.coreDriveName : ''}</h2>
-
-                            {coreDrive6.hat != null ? 
-                                coreDrive6.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive6.motivation != null ? 
-                                coreDrive6.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive6 && 
-                                coreDrive6.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-               
-               {coreDrive7 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive7 !== null ? coreDrive7.coreDriveName : ''}</h2>
-
-                            {coreDrive7.hat != null ? 
-                                coreDrive7.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive7.motivation != null ? 
-                                coreDrive7.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive7 && 
-                                coreDrive7.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-
-
-                {coreDrive8 && (
-
-                    <div className="core-drive-box">
-                        <div className="core-drive-header">
-                            <h2>{coreDrive8 !== null ? coreDrive8.coreDriveName : ''}</h2>
-
-                            {coreDrive8.hat != null ? 
-                                coreDrive8.hat === 'white' ?
-                                (<WhiteHatBox/>)
-                                :
-                                (<BlackHatBox/>)
-                                :
-                                ''
-                            }
-
-                            {coreDrive8.motivation != null ? 
-                                coreDrive8.motivation === 'intrinsic' ?
-                                (<IntrinsicBox/>)
-                                :
-                                (<ExtrinsicBox/>)
-                                :
-                                ''
-                            }
-                        </div>
-
-                        <div className="core-drive-techniques">
-
-                            {coreDrive8 && 
-                                coreDrive8.techniques.map((technique, index) => (
-
-                                <div key={technique._id} className="choose-technique-box">
-                                    <input 
-                                        type="checkbox" 
-                                        id={`technique-${technique._id}`} 
-                                        onChange={handleCheckboxChange}
-                                        value={technique._id}
-                                    />
-
-                                    <label htmlFor={`technique-${technique._id}`}>
-                                        {technique.techniqueName}
-                                    </label>
-
-                                    <Link
-                                        href={{
-                                            pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
-                                        }}
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
-                                            <Image 
-                                                src="/img/help.svg"
-                                                width={25}
-                                                height={25}
-                                                unoptimized={true}
-                                            />
-                                        </a>
-                                    </Link>
-                                </div>
-                                    
-                                
-                                ))
-                            }
-                            
-
-                        
-                        </div>
-                    </div>
-                )}
-                
-
-                <div className="techniques-button-wrapper">
-                    <Button
-                        text="Finalizar"
-                        type="submit"
-                        onClick={handleConfirm}
-                    />
                 </div>
-
-            </div>
-            
-            
-            
-        </Background>
+                
+                
+                
+            </Background>
         </>
-
     );
 }
 

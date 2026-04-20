@@ -11,8 +11,6 @@ import BlackHatBox from "@/app/components/BlackHatBox"
 import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
-import dotenv from 'dotenv'
-dotenv.config()
 
 export default function OctalysisContent(){
     const [subject, setSubject] = useState(null)

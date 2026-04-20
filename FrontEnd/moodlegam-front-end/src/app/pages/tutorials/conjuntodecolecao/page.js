@@ -56,13 +56,10 @@
                                             href={{
                                                 pathname: `/pages/tutorials/stash`
                                             }}
-
-                                            passHref
-                                            legacyBehavior
-                                        >
-                                            <a target="_blank">
+                                            target="_blank">
+                                            
                                                 Clique para ver o tutorial
-                                            </a>
+                                            
                                         </Link>
                                     </p>
                                 </div>
@@ -86,9 +83,6 @@
                     </div>
                 
                 </div>
-
             </Background>
-            
-
         );
     }

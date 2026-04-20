@@ -4,10 +4,8 @@ import Image from "next/image";
 import Button from "../../components/Button/index";
 import LoadingPage from "../../components/LoadingPage/index";
 import React, { useEffect, useState } from "react";
-import dotenv from 'dotenv'
 import { useRouter } from 'next/navigation';
 import { axiosInstance } from "@/app/config/config";
-dotenv.config()
 
 export default function LoginPage(){
     

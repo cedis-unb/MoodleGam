@@ -7,9 +7,7 @@ import {axiosInstance} from '../../config/config'
 import {useRouter} from "next/navigation";
 import React, { useEffect, useState } from "react";
 import {jwtDecode} from "jwt-decode"; 
-import dotenv from 'dotenv'
 import "./style.css"
-dotenv.config()
 
 export default function EditUserPage(){
     

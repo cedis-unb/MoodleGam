@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Dropdown from "@/app/components/Dropdown/index"
 import { useRouter } from 'next/navigation';
-import dotenv from 'dotenv'
-dotenv.config()
 
 export default function Background(props){
     const router = useRouter();

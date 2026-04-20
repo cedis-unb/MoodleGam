@@ -54,13 +54,10 @@ export default function EasterEggs(){
                                 href={{
                                     pathname: `/pages/tutorials/instalarplugin`
                                 }}
-
-                                passHref
-                                legacyBehavior
-                            >
-                                <a target="_blank">
+                                target="_blank">
+                                
                                     Clique para ver o tutorial
-                                </a>
+                                
                             </Link>
                         </div>
                         
@@ -81,9 +78,6 @@ export default function EasterEggs(){
                 </div>
             
             </div>
-
         </Background>
-        
-
     );
 }

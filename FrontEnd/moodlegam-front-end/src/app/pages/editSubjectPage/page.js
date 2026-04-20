@@ -14,9 +14,6 @@ import WhiteHatBox from "@/app/components/WhiteHatBox"
 import IntrinsicBox from "@/app/components/IntrinsicBox"
 import ExtrinsicBox from "@/app/components/ExtrinsicBox"
 import RadarGraph from "@/app/components/RadarGraph"
-import dotenv from 'dotenv'
-
-dotenv.config()
 
 
 
@@ -645,8 +642,6 @@ export default function EditSubjectPage(){
 
 
             )}
-
-
             {infoModalOpen && (
 
                 <Modal
@@ -772,18 +767,15 @@ export default function EditSubjectPage(){
                                                     href={{
                                                         pathname: `/pages/tutorials/${getFileName(technique.techniqueName)}`
                                                     }}
+                                                    target="_blank">
 
-                                                    passHref
-                                                    legacyBehavior
-                                                >
-                                                    <a target="_blank">
-                                                        <Image 
-                                                            src="/img/help.svg"
-                                                            width={25}
-                                                            height={25}
-                                                            unoptimized={true}
-                                                        />
-                                                    </a>
+                                                    <Image 
+                                                        src="/img/help.svg"
+                                                        width={25}
+                                                        height={25}
+                                                        unoptimized={true}
+                                                    />
+
                                                 </Link>
                                             </div>
                                         
@@ -812,11 +804,6 @@ export default function EditSubjectPage(){
                     />
                 </div>
             </Background>
-        
-        
         </>
-        
-
-
     );
 }

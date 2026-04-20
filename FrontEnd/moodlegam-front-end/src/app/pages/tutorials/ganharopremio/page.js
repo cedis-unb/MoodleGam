@@ -64,13 +64,10 @@ export default function GanharOPremio(){
                                         href={{
                                             pathname: `/pages/tutorials/instalarplugin`
                                         }}
-
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
+                                        target="_blank">
+                                        
                                             Clique para ver o tutorial
-                                        </a>
+                                        
                                     </Link>
                                 </div>
                                 
@@ -107,9 +104,6 @@ export default function GanharOPremio(){
                         </div>
                     
                     </div>
-
         </Background>
-        
-
     );
 }

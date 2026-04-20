@@ -52,13 +52,10 @@ export default function IntervalosFixos(){
                                 href={{
                                     pathname: `/pages/tutorials/instalarplugin`
                                 }}
-
-                                passHref
-                                legacyBehavior
-                            >
-                                <a target="_blank">
+                                target="_blank">
+                                
                                     Clique para ver o tutorial
-                                </a>
+                                
                             </Link>
                         </div>
 
@@ -77,13 +74,10 @@ export default function IntervalosFixos(){
                                         href={{
                                             pathname: `/pages/tutorials/stash`
                                         }}
-
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
+                                        target="_blank">
+                                        
                                             Clique para ver o tutorial
-                                        </a>
+                                        
                                     </Link>
                                 </p>
                             </div>
@@ -94,9 +88,6 @@ export default function IntervalosFixos(){
                 </div>
             
             </div>
-
         </Background>
-        
-
     );
 }

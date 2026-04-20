@@ -10,7 +10,7 @@ export default function Help(){
         document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
     };
 
-    return(
+    return (
         <Background>
             <div className="help-conteiner">
                 <div className="help-header">
@@ -19,59 +19,59 @@ export default function Help(){
                 <div className="help-index">
                     <ul>
                         <li>
-                            <Link legacyBehavior href="#section1">
-                                <a>O que é o MoodleGam?</a>
+                            <Link href="#section1">
+                                O que é o MoodleGam?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section2">
-                                <a>Não sei o que é Gamificação, onde posso aprender sobre?</a>
+                            <Link href="#section2">
+                                Não sei o que é Gamificação, onde posso aprender sobre?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section3">
-                                <a>Como cadastro uma disciplina?</a>
+                            <Link href="#section3">
+                                Como cadastro uma disciplina?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section4">
-                                <a>Eu estou cadastrando uma disciplina, mas não conheço nenhuma técnica de Gamificação, como posso aprender sobre essas técnicas?</a>
+                            <Link href="#section4">
+                                Eu estou cadastrando uma disciplina, mas não conheço nenhuma técnica de Gamificação, como posso aprender sobre essas técnicas?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section5">
-                                <a>Para que serve o campo &quot;Anotações&quot; ao cadastrar uma disciplina?</a>
+                            <Link href="#section5">
+                                Para que serve o campo &quot;Anotações&quot; ao cadastrar uma disciplina?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section6">
-                                <a>Como edito os dados de uma disciplina?</a>
+                            <Link href="#section6">
+                                Como edito os dados de uma disciplina?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section7">
-                                <a>
+                            <Link href="#section7">
+                                
                                     Vou cadastrar uma nova disciplina, mas quero reaproveitar a 
                                     Gamificação de uma disciplina anterior, como posso fazer isso?
-                                </a>
+                                
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section8">
-                                <a>Como edito os dados da minha conta?</a>
+                            <Link href="#section8">
+                                Como edito os dados da minha conta?
                             </Link>
                             
                         </li>
                         <li>
-                            <Link legacyBehavior href="#section9">
-                                <a>Não conheço muito bem o Moodle, onde posso aprender mais sobre a plataforma?</a>
+                            <Link href="#section9">
+                                Não conheço muito bem o Moodle, onde posso aprender mais sobre a plataforma?
                             </Link>
                             
                         </li>
@@ -200,5 +200,5 @@ export default function Help(){
 
             </div>
         </Background>
-    )
+    );
 } 

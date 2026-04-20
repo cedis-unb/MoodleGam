@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "@/app/config/config";
 import Image from "next/image";
 import "./style.css"
-import dotenv from 'dotenv'
-dotenv.config()
 
 export default function Homepage(){
     const [isAdmin, setIsAdmin] = useState(false);

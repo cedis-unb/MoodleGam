@@ -8,9 +8,7 @@ import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal"
 import {useRouter} from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import dotenv from 'dotenv'
 import LoadingPage from "@/app/components/LoadingPage";
-dotenv.config()
 
 
 export default function ReuseSubjectGamification(){

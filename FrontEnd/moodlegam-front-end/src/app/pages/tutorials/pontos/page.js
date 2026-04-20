@@ -51,13 +51,10 @@ export default function Pontos(){
                                 href={{
                                     pathname: `/pages/tutorials/instalarplugin`
                                 }}
-
-                                passHref
-                                legacyBehavior
-                            >
-                                <a target="_blank">
+                                target="_blank">
+                                
                                     Clique para ver o tutorial
-                                </a>
+                                
                             </Link>
                         </div>
 
@@ -72,13 +69,10 @@ export default function Pontos(){
                                         href={{
                                             pathname: `/pages/tutorials/blockGame`
                                         }}
-
-                                        passHref
-                                        legacyBehavior
-                                    >
-                                        <a target="_blank">
+                                        target="_blank">
+                                        
                                             Clique para ver o tutorial
-                                        </a>
+                                        
                                     </Link>
                                 </p>
                             </div>
@@ -112,9 +106,6 @@ export default function Pontos(){
                 </div>
                     
             </div>
-
         </Background>
-        
-
     );
 }
